@@ -17,7 +17,7 @@ public class ballSpawner : MonoBehaviour {
 	void Update () 
 	{
         
-        if (ballCount < 10000)
+        if (ballCount < 5)
         {
             ballCount++;
             Instantiate<GameObject>(ball);
