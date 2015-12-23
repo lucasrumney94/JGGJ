@@ -6,6 +6,7 @@ public class globController : MonoBehaviour
 {
 
     public GameObject Ball;
+    public GameObject BallLARGE;
     public int ballCount = 200;
     public float clusterAffinity = 100f;
 
@@ -39,11 +40,26 @@ public class globController : MonoBehaviour
 
     void addGlobs(int numberOfGlobs)
     {
-        for (int j = 0; j < numberOfGlobs; j++)
+        int largeGlobs = numberOfGlobs / 4;
+        if (numberOfGlobs < 400)
         {
-            ballCount++;
-            randomOffset = new Vector3(Random.Range(-1.0f, 1.0f), Random.Range(-1.0f, 1.0f), Random.Range(-1.0f, 1.0f));
-            globs.Add((GameObject)Instantiate(Ball, transform.position + randomOffset, Quaternion.identity));
+            for (int j = 0; j < numberOfGlobs; j++)
+            {
+                ballCount++;
+                randomOffset = new Vector3(Random.Range(-1.0f, 1.0f), Random.Range(-1.0f, 1.0f), Random.Range(-1.0f, 1.0f));
+
+                globs.Add((GameObject)Instantiate(Ball, transform.position + randomOffset, Quaternion.identity));
+            }
+        }
+        else
+        {
+            for (int j = 0; j < largeGlobs; j++)
+            {
+                ballCount++;
+                randomOffset = new Vector3(Random.Range(-1.0f, 1.0f), Random.Range(-1.0f, 1.0f), Random.Range(-1.0f, 1.0f));
+
+                globs.Add((GameObject)Instantiate(BallLARGE, transform.position + randomOffset, Quaternion.identity));
+            }
         }
     }
 }
