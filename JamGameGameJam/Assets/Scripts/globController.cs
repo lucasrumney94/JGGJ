@@ -42,7 +42,7 @@ public class globController : MonoBehaviour
         for (int j = 0; j < numberOfGlobs; j++)
         {
             ballCount++;
-            randomOffset = new Vector3(Random.Range(-3.0f, 3.0f), Random.Range(-3.0f, 3.0f), Random.Range(-3.0f, 3.0f));
+            randomOffset = new Vector3(Random.Range(-1.0f, 1.0f), Random.Range(-1.0f, 1.0f), Random.Range(-1.0f, 1.0f));
             globs.Add((GameObject)Instantiate(Ball, transform.position + randomOffset, Quaternion.identity));
         }
     }
