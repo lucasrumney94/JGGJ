@@ -1,6 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 using System.Collections.Generic;
+using System.Runtime.InteropServices;
 
 public class globController : MonoBehaviour
 {
@@ -13,8 +14,9 @@ public class globController : MonoBehaviour
     public List<GameObject> globs = new List<GameObject>();
     int i = 0;
     Vector3 randomOffset;
-
+    bool large = false;
     private GameObject Anchor;
+    private int explodeSelfCount = 0;
 
     // Use this for initialization
     void Start()
@@ -30,11 +32,51 @@ public class globController : MonoBehaviour
     // Update is called once per frame
     void FixedUpdate()
     {
+        bool explodeSelf = Input.GetButtonDown("Explode");
+
+        if (explodeSelf)
+        {
+            clusterAffinity = -clusterAffinity;
+        }
+        if (clusterAffinity < 0)
+        {
+            explodeSelfCount++;
+        }
+        if (explodeSelfCount > 100)
+        {
+            clusterAffinity = -clusterAffinity;
+            explodeSelfCount = 0;
+        }
+        
+
         foreach (GameObject glob in globs)
         {
             //Debug.Log(glob.transform.parent.position);
             glob.GetComponent<Rigidbody>().AddForce(clusterAffinity * (Anchor.transform.position-glob.transform.position)*Time.smoothDeltaTime);
         }
+
+        /*if (ballCount > 700)
+        {
+            int count = 0;
+            foreach (GameObject glob in globs)
+            {
+                if (glob.name == "Ball(Clone)")
+                {
+                    count++;
+                    globs.Remove(glob);
+                    Destroy(glob);
+                    ballCount--;
+                }
+                if (count == 4)
+                {
+                    large = true;
+                    addGlobs(1);
+                    large = false;
+                    ballCount++;
+                    break;
+                }
+            }
+        }*/
         
     }
 
@@ -51,7 +93,7 @@ public class globController : MonoBehaviour
                 globs.Add((GameObject)Instantiate(Ball, transform.position + randomOffset, Quaternion.identity));
             }
         }
-        else
+        else if (numberOfGlobs >=400 || large == true)
         {
             for (int j = 0; j < largeGlobs; j++)
             {
