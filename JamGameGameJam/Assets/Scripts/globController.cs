@@ -21,7 +21,7 @@ public class globController : MonoBehaviour
         Anchor = GameObject.FindGameObjectWithTag("Anchor");
         for (i = 0; i < ballCount; i++)
         {
-            randomOffset = new Vector3(Random.Range(-10.0f, 10.0f), Random.Range(-10.0f, 10.0f), Random.Range(-10.0f, 10.0f));
+            randomOffset = new Vector3(Random.Range(-3.0f, 3.0f), Random.Range(-3.0f, 3.0f), Random.Range(-3.0f, 3.0f));
             globs.Add((GameObject)Instantiate(Ball,randomOffset,Quaternion.identity));
         }
     }
@@ -35,5 +35,15 @@ public class globController : MonoBehaviour
             glob.GetComponent<Rigidbody>().AddForce(clusterAffinity * (Anchor.transform.position-glob.transform.position)*Time.smoothDeltaTime);
         }
         
+    }
+
+    void addGlobs(int numberOfGlobs)
+    {
+        for (int j = 0; j < numberOfGlobs; j++)
+        {
+            ballCount++;
+            randomOffset = new Vector3(Random.Range(-3.0f, 3.0f), Random.Range(-3.0f, 3.0f), Random.Range(-3.0f, 3.0f));
+            globs.Add((GameObject)Instantiate(Ball, transform.position + randomOffset, Quaternion.identity));
+        }
     }
 }

@@ -17,9 +17,11 @@ public class playerMovement : MonoBehaviour {
     {
         float moveHorizontal = Input.GetAxis("Horizontal");
         float moveVertical = Input.GetAxis("Vertical");
+        float moveElevation = Input.GetAxis("Elevate");
+        //Debug.Log(moveElevation);
 
-        Vector3 movement = new Vector3(moveHorizontal, 0.0f, moveVertical);
-        rb.AddForce(speed*movement*Time.smoothDeltaTime);
+        Vector3 movement = new Vector3(moveHorizontal, moveElevation, moveVertical);
+        rb.AddRelativeForce(speed*movement*Time.smoothDeltaTime);
 
     }
 
