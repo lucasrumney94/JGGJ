@@ -20,7 +20,7 @@ public class playerStats : MonoBehaviour {
 	// Use this for initialization
 	void Start () 
 	{
-        Anchor = transform.FindChild("Anchor").gameObject;
+        Anchor = GameObject.FindGameObjectWithTag("Anchor") ;
         StartCoroutine("checkRadius");
 	}
 	
