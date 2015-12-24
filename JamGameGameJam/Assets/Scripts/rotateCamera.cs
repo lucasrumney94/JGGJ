@@ -25,7 +25,7 @@ public class rotateCamera : MonoBehaviour {
     {
         float xAxis = Input.GetAxis("rotateCamera");
         transform.Rotate(new Vector3(0.0f, xAxis*turnSpeed, 0.0f));
-        float yAxis = Input.GetAxis("rotateCameraVertical");
-        transform.Rotate(new Vector3(yAxis * turnSpeed, 0.0f, 0.0f));
+        //float yAxis = Input.GetAxis("rotateCameraVertical");
+        //transform.Rotate(new Vector3(yAxis * turnSpeed, 0.0f, 0.0f));
     }
 }
