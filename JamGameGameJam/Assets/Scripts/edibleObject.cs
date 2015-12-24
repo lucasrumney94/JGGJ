@@ -35,7 +35,7 @@ public class edibleObject : MonoBehaviour {
     {
         if (GameObject.FindGameObjectWithTag("Player").GetComponent<playerStats>().isSmashing)
         {
-            eatTime /= 2;
+            eatTime /= 1.1f;
         }
         yield return new WaitForSeconds(eatTime);
         if (GameObject.FindGameObjectWithTag("Player").GetComponent<playerStats>().canEat)
