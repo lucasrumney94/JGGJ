@@ -1,4 +1,6 @@
-﻿using UnityEngine;
+﻿//Seeking-Type AI
+
+using UnityEngine;
 using System.Collections;
 
 [RequireComponent(typeof(Rigidbody))]
@@ -11,15 +13,18 @@ public class AI_Blinky : MonoBehaviour {
 
     void Start()
     {
-        player = GameObject.FindGameObjectWithTag("Player");
+        player = GameObject.FindGameObjectWithTag("Anchor");
         physicsRigidbody = GetComponent<Rigidbody>();
     }
 
     void FixedUpdate()
     {
-        Vector3 toPlayer = this.transform.position - player.transform.position;
-        toPlayer = toPlayer.normalized * speed;
-        physicsRigidbody.AddForce(toPlayer);
+        Vector3 toPlayer = player.transform.position - this.transform.position;
+        //Kill velocity if it gets too high and prevent orbiting behavior
+        Vector3 toVelocity = toPlayer - physicsRigidbody.velocity;
+        toVelocity = toVelocity.normalized * speed;
+        physicsRigidbody.AddForce(toVelocity);
         Debug.DrawRay(transform.position, toPlayer, Color.red);
+        Debug.DrawRay(transform.position, toVelocity, Color.green);
     }
 }
