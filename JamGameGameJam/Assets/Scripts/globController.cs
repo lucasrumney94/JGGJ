@@ -6,9 +6,10 @@ using System.Runtime.InteropServices;
 public class globController : MonoBehaviour
 {
 
-    public GameObject Ball;
-    public GameObject BallLARGE;
-    public int ballCount = 200;
+    public GameObject globSMALL;
+    public GameObject globLARGE;
+    public int particleCount = 200;
+    public int globCount = 200;
     public float clusterAffinity = 100f;
 
     public List<GameObject> globs = new List<GameObject>();
@@ -18,14 +19,15 @@ public class globController : MonoBehaviour
     private GameObject Anchor;
     private int explodeSelfCount = 0;
 
+
     // Use this for initialization
     void Start()
     {
         Anchor = GameObject.FindGameObjectWithTag("Anchor");
-        for (i = 0; i < ballCount; i++)
+        for (i = 0; i < particleCount; i++)
         {
             randomOffset = new Vector3(Random.Range(-3.0f, 3.0f), Random.Range(-3.0f, 3.0f), Random.Range(-3.0f, 3.0f));
-            globs.Add((GameObject)Instantiate(Ball,randomOffset,Quaternion.identity));
+            globs.Add((GameObject)Instantiate(globSMALL,randomOffset,Quaternion.identity));
         }
     }
 
@@ -36,6 +38,8 @@ public class globController : MonoBehaviour
 
         if (explodeSelf)
         {
+            GameObject.FindGameObjectWithTag("Player").GetComponent<playerStats>().isSmashing = true;
+            GameObject.FindGameObjectWithTag("Player").GetComponent<playerStats>().canEat = false;
             clusterAffinity = -clusterAffinity;
         }
         if (clusterAffinity < 0)
@@ -46,12 +50,15 @@ public class globController : MonoBehaviour
         {
             clusterAffinity = -clusterAffinity;
             explodeSelfCount = 0;
+            GameObject.FindGameObjectWithTag("Player").GetComponent<playerStats>().isSmashing = false;
+            GameObject.FindGameObjectWithTag("Player").GetComponent<playerStats>().canEat = true;
         }
-        
 
+        
         foreach (GameObject glob in globs)
         {
             //Debug.Log(glob.transform.parent.position);
+           
             glob.GetComponent<Rigidbody>().AddForce(clusterAffinity * (Anchor.transform.position-glob.transform.position)*Time.smoothDeltaTime);
         }
 
@@ -82,25 +89,28 @@ public class globController : MonoBehaviour
 
     void addGlobs(int numberOfGlobs)
     {
-        int largeGlobs = numberOfGlobs / 4;
+        int largeToSmallRatio = 4;
+        int largeGlobs = numberOfGlobs / largeToSmallRatio;
         if (numberOfGlobs < 400)
         {
             for (int j = 0; j < numberOfGlobs; j++)
             {
-                ballCount++;
+                particleCount++;
+                globCount++;
                 randomOffset = new Vector3(Random.Range(-1.0f, 1.0f), Random.Range(-1.0f, 1.0f), Random.Range(-1.0f, 1.0f));
 
-                globs.Add((GameObject)Instantiate(Ball, transform.position + randomOffset, Quaternion.identity));
+                globs.Add((GameObject)Instantiate(globSMALL, transform.position + randomOffset, Quaternion.identity));
             }
         }
         else if (numberOfGlobs >=400 || large == true)
         {
             for (int j = 0; j < largeGlobs; j++)
             {
-                ballCount++;
+                particleCount++;
+                globCount += largeToSmallRatio;
                 randomOffset = new Vector3(Random.Range(-1.0f, 1.0f), Random.Range(-1.0f, 1.0f), Random.Range(-1.0f, 1.0f));
 
-                globs.Add((GameObject)Instantiate(BallLARGE, transform.position + randomOffset, Quaternion.identity));
+                globs.Add((GameObject)Instantiate(globLARGE, transform.position + randomOffset, Quaternion.identity));
             }
         }
     }

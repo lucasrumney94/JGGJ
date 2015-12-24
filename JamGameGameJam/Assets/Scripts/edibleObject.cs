@@ -18,21 +18,31 @@ public class edibleObject : MonoBehaviour {
 	// Update is called once per frame
 	void FixedUpdate ()
     {
-        if (((playerAnchor.transform.position - transform.position).sqrMagnitude < eatDistance) && playerAnchor.GetComponent<globController>().ballCount>globs)
+        eatDistance = Mathf.Pow(transform.localScale.x/4 + playerAnchor.transform.parent.GetComponent<playerStats>().playerRadius,2); 
+        if (((playerAnchor.transform.position - transform.position).sqrMagnitude < eatDistance) && playerAnchor.GetComponent<globController>().particleCount>globs)
         {
             StartCoroutine("eatingTime");
+            
         }
         else
         {
             StopCoroutine("eatingTime");
         }
+        
 	}
 
     IEnumerator eatingTime ()
     {
+        if (GameObject.FindGameObjectWithTag("Player").GetComponent<playerStats>().isSmashing)
+        {
+            eatTime /= 2;
+        }
         yield return new WaitForSeconds(eatTime);
-        playerAnchor.SendMessageUpwards("addGlobs", globs, SendMessageOptions.DontRequireReceiver);
-        Destroy(this.gameObject);
+        if (GameObject.FindGameObjectWithTag("Player").GetComponent<playerStats>().canEat)
+        {
+            playerAnchor.SendMessageUpwards("addGlobs", globs, SendMessageOptions.DontRequireReceiver);
+            Destroy(this.gameObject);
+        }
     }
 
 
