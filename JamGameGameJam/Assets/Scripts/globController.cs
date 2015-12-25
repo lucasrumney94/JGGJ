@@ -72,22 +72,14 @@ public class globController : MonoBehaviour
         }
         if (expanded)
         {
-            float spacing = 0.5f;
-            float posI = 0.0f;
-            float posJ = 0.0f;
-            float posK = 0.0f;
-
+            float scale = 20.0f;
             foreach (GameObject glob in globs)
             {
 
-                Vector3 offset = new Vector3(spacing*posI,spacing*posJ,spacing*posK);
-                posI++;
-                posJ++;
-                posK++;
-                
-
-                glob.GetComponent<Rigidbody>().AddForce(clusterAffinity * (offset + Anchor.transform.position - glob.transform.position) * Time.smoothDeltaTime);
+                Vector3 randomExpand = new Vector3(Random.Range(-scale * playerRadiusSample, scale * playerRadiusSample), Random.Range(-scale * playerRadiusSample, scale * playerRadiusSample), Random.Range(-scale * playerRadiusSample, scale * playerRadiusSample));
+                glob.GetComponent<Rigidbody>().AddForce(clusterAffinity * scale * (randomExpand + Anchor.transform.position - glob.transform.position).normalized * Time.smoothDeltaTime);
             }
+            
         }
         else
         {

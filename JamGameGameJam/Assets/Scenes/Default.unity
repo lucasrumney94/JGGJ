@@ -320,7 +320,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   eatTime: 7
-  globs: 700
+  globs: 300
   eatDistance: 30
 --- !u!23 &498751844
 MeshRenderer:
@@ -689,8 +689,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   eatTime: 7
-  globs: 700
-  eatDistance: 22
+  globs: 600
+  eatDistance: 16
 --- !u!23 &891490317
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -812,8 +812,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   eatTime: 5
-  globs: 600
-  eatDistance: 17
+  globs: 500
+  eatDistance: 12
 --- !u!23 &984807165
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -943,7 +943,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   eatTime: 5
-  globs: 400
+  globs: 100
   eatDistance: 15
 --- !u!1 &1135426473
 GameObject:
@@ -1048,8 +1048,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   eatTime: 7
-  globs: 1000
-  eatDistance: 21
+  globs: 700
+  eatDistance: 18
 --- !u!23 &1158187494
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -1238,7 +1238,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   eatTime: 3
   globs: 400
-  eatDistance: 12
+  eatDistance: 10
 --- !u!23 &1368008912
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -1471,7 +1471,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   eatTime: 15
-  globs: 300
+  globs: 50
   eatDistance: 10
 --- !u!23 &1470405642
 MeshRenderer:
@@ -1710,8 +1710,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   eatTime: 8
-  globs: 1200
-  eatDistance: 25
+  globs: 800
+  eatDistance: 20
 --- !u!23 &1745252875
 MeshRenderer:
   m_ObjectHideFlags: 0
