@@ -1,6 +1,6 @@
 fileFormatVersion: 2
-guid: 9487f5ff8f870894ebbdb6c4467bf728
-timeCreated: 1451001986
+guid: 5a1ed93b6ce320c4bbf68d2ac112416a
+timeCreated: 1451017144
 licenseType: Free
 ModelImporter:
   serializedVersion: 18
@@ -9,10 +9,7 @@ ModelImporter:
     400000: //RootNode
     2300000: //RootNode
     3300000: //RootNode
-    4300000: Cube
-    4300002: Body
-    7400000: Default Take
-    9500000: //RootNode
+    4300000: Icosphere
   materials:
     importMaterials: 1
     materialName: 0
@@ -56,7 +53,7 @@ ModelImporter:
     splitTangentsAcrossUV: 1
     normalImportMode: 0
     tangentImportMode: 1
-  importAnimation: 0
+  importAnimation: 1
   copyAvatar: 0
   humanDescription:
     human: []
@@ -71,7 +68,7 @@ ModelImporter:
     rootMotionBoneName: 
     hasTranslationDoF: 0
   lastHumanDescriptionAvatarSource: {instanceID: 0}
-  animationType: 2
+  animationType: 0
   humanoidOversampling: 1
   additionalBone: 0
   userData: 
