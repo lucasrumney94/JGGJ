@@ -27,7 +27,7 @@ public class playerStats : MonoBehaviour {
 	// Update is called once per frame
 	void Update () 
 	{
-        //Debug.Log(Anchor.GetComponent<globController>().globCount);
+        playerGlobCount = Anchor.GetComponent<globController>().globCount;
     }
 
 

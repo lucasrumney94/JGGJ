@@ -119,7 +119,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 642990abf100c6544abdd2826ac8fa6d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 200
+  baseSpeed: 100
+  speedScale: .100000001
+  speed: 100
 --- !u!114 &11442324
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -151,10 +153,10 @@ MonoBehaviour:
   globLARGE: {fileID: 172742, guid: 1366019cbb3fe0c4594382ea837d7d45, type: 2}
   particleCount: 400
   globCount: 400
-  clusterAffinity: 100
+  clusterAffinity: 200
   smashLength: 2
   smashRecharge: 10
-  expandRecharge: 2
+  expandRecharge: 1.5
   globs: []
 --- !u!135 &13516742
 SphereCollider:

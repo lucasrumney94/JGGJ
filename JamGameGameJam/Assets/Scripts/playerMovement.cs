@@ -3,14 +3,19 @@ using System.Collections;
 
 public class playerMovement : MonoBehaviour {
 
-    public float speed = 5.0f;
+    public float baseSpeed = 200.0f;
+    public float speedScale = .9f;
+    public float speed = 200.0f;
+
     Rigidbody rb = new Rigidbody();
+    private playerStats pStats;
     
     
     // Use this for initialization
     void Start ()
     {
         rb = GetComponent<Rigidbody>();
+        pStats = GameObject.FindGameObjectWithTag("Player").GetComponent<playerStats>();
     }
 
     void FixedUpdate()
@@ -30,6 +35,7 @@ public class playerMovement : MonoBehaviour {
 // Update is called once per frame
 void Update ()
     {
-	
+        speed = baseSpeed + pStats.playerGlobCount * speedScale;
+        Debug.Log(pStats.playerGlobCount);
 	}
 }
