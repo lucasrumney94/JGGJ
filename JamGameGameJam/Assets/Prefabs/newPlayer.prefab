@@ -154,7 +154,7 @@ MonoBehaviour:
   clusterAffinity: 100
   smashLength: 2
   smashRecharge: 10
-  expandRecharge: 3
+  expandRecharge: 2
   globs: []
 --- !u!135 &13516742
 SphereCollider:
