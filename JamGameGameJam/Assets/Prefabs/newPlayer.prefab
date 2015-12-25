@@ -154,7 +154,7 @@ MonoBehaviour:
   particleCount: 400
   globCount: 400
   clusterAffinity: 200
-  smashLength: 2
+  smashLength: 1
   smashRecharge: 10
   expandRecharge: 1.5
   globs: []
