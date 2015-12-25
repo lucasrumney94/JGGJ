@@ -152,6 +152,7 @@ MonoBehaviour:
   particleCount: 400
   globCount: 400
   clusterAffinity: 100
+  smashLength: 2
   globs: []
 --- !u!135 &13516742
 SphereCollider:

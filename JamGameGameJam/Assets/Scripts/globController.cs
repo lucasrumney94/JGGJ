@@ -11,6 +11,7 @@ public class globController : MonoBehaviour
     public int particleCount = 200;
     public int globCount = 200;
     public float clusterAffinity = 100f;
+	public float smashLength = 3.0f;
 
     public List<GameObject> globs = new List<GameObject>();
     int i = 0;
@@ -38,21 +39,9 @@ public class globController : MonoBehaviour
 
         if (explodeSelf)
         {
-            GameObject.FindGameObjectWithTag("Player").GetComponent<playerStats>().isSmashing = true;
-            GameObject.FindGameObjectWithTag("Player").GetComponent<playerStats>().canEat = false;
-            clusterAffinity = -clusterAffinity;
+			StartCoroutine("smashAttack");
         }
-        if (clusterAffinity < 0)
-        {
-            explodeSelfCount++;
-        }
-        if (explodeSelfCount > 100)
-        {
-            clusterAffinity = -clusterAffinity;
-            explodeSelfCount = 0;
-            GameObject.FindGameObjectWithTag("Player").GetComponent<playerStats>().isSmashing = false;
-            GameObject.FindGameObjectWithTag("Player").GetComponent<playerStats>().canEat = true;
-        }
+
 
         
         foreach (GameObject glob in globs)
@@ -114,4 +103,26 @@ public class globController : MonoBehaviour
             }
         }
     }
+
+
+	IEnumerator smashAttack()
+	{
+		GameObject.FindGameObjectWithTag("Player").GetComponent<playerStats>().isSmashing = true;
+		GameObject.FindGameObjectWithTag("Player").GetComponent<playerStats>().canEat = false;
+		clusterAffinity = -clusterAffinity;
+
+		yield return new WaitForSeconds(smashLength);
+
+		clusterAffinity = -clusterAffinity;
+
+		yield return new WaitForSeconds(smashLength);
+		GameObject.FindGameObjectWithTag("Player").GetComponent<playerStats>().isSmashing = false;
+		GameObject.FindGameObjectWithTag("Player").GetComponent<playerStats>().canEat = true;
+
+
+
+
+
+
+	}
 }

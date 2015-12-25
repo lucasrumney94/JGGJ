@@ -19,7 +19,7 @@ public class edibleObject : MonoBehaviour {
 	void FixedUpdate ()
     {
         eatDistance = Mathf.Pow(transform.localScale.x/4 + playerAnchor.transform.parent.GetComponent<playerStats>().playerRadius,2); 
-        if (((playerAnchor.transform.position - transform.position).sqrMagnitude < eatDistance) && playerAnchor.GetComponent<globController>().particleCount>globs)
+		if (((playerAnchor.transform.position - transform.position).sqrMagnitude < eatDistance) && playerAnchor.GetComponent<globController>().globCount>globs)
         {
             StartCoroutine("eatingTime");
             
@@ -35,7 +35,7 @@ public class edibleObject : MonoBehaviour {
     {
         if (GameObject.FindGameObjectWithTag("Player").GetComponent<playerStats>().isSmashing)
         {
-            eatTime /= 1.1f;
+			eatTime = 0.0f;
         }
         yield return new WaitForSeconds(eatTime);
         if (GameObject.FindGameObjectWithTag("Player").GetComponent<playerStats>().canEat)
