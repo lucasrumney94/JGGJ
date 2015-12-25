@@ -104,7 +104,7 @@ public class globController : MonoBehaviour
             foreach (GameObject glob in globs)
             {
                 tempClusterAff++;
-                if (tempClusterAff > 5.0f*clusterAffinity)
+                if (tempClusterAff > 4.5f*clusterAffinity)
                     tempClusterAff = 2.0f*clusterAffinity;
                 glob.GetComponent<Rigidbody>().AddForce(tempClusterAff * (Anchor.transform.position - glob.transform.position).normalized * Time.smoothDeltaTime);
             }

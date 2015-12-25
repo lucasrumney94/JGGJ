@@ -408,10 +408,6 @@ Prefab:
       propertyPath: m_RootOrder
       value: 4
       objectReference: {fileID: 0}
-    - target: {fileID: 11498546, guid: 8750a61d87f30ef4da41fe5674729146, type: 2}
-      propertyPath: snakeSpeedFactor
-      value: 2.5
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 8750a61d87f30ef4da41fe5674729146, type: 2}
   m_IsPrefabParent: 0
@@ -947,7 +943,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   eatTime: 5
-  globs: 100
+  globs: 798
   eatDistance: 15
 --- !u!1 &1135426473
 GameObject:
@@ -1475,7 +1471,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   eatTime: 15
-  globs: 50
+  globs: 399
   eatDistance: 10
 --- !u!23 &1470405642
 MeshRenderer:
