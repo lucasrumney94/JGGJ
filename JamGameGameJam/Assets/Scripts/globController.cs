@@ -100,12 +100,12 @@ public class globController : MonoBehaviour
             Anchor.GetComponent<playerMovement>().boost = snakeSpeedFactor;
             
             Debug.Log("Snaked!");
-            float tempClusterAff = clusterAffinity;
+            float tempClusterAff = clusterAffinity*2;
             foreach (GameObject glob in globs)
             {
                 tempClusterAff++;
-                if (tempClusterAff > 2*clusterAffinity)
-                    tempClusterAff = clusterAffinity;
+                if (tempClusterAff > 5.0f*clusterAffinity)
+                    tempClusterAff = 2.0f*clusterAffinity;
                 glob.GetComponent<Rigidbody>().AddForce(tempClusterAff * (Anchor.transform.position - glob.transform.position).normalized * Time.smoothDeltaTime);
             }
         }

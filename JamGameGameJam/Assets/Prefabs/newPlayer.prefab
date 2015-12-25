@@ -120,7 +120,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   baseSpeed: 100
-  speedScale: .100000001
+  speedScale: .00999999978
   speed: 100
   boost: 5
 --- !u!114 &11442324
@@ -158,7 +158,7 @@ MonoBehaviour:
   smashLength: 1
   smashRecharge: 10
   expandRecharge: 1.5
-  snakeSpeedFactor: 2
+  snakeSpeedFactor: 3
   globs: []
 --- !u!135 &13516742
 SphereCollider:
