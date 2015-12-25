@@ -63,7 +63,7 @@ MeshFilter:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 169934}
-  m_Mesh: {fileID: 4300002, guid: 9487f5ff8f870894ebbdb6c4467bf728, type: 3}
+  m_Mesh: {fileID: 4300000, guid: c8c6f4c62004d584c93a0fcab4a8b07a, type: 3}
 --- !u!54 &5492866
 Rigidbody:
   m_ObjectHideFlags: 1
@@ -103,8 +103,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   eatTime: 1
-  globs: 2
-  eatDistance: 1
+  globs: 10
+  eatDistance: 2
 --- !u!114 &11467094
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -123,7 +123,11 @@ Prefab:
   serializedVersion: 2
   m_Modification:
     m_TransformParent: {fileID: 0}
-    m_Modifications: []
+    m_Modifications:
+    - target: {fileID: 0}
+      propertyPath: m_Mesh
+      value: 
+      objectReference: {fileID: 4300000, guid: c8c6f4c62004d584c93a0fcab4a8b07a, type: 3}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}
   m_RootGameObject: {fileID: 169934}

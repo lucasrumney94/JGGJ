@@ -1,23 +1,22 @@
 fileFormatVersion: 2
-guid: c8c6f4c62004d584c93a0fcab4a8b07a
-timeCreated: 1451005561
+guid: d5ebceb6e0d2d304586df7b48f45b3b1
+timeCreated: 1451015042
 licenseType: Free
 ModelImporter:
   serializedVersion: 18
   fileIDToRecycleName:
-    100000: Body
-    100002: Camera
-    100004: //RootNode
-    100006: Lamp
-    400000: Body
-    400002: Camera
-    400004: //RootNode
-    400006: Lamp
-    2300000: Body
-    2300002: //RootNode
-    3300000: Body
-    3300002: //RootNode
-    4300000: Body
+    100000: //RootNode
+    100002: Ship
+    100004: Turret
+    400000: //RootNode
+    400002: Ship
+    400004: Turret
+    2300000: Ship
+    2300002: Turret
+    3300000: Ship
+    3300002: Turret
+    4300000: Turret
+    4300002: Ship
   materials:
     importMaterials: 1
     materialName: 0
@@ -60,7 +59,7 @@ ModelImporter:
     normalSmoothAngle: 60
     splitTangentsAcrossUV: 1
     normalImportMode: 0
-    tangentImportMode: 0
+    tangentImportMode: 1
   importAnimation: 1
   copyAvatar: 0
   humanDescription:
