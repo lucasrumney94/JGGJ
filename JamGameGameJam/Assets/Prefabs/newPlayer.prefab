@@ -68,7 +68,7 @@ MeshRenderer:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 100886}
-  m_Enabled: 1
+  m_Enabled: 0
   m_CastShadows: 1
   m_ReceiveShadows: 1
   m_Materials:
@@ -133,7 +133,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 65f319d02ea761a4c833dbbed1d222cd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  checkRadiusPeriod: 1
+  checkRadiusPeriod: .5
   playerRadius: 1
   playerGlobCount: 1
   canEat: 1

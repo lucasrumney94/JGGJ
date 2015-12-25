@@ -36,6 +36,6 @@ public class playerMovement : MonoBehaviour {
 void Update ()
     {
         speed = baseSpeed + pStats.playerGlobCount * speedScale;
-        Debug.Log(pStats.playerGlobCount);
+        //Debug.Log(pStats.playerGlobCount);
 	}
 }

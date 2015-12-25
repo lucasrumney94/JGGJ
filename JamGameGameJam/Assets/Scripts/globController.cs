@@ -29,6 +29,7 @@ public class globController : MonoBehaviour
 	private bool expandRecharged = true;
     private bool expanded = false;
     private float playerRadiusSample = 1.0f;
+    private float originalClusterAffinity;
 
     // Use this for initialization
     void Start()
@@ -37,6 +38,8 @@ public class globController : MonoBehaviour
 
 		player = GameObject.FindGameObjectWithTag("Player");
 		pStats = player.GetComponent<playerStats>();
+
+        originalClusterAffinity = clusterAffinity;
 
         for (i = 0; i < particleCount; i++)
         {
@@ -67,7 +70,7 @@ public class globController : MonoBehaviour
             StartCoroutine("expandRecharger");
             pStats.canEat = false;
             expandRecharged = false;
-            Debug.Log(expanded);
+            //Debug.Log(expanded);
             playerRadiusSample = pStats.playerRadius;
         }
         if (expanded)
@@ -152,7 +155,7 @@ public class globController : MonoBehaviour
 
 		yield return new WaitForSeconds(smashLength);
 
-		clusterAffinity = -clusterAffinity;
+		clusterAffinity = originalClusterAffinity;
 
 		yield return new WaitForSeconds(smashLength);
 		GameObject.FindGameObjectWithTag("Player").GetComponent<playerStats>().isSmashing = false;
