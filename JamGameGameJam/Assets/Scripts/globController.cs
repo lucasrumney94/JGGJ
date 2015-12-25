@@ -12,19 +12,32 @@ public class globController : MonoBehaviour
     public int globCount = 200;
     public float clusterAffinity = 100f;
 	public float smashLength = 3.0f;
+	public float smashRecharge = 10.0f;
+	public float expandRecharge = 1.0f;
+
 
     public List<GameObject> globs = new List<GameObject>();
-    int i = 0;
+	private GameObject player;
+	private playerStats pStats;
+	int i = 0;
     Vector3 randomOffset;
     bool large = false;
     private GameObject Anchor;
-    private int explodeSelfCount = 0;
-
+	private bool smashRecharged = true;
+    private bool explodeSelf = false;
+    private bool expandSelf = false;
+	private bool expandRecharged = true;
+    private bool expanded = false;
+    private float playerRadiusSample = 1.0f;
 
     // Use this for initialization
     void Start()
     {
         Anchor = GameObject.FindGameObjectWithTag("Anchor");
+
+		player = GameObject.FindGameObjectWithTag("Player");
+		pStats = player.GetComponent<playerStats>();
+
         for (i = 0; i < particleCount; i++)
         {
             randomOffset = new Vector3(Random.Range(-3.0f, 3.0f), Random.Range(-3.0f, 3.0f), Random.Range(-3.0f, 3.0f));
@@ -35,22 +48,56 @@ public class globController : MonoBehaviour
     // Update is called once per frame
     void FixedUpdate()
     {
-        bool explodeSelf = Input.GetButtonDown("Explode");
+        explodeSelf = Input.GetButtonDown("Explode");
 
-        if (explodeSelf)
+        if (explodeSelf && smashRecharged && !expanded)
         {
 			StartCoroutine("smashAttack");
+			StartCoroutine("smashRecharger");
+			smashRecharged = false;
         }
 
+		expandSelf = Input.GetButtonDown("Expand");
 
-        
-        foreach (GameObject glob in globs)
+		if (expandSelf && expandRecharged && !explodeSelf)
+		{
+            //start coroutines for expand
+            
+            expanded = !expanded;
+            StartCoroutine("expandRecharger");
+            pStats.canEat = false;
+            expandRecharged = false;
+            Debug.Log(expanded);
+            playerRadiusSample = pStats.playerRadius;
+        }
+        if (expanded)
         {
-            //Debug.Log(glob.transform.parent.position);
-           
-            glob.GetComponent<Rigidbody>().AddForce(clusterAffinity * (Anchor.transform.position-glob.transform.position)*Time.smoothDeltaTime);
-        }
+            float spacing = 0.5f;
+            float posI = 0.0f;
+            float posJ = 0.0f;
+            float posK = 0.0f;
 
+            foreach (GameObject glob in globs)
+            {
+
+                Vector3 offset = new Vector3(spacing*posI,spacing*posJ,spacing*posK);
+                posI++;
+                posJ++;
+                posK++;
+                
+
+                glob.GetComponent<Rigidbody>().AddForce(clusterAffinity * (offset + Anchor.transform.position - glob.transform.position) * Time.smoothDeltaTime);
+            }
+        }
+        else
+        {
+            foreach (GameObject glob in globs)
+            {
+                //Debug.Log(glob.transform.parent.position);
+
+                glob.GetComponent<Rigidbody>().AddForce(clusterAffinity * (Anchor.transform.position - glob.transform.position) * Time.smoothDeltaTime);
+            }
+        }
         /*if (ballCount > 700)
         {
             int count = 0;
@@ -119,10 +166,18 @@ public class globController : MonoBehaviour
 		GameObject.FindGameObjectWithTag("Player").GetComponent<playerStats>().isSmashing = false;
 		GameObject.FindGameObjectWithTag("Player").GetComponent<playerStats>().canEat = true;
 
-
-
-
-
-
 	}
+	IEnumerator smashRecharger()
+	{
+		yield return new WaitForSeconds(smashRecharge);
+		smashRecharged = true;
+	}
+
+
+    IEnumerator expandRecharger()
+    {
+        yield return new WaitForSeconds(expandRecharge);
+        expandRecharged = true;
+    }
+
 }

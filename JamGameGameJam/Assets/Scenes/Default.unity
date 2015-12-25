@@ -1049,7 +1049,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   eatTime: 7
   globs: 1000
-  eatDistance: 23
+  eatDistance: 21
 --- !u!23 &1158187494
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -1711,7 +1711,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   eatTime: 8
   globs: 1200
-  eatDistance: 30
+  eatDistance: 25
 --- !u!23 &1745252875
 MeshRenderer:
   m_ObjectHideFlags: 0
