@@ -1904,10 +1904,6 @@ Prefab:
       propertyPath: target
       value: 
       objectReference: {fileID: 510115956}
-    - target: {fileID: 11421870, guid: 72da4853879ec434f9f41795765f5dd9, type: 2}
-      propertyPath: followSmoothTime
-      value: .400000006
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 72da4853879ec434f9f41795765f5dd9, type: 2}
   m_IsPrefabParent: 0

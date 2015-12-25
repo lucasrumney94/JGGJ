@@ -7,6 +7,8 @@ public class playerMovement : MonoBehaviour {
     public float speedScale = .9f;
     public float speed = 200.0f;
 
+    public float boost = 4.0f;
+
     Rigidbody rb = new Rigidbody();
     private playerStats pStats;
     
@@ -26,7 +28,7 @@ public class playerMovement : MonoBehaviour {
         //Debug.Log(moveElevation);
 
         Vector3 movement = new Vector3(moveHorizontal, moveElevation, moveVertical);
-        rb.AddRelativeForce(speed*movement*Time.smoothDeltaTime);
+        rb.AddRelativeForce(boost*speed*movement*Time.smoothDeltaTime);
 
     }
 

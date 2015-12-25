@@ -111,7 +111,7 @@ MonoBehaviour:
   player: {fileID: 0}
   anchor: {fileID: 0}
   mainCamera: {fileID: 0}
-  followSmoothTime: .400000006
+  followSmoothTime: .600000024
   turnSpeed: 4
 --- !u!124 &12415714
 Behaviour:
