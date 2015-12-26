@@ -6,9 +6,13 @@ public class edibleObject : MonoBehaviour {
     public float eatTime = 5.0f;
     public int globs = 10;
     public float eatDistance = 5.0f;
+    public float smashTimeLeft = 0.1f;
+    public float lungeTimeReduction = 2.0f;
 
     private GameObject playerAnchor;
 
+    private bool eating = false;
+    private bool lungeFlag = true;
 	// Use this for initialization
 	void Start ()
     {
@@ -21,11 +25,18 @@ public class edibleObject : MonoBehaviour {
         eatDistance = Mathf.Pow(transform.localScale.x/4 + playerAnchor.transform.parent.GetComponent<playerStats>().playerRadius,2); 
 		if (((playerAnchor.transform.position - transform.position).sqrMagnitude < eatDistance) && playerAnchor.GetComponent<globController>().globCount>globs)
         {
-            StartCoroutine("eatingTime");
+            if (eating == false)
+            {
+                StartCoroutine("eatingTime");
+            }
+            eating = true;
+
             
+
         }
         else
         {
+            eating = false;
             StopCoroutine("eatingTime");
         }
         
@@ -33,11 +44,32 @@ public class edibleObject : MonoBehaviour {
 
     IEnumerator eatingTime ()
     {
-        if (GameObject.FindGameObjectWithTag("Player").GetComponent<playerStats>().isSmashing)
+        lungeFlag = true;
+        
+        while (eatTime > 0.0f)
         {
-			eatTime = 0.0f;
+            eatTime -= Time.deltaTime;
+            if (GameObject.FindGameObjectWithTag("Player").GetComponent<playerStats>().isSmashing)
+            {
+                eatTime = smashTimeLeft;
+            }
+            if (!GameObject.FindGameObjectWithTag("Anchor").GetComponent<globController>().lungeRecharged && lungeFlag)
+            {
+               eatTime -= lungeTimeReduction;
+               lungeFlag = false;
+            }
+
+
+
+
+            if (eatTime <= 0.0f)
+                break;
+
+            
+            
+            yield return null;
         }
-        yield return new WaitForSeconds(eatTime);
+        //yield return new WaitForSeconds(eatTime);
         if (GameObject.FindGameObjectWithTag("Player").GetComponent<playerStats>().canEat)
         {
             playerAnchor.SendMessageUpwards("addGlobs", globs, SendMessageOptions.DontRequireReceiver);

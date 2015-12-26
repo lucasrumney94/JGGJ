@@ -7,6 +7,7 @@ public class globController : MonoBehaviour
 {
 
     public GameObject globSMALL;
+    public GameObject globMEDIUM;
     public GameObject globLARGE;
     public int particleCount = 200;
     public int globCount = 200;
@@ -15,6 +16,9 @@ public class globController : MonoBehaviour
 	public float smashRecharge = 10.0f;
 	public float expandRecharge = 1.0f;
     public float snakeSpeedFactor = 2.0f;
+    public float lungeRecharge = 5.0f;
+    public float lungeSpeed = 5.0f;
+    public float lungeDistance = 5.0f;
 
 
     public List<GameObject> globs = new List<GameObject>();
@@ -22,7 +26,9 @@ public class globController : MonoBehaviour
 	private playerStats pStats;
 	int i = 0;
     Vector3 randomOffset;
-    bool large = false;
+    private bool medium = false;
+    private bool large = false;
+
     private GameObject Anchor;
 	private bool smashRecharged = true;
     private bool explodeSelf = false;
@@ -35,6 +41,14 @@ public class globController : MonoBehaviour
     private bool snakeRecharged = true;
     private float originalSpeed;
     private bool snaked = false;
+
+
+    private bool lunge = false;
+    private bool lunged = false;
+    private bool lungeSelf = false;
+    [HideInInspector]
+    public bool lungeRecharged = true;
+
 
     // Use this for initialization
     void Start()
@@ -60,6 +74,7 @@ public class globController : MonoBehaviour
 
         if (explodeSelf && smashRecharged && !expanded)
         {
+            Debug.Log("SMASH ATTACK!");
 			StartCoroutine("smashAttack");
 			StartCoroutine("smashRecharger");
 			smashRecharged = false;
@@ -74,7 +89,7 @@ public class globController : MonoBehaviour
             StartCoroutine("expandRecharger");
             pStats.canEat = false;
             expandRecharged = false;
-            //Debug.Log(expanded);
+            Debug.Log("FORM OF... BEES!");
             playerRadiusSample = pStats.playerRadius;
         }
         if (expanded)
@@ -99,17 +114,37 @@ public class globController : MonoBehaviour
             pStats.canEat = false;
             Anchor.GetComponent<playerMovement>().boost = snakeSpeedFactor;
             
-            Debug.Log("Snaked!");
+            Debug.Log("FORM OF... SNAKE!");
             float tempClusterAff = clusterAffinity*2;
             foreach (GameObject glob in globs)
             {
                 tempClusterAff++;
-                if (tempClusterAff > 5.0f*clusterAffinity)
+                if (tempClusterAff > 4.5f*clusterAffinity)
                     tempClusterAff = 2.0f*clusterAffinity;
                 glob.GetComponent<Rigidbody>().AddForce(tempClusterAff * (Anchor.transform.position - glob.transform.position).normalized * Time.smoothDeltaTime);
             }
         }
-        else
+        lungeSelf = Input.GetButtonDown("Lunge");
+        //Debug.DrawRay(Anchor.transform.position, 100 * Anchor.transform.forward);
+        lungeDistance = pStats.playerRadius;
+        if (lungeSelf && lungeRecharged && !snaked && !expanded && !explodeSelf)
+        {
+            StartCoroutine("lungeRecharger");
+            Debug.Log("lunge!");
+            foreach (GameObject glob in globs)
+            {
+                //Vector3 lungeForward =  Anchor.transform.forward*lungeDistance;
+                
+                //Debug.Log(Anchor.transform.forward);
+
+                glob.GetComponent<Rigidbody>().AddForce(lungeSpeed * ((Anchor.transform.forward.normalized * lungeDistance)) * Time.smoothDeltaTime);
+            }
+            lungeRecharged = false;
+            Anchor.GetComponent<Rigidbody>().AddForce(lungeSpeed * lungeDistance * Anchor.transform.forward.normalized * Time.smoothDeltaTime);
+        }
+
+
+        if (!snaked && !expanded && !explodeSelf && !lungeSelf)
         {
             Anchor.GetComponent<playerMovement>().boost = 1.0f;
             foreach (GameObject glob in globs)
@@ -120,35 +155,53 @@ public class globController : MonoBehaviour
             }
         }
         
-        /*if (ballCount > 700)
+        if (particleCount > 1000)
         {
-            int count = 0;
+            int sCount = 0;
+            int mCount = 0;
             foreach (GameObject glob in globs)
             {
-                if (glob.name == "Ball(Clone)")
+                if (glob.name == "globSMALL(Clone)")
                 {
-                    count++;
+                    sCount++;
                     globs.Remove(glob);
                     Destroy(glob);
-                    ballCount--;
+                    particleCount--;
                 }
-                if (count == 4)
+                if (sCount == 4)
+                {
+                    medium = true;
+                    addGlobs(1);
+                    medium = false;
+                    particleCount++;
+                    break;
+                }
+                if (glob.name == "globMEDIUM(Clone)")
+                {
+                    mCount++;
+                    globs.Remove(glob);
+                    Destroy(glob);
+                    particleCount--;
+                }
+                if (mCount == 4)
                 {
                     large = true;
                     addGlobs(1);
                     large = false;
-                    ballCount++;
+                    particleCount++;
                     break;
                 }
             }
-        }*/
+        }
         
     }
 
     void addGlobs(int numberOfGlobs)
     {
-        int largeToSmallRatio = 4;
-        int largeGlobs = numberOfGlobs / largeToSmallRatio;
+        int mediumToSmallRatio = 4;
+        int largeToMediumRatio = 4;
+        int mediumGlobs = numberOfGlobs / mediumToSmallRatio;
+        int largeGlobs = numberOfGlobs / largeToMediumRatio;
         if (numberOfGlobs < 200)
         {
             for (int j = 0; j < numberOfGlobs; j++)
@@ -160,14 +213,24 @@ public class globController : MonoBehaviour
                 globs.Add((GameObject)Instantiate(globSMALL, transform.position + randomOffset, Quaternion.identity));
             }
         }
-        else if (numberOfGlobs >=200 || large == true)
+        else if (numberOfGlobs >=200 && numberOfGlobs<=700 || medium == true)
         {
             for (int j = 0; j < largeGlobs; j++)
             {
                 particleCount++;
-                globCount += largeToSmallRatio;
+                globCount += mediumToSmallRatio;
                 randomOffset = new Vector3(Random.Range(-1.0f, 1.0f), Random.Range(-1.0f, 1.0f), Random.Range(-1.0f, 1.0f));
-
+         
+                globs.Add((GameObject)Instantiate(globMEDIUM, transform.position + randomOffset, Quaternion.identity));
+            }
+        }
+        else if (numberOfGlobs >= 700 || large == true)
+        {
+            for (int j = 0; j < largeGlobs; j++)
+            {
+                particleCount++;
+                globCount += largeToMediumRatio;
+                randomOffset = new Vector3(Random.Range(-1.0f, 1.0f), Random.Range(-1.0f, 1.0f), Random.Range(-1.0f, 1.0f));
                 globs.Add((GameObject)Instantiate(globLARGE, transform.position + randomOffset, Quaternion.identity));
             }
         }
@@ -200,6 +263,12 @@ public class globController : MonoBehaviour
     {
         yield return new WaitForSeconds(expandRecharge);
         expandRecharged = true;
+    }
+
+    IEnumerator lungeRecharger()
+    {
+        yield return new WaitForSeconds(lungeRecharge);
+        lungeRecharged = true;
     }
 
 }
