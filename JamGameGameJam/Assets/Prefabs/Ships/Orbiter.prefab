@@ -46,6 +46,7 @@ GameObject:
   - 4: {fileID: 496824}
   - 33: {fileID: 3366316}
   - 23: {fileID: 2321410}
+  - 114: {fileID: 11401134}
   m_Layer: 0
   m_Name: Turret
   m_TagString: Untagged
@@ -180,6 +181,20 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 12, y: 3, z: 6}
   m_Center: {x: 2, y: 0, z: 0}
+--- !u!114 &11401134
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 182598}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2763a4c6976cca647b09b091c3ae003f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  fireDelay: 2
+  bulletSpeed: 10
+  bullet: {fileID: 145304, guid: 7dd8d92d91307b840a993d225e2ad13e, type: 2}
 --- !u!114 &11414712
 MonoBehaviour:
   m_ObjectHideFlags: 1
