@@ -50,7 +50,7 @@ public class planetChest : MonoBehaviour
             yield return null;
         }
         yield return new WaitForSeconds(5.0f);
-        Debug.Log("Set off Spawner");
+        //Debug.Log("Set off Spawner");
         dispense = true;
 
 

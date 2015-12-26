@@ -74,7 +74,7 @@ public class globController : MonoBehaviour
 
         if (explodeSelf && smashRecharged && !expanded)
         {
-            Debug.Log("SMASH ATTACK!");
+            //Debug.Log("SMASH ATTACK!");
 			StartCoroutine("smashAttack");
 			StartCoroutine("smashRecharger");
 			smashRecharged = false;
@@ -89,7 +89,7 @@ public class globController : MonoBehaviour
             StartCoroutine("expandRecharger");
             pStats.canEat = false;
             expandRecharged = false;
-            Debug.Log("FORM OF... BEES!");
+            //Debug.Log("FORM OF... BEES!");
             playerRadiusSample = pStats.playerRadius;
         }
         if (expanded)
@@ -114,7 +114,7 @@ public class globController : MonoBehaviour
             pStats.canEat = false;
             Anchor.GetComponent<playerMovement>().boost = snakeSpeedFactor;
             
-            Debug.Log("FORM OF... SNAKE!");
+            //Debug.Log("FORM OF... SNAKE!");
             float tempClusterAff = clusterAffinity*2;
             foreach (GameObject glob in globs)
             {
@@ -130,7 +130,7 @@ public class globController : MonoBehaviour
         if (lungeSelf && lungeRecharged && !snaked && !expanded && !explodeSelf)
         {
             StartCoroutine("lungeRecharger");
-            Debug.Log("lunge!");
+            //Debug.Log("lunge!");
             foreach (GameObject glob in globs)
             {
                 //Vector3 lungeForward =  Anchor.transform.forward*lungeDistance;
