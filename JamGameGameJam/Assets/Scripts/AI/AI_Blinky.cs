@@ -30,16 +30,18 @@ public class AI_Blinky : MonoBehaviour {
 
     private void TurnToVelocity()
     {
-        Vector3 facingAngle = transform.eulerAngles.normalized;
+        Vector3 facingAngle = transform.forward;
         Debug.DrawRay(transform.position, facingAngle * 2f, Color.red);
 
         Vector3 velocityAngle = physicsRigidbody.velocity.normalized;
         Debug.DrawRay(transform.position, velocityAngle * 2f, Color.green);
 
-        if (Vector3.Angle(facingAngle, velocityAngle) > 5f)
+        float angleBetween = Vector3.Angle(facingAngle, velocityAngle);
+
+        if (angleBetween > 5f)
         {
             Vector3 torqueAxis = Vector3.Cross(facingAngle, velocityAngle).normalized * turnSpeed;
-            physicsRigidbody.AddTorque(torqueAxis);
+            physicsRigidbody.AddTorque(torqueAxis * (angleBetween / 360));
             Debug.DrawRay(transform.position, torqueAxis, Color.blue);
         }
     }
