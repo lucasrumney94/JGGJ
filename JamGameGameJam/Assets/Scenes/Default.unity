@@ -457,6 +457,10 @@ Prefab:
       propertyPath: numberOfGlobs
       value: 750
       objectReference: {fileID: 0}
+    - target: {fileID: 11427138, guid: 47e050c4e5327de4ca986ead3f644d94, type: 2}
+      propertyPath: randomSpreadScale
+      value: 150
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 47e050c4e5327de4ca986ead3f644d94, type: 2}
   m_IsPrefabParent: 0
@@ -2114,6 +2118,7 @@ MonoBehaviour:
   openMe: 0
   dispense: 0
   numberOfGlobs: 70
+  randomSpreadScale: 50
 --- !u!1 &2015503773
 GameObject:
   m_ObjectHideFlags: 0

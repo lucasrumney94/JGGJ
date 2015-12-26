@@ -8,6 +8,8 @@ public class planetChest : MonoBehaviour
     public bool dispense = false;
     public int numberOfGlobs = 50;
 
+    public float randomSpreadScale = 50;
+
     private GameObject Anchor;
     private globController globCont;
     private bool dispensing = true;
@@ -65,7 +67,6 @@ public class planetChest : MonoBehaviour
             int mediumGlobs = numberOfGlobs / mediumToSmallRatio;
             int largeGlobs = numberOfGlobs / largeToMediumRatio;
 
-            float randomSpreadScale = 50;
             Vector3 randomSpread;
 
             if (numberOfGlobs < 200)
