@@ -63,10 +63,13 @@ public class edibleObject : MonoBehaviour {
 
 
             if (eatTime <= 0.0f)
-                break;
+            {
+                playerAnchor.SendMessageUpwards("addGlobs", globs, SendMessageOptions.DontRequireReceiver);
+                Destroy(this.gameObject);
+                yield return null;
+            }
 
-            
-            
+
             yield return null;
         }
         //yield return new WaitForSeconds(eatTime);
