@@ -409,11 +409,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 473726, guid: 8750a61d87f30ef4da41fe5674729146, type: 2}
       propertyPath: m_RootOrder
-      value: 4
-      objectReference: {fileID: 0}
-    - target: {fileID: 13516742, guid: 8750a61d87f30ef4da41fe5674729146, type: 2}
-      propertyPath: m_Enabled
-      value: 0
+      value: 3
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 8750a61d87f30ef4da41fe5674729146, type: 2}
@@ -455,23 +451,11 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 495856, guid: 47e050c4e5327de4ca986ead3f644d94, type: 2}
       propertyPath: m_RootOrder
-      value: 8
+      value: 4
       objectReference: {fileID: 0}
-    - target: {fileID: 495856, guid: 47e050c4e5327de4ca986ead3f644d94, type: 2}
-      propertyPath: m_LocalScale.x
-      value: 200
-      objectReference: {fileID: 0}
-    - target: {fileID: 495856, guid: 47e050c4e5327de4ca986ead3f644d94, type: 2}
-      propertyPath: m_LocalScale.y
-      value: 200
-      objectReference: {fileID: 0}
-    - target: {fileID: 495856, guid: 47e050c4e5327de4ca986ead3f644d94, type: 2}
-      propertyPath: m_LocalScale.z
-      value: 200
-      objectReference: {fileID: 0}
-    - target: {fileID: 407680, guid: 47e050c4e5327de4ca986ead3f644d94, type: 2}
-      propertyPath: m_LocalPosition.x
-      value: 0
+    - target: {fileID: 11427138, guid: 47e050c4e5327de4ca986ead3f644d94, type: 2}
+      propertyPath: numberOfGlobs
+      value: 750
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 47e050c4e5327de4ca986ead3f644d94, type: 2}
@@ -480,20 +464,6 @@ Prefab:
 GameObject:
   m_PrefabParentObject: {fileID: 145144, guid: 47e050c4e5327de4ca986ead3f644d94, type: 2}
   m_PrefabInternal: {fileID: 683520903}
---- !u!114 &683520905
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 683520904}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 491eb5ed9643d19478c424bbfbc4bca3, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  openMe: 0
-  dispense: 0
-  numberOfGlobs: 201
 --- !u!4 &683520906 stripped
 Transform:
   m_PrefabParentObject: {fileID: 495856, guid: 47e050c4e5327de4ca986ead3f644d94, type: 2}
