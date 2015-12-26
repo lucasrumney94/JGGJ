@@ -62,7 +62,7 @@ Transform:
   m_GameObject: {fileID: 141810}
   m_LocalRotation: {x: -.707106829, y: 0, z: -0, w: .707106709}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 100, y: 100.000008, z: 100.000008}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 495392}
   m_RootOrder: 0
@@ -86,9 +86,9 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 182598}
-  m_LocalRotation: {x: -.707106829, y: 0, z: -0, w: .707106709}
+  m_LocalRotation: {x: -.707106829, y: 0, z: 0, w: .707106709}
   m_LocalPosition: {x: 6, y: 2, z: 0}
-  m_LocalScale: {x: 100, y: 100.000008, z: 100.000008}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 495392}
   m_RootOrder: 1
@@ -194,6 +194,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   fireDelay: 2
   bulletSpeed: 10
+  muzzlePosition: {x: 2.58999991, y: 0, z: .0900000036}
   bullet: {fileID: 145304, guid: 7dd8d92d91307b840a993d225e2ad13e, type: 2}
 --- !u!114 &11414712
 MonoBehaviour:
@@ -209,6 +210,8 @@ MonoBehaviour:
   eatTime: 3
   globs: 20
   eatDistance: 5
+  smashTimeLeft: .100000001
+  lungeTimeReduction: 2
 --- !u!114 &11455930
 MonoBehaviour:
   m_ObjectHideFlags: 1

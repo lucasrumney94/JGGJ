@@ -27,4 +27,13 @@ public class AI_Blinky : MonoBehaviour {
         Debug.DrawRay(transform.position, toPlayer, Color.red);
         Debug.DrawRay(transform.position, toVelocity, Color.green);
     }
+
+    private void TurnToVelocity()
+    {
+        Vector3 velocityAngle = physicsRigidbody.velocity.normalized;
+        if(Vector3.Angle(transform.eulerAngles, velocityAngle) > 5f)
+        {
+
+        }
+    }
 }
