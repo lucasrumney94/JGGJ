@@ -151,6 +151,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   globSMALL: {fileID: 172742, guid: 17586f387fe9c1e4198933e77cc85d92, type: 2}
+  globMEDIUM: {fileID: 172742, guid: 157bcb1445c2bb24a810a67be2bf4ffa, type: 2}
   globLARGE: {fileID: 172742, guid: 1366019cbb3fe0c4594382ea837d7d45, type: 2}
   particleCount: 400
   globCount: 400
@@ -158,8 +159,12 @@ MonoBehaviour:
   smashLength: 1
   smashRecharge: 10
   expandRecharge: 1.5
-  snakeSpeedFactor: 3
+  snakeSpeedFactor: 3.70000005
+  lungeRecharge: 3
+  lungeSpeed: 12500
+  lungeDistance: 20
   globs: []
+  lungeRecharged: 1
 --- !u!135 &13516742
 SphereCollider:
   m_ObjectHideFlags: 1
