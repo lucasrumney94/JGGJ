@@ -60,7 +60,7 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 141810}
-  m_LocalRotation: {x: -.707106829, y: 0, z: -0, w: .707106709}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
@@ -86,8 +86,8 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 182598}
-  m_LocalRotation: {x: -.707106829, y: 0, z: 0, w: .707106709}
-  m_LocalPosition: {x: 6, y: 2, z: 0}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 495392}
@@ -179,8 +179,8 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 12, y: 3, z: 6}
-  m_Center: {x: 2, y: 0, z: 0}
+  m_Size: {x: 5, y: 2, z: 9}
+  m_Center: {x: 0, y: 0, z: 2}
 --- !u!114 &11401134
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -194,7 +194,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   fireDelay: 2
   bulletSpeed: 10
-  muzzlePosition: {x: 2.58999991, y: 0, z: .0900000036}
+  muzzlePosition: {x: 0, y: 0, z: 0}
   bullet: {fileID: 145304, guid: 7dd8d92d91307b840a993d225e2ad13e, type: 2}
 --- !u!114 &11414712
 MonoBehaviour:

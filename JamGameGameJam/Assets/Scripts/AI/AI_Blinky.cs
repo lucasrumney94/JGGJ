@@ -7,6 +7,7 @@ using System.Collections;
 public class AI_Blinky : MonoBehaviour {
 
     public float speed = 1f;
+    public float turnSpeed = 1f;
 
     private GameObject player;
     private Rigidbody physicsRigidbody;
@@ -24,16 +25,22 @@ public class AI_Blinky : MonoBehaviour {
         Vector3 toVelocity = toPlayer - physicsRigidbody.velocity;
         toVelocity = toVelocity.normalized * speed;
         physicsRigidbody.AddForce(toVelocity);
-        Debug.DrawRay(transform.position, toPlayer, Color.red);
-        Debug.DrawRay(transform.position, toVelocity, Color.green);
+        TurnToVelocity();
     }
 
     private void TurnToVelocity()
     {
-        Vector3 velocityAngle = physicsRigidbody.velocity.normalized;
-        if(Vector3.Angle(transform.eulerAngles, velocityAngle) > 5f)
-        {
+        Vector3 facingAngle = transform.eulerAngles.normalized;
+        Debug.DrawRay(transform.position, facingAngle * 2f, Color.red);
 
+        Vector3 velocityAngle = physicsRigidbody.velocity.normalized;
+        Debug.DrawRay(transform.position, velocityAngle * 2f, Color.green);
+
+        if (Vector3.Angle(facingAngle, velocityAngle) > 5f)
+        {
+            Vector3 torqueAxis = Vector3.Cross(facingAngle, velocityAngle).normalized * turnSpeed;
+            physicsRigidbody.AddTorque(torqueAxis);
+            Debug.DrawRay(transform.position, torqueAxis, Color.blue);
         }
     }
 }

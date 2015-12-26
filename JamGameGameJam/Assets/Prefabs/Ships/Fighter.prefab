@@ -89,8 +89,8 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: .800000012, y: .5, z: .5}
-  m_Center: {x: -.300000012, y: .100000001, z: 0}
+  m_Size: {x: .5, y: .5, z: .800000012}
+  m_Center: {x: 0, y: .100000001, z: -.300000012}
 --- !u!114 &11442888
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -105,6 +105,8 @@ MonoBehaviour:
   eatTime: 1
   globs: 10
   eatDistance: 2
+  smashTimeLeft: .100000001
+  lungeTimeReduction: 2
 --- !u!114 &11467094
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -117,6 +119,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 5
+  turnSpeed: 4
 --- !u!1001 &100100000
 Prefab:
   m_ObjectHideFlags: 1

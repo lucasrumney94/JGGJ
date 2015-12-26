@@ -13,8 +13,10 @@ ModelImporter:
     400004: Turret
     2300000: Ship
     2300002: Turret
+    2300004: //RootNode
     3300000: Ship
     3300002: Turret
+    3300004: //RootNode
     4300000: Turret
     4300002: Ship
   materials:
