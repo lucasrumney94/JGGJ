@@ -5,6 +5,10 @@ TagManager:
   serializedVersion: 2
   tags:
   - Anchor
+  - Planet1
+  - Planet2
+  - Planet3
+  - Planet4
   layers:
   - Default
   - TransparentFX
@@ -16,7 +20,7 @@ TagManager:
   - 
   - MBParticle
   - MBLiquid
-  - 
+  - CantMovePast
   - 
   - 
   - 

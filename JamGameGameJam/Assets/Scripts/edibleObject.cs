@@ -3,11 +3,13 @@ using System.Collections;
 
 public class edibleObject : MonoBehaviour {
 
+    public int level = 1;
     public float eatTime = 5.0f;
     public int globs = 10;
     public float eatDistance = 5.0f;
     public float smashTimeLeft = 0.1f;
     public float lungeTimeReduction = 2.0f;
+   
 
     private GameObject playerAnchor;
 
@@ -17,6 +19,7 @@ public class edibleObject : MonoBehaviour {
 	void Start ()
     {
         playerAnchor = GameObject.FindGameObjectWithTag("Anchor");
+        //SendMessageUpwards("addToCount");
 	}
 	
 	// Update is called once per frame
@@ -63,16 +66,20 @@ public class edibleObject : MonoBehaviour {
 
 
             if (eatTime <= 0.0f)
-                break;
+            {
+                playerAnchor.SendMessageUpwards("addGlobs", globs, SendMessageOptions.DontRequireReceiver);
+                Destroy(this.gameObject);
+                yield return null;
+            }
 
-            
-            
+
             yield return null;
         }
         //yield return new WaitForSeconds(eatTime);
         if (GameObject.FindGameObjectWithTag("Player").GetComponent<playerStats>().canEat)
         {
             playerAnchor.SendMessageUpwards("addGlobs", globs, SendMessageOptions.DontRequireReceiver);
+            //SendMessageUpwards("subtractFromCount");
             Destroy(this.gameObject);
         }
     }

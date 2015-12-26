@@ -25,6 +25,7 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 495856}
+  - 114: {fileID: 11427138}
   m_Layer: 0
   m_Name: Planet_1
   m_TagString: Untagged
@@ -60,7 +61,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 495856}
-  m_RootOrder: 1
+  m_RootOrder: 0
 --- !u!4 &420542
 Transform:
   m_ObjectHideFlags: 1
@@ -72,7 +73,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 495856}
-  m_RootOrder: 0
+  m_RootOrder: 1
 --- !u!4 &495856
 Transform:
   m_ObjectHideFlags: 1
@@ -80,11 +81,11 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 145144}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalPosition: {x: -81, y: -42, z: -252}
+  m_LocalScale: {x: 200, y: 200, z: 200}
   m_Children:
-  - {fileID: 420542}
   - {fileID: 407680}
+  - {fileID: 420542}
   m_Father: {fileID: 0}
   m_RootOrder: 0
 --- !u!23 &2355604
@@ -149,6 +150,20 @@ MeshFilter:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 141542}
   m_Mesh: {fileID: 4300000, guid: e3cbe52720b185d468c025b936dc6316, type: 3}
+--- !u!114 &11427138
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 145144}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 491eb5ed9643d19478c424bbfbc4bca3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  openMe: 0
+  dispense: 0
+  numberOfGlobs: 201
 --- !u!1001 &100100000
 Prefab:
   m_ObjectHideFlags: 1

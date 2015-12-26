@@ -155,11 +155,11 @@ MonoBehaviour:
   globLARGE: {fileID: 172742, guid: 1366019cbb3fe0c4594382ea837d7d45, type: 2}
   particleCount: 400
   globCount: 400
-  clusterAffinity: 200
+  clusterAffinity: 175
   smashLength: 1
   smashRecharge: 10
   expandRecharge: 1.5
-  snakeSpeedFactor: 3.70000005
+  snakeSpeedFactor: 3.9000001
   lungeRecharge: 3
   lungeSpeed: 12500
   lungeDistance: 20

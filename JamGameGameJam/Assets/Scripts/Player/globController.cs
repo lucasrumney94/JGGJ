@@ -81,7 +81,7 @@ public class globController : MonoBehaviour
         }
 
 		expandSelf = Input.GetButtonDown("Expand");
-        if (expandSelf && expandRecharged && !explodeSelf)
+        if (expandSelf && expandRecharged && !explodeSelf && !snaked)
 		{
             //start coroutines for expand
             
@@ -104,7 +104,7 @@ public class globController : MonoBehaviour
 
         }
         snakeSelf = Input.GetButtonDown("Snake");
-        if (snakeSelf) //&& snakeRecharged && !explodeSelf && !expanded)
+        if (snakeSelf && !explodeSelf && !expanded)
         {
             snaked = !snaked;
  
