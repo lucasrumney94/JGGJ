@@ -67,8 +67,11 @@ public class edibleObject : MonoBehaviour {
 
             if (eatTime <= 0.0f)
             {
-                playerAnchor.SendMessageUpwards("addGlobs", globs, SendMessageOptions.DontRequireReceiver);
-                Destroy(this.gameObject);
+                if (GameObject.FindGameObjectWithTag("Player").GetComponent<playerStats>().canEat)
+                {
+                    playerAnchor.SendMessageUpwards("addGlobs", globs, SendMessageOptions.DontRequireReceiver);
+                    Destroy(this.gameObject);
+                }
                 yield return null;
             }
 
@@ -82,6 +85,7 @@ public class edibleObject : MonoBehaviour {
             //SendMessageUpwards("subtractFromCount");
             Destroy(this.gameObject);
         }
+        yield return null;
     }
 
 

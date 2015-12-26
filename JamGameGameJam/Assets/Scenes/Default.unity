@@ -468,6 +468,18 @@ Prefab:
 GameObject:
   m_PrefabParentObject: {fileID: 145144, guid: 47e050c4e5327de4ca986ead3f644d94, type: 2}
   m_PrefabInternal: {fileID: 683520903}
+--- !u!135 &683520905
+SphereCollider:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 683520904}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: .5
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!4 &683520906 stripped
 Transform:
   m_PrefabParentObject: {fileID: 495856, guid: 47e050c4e5327de4ca986ead3f644d94, type: 2}
