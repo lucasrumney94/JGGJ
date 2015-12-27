@@ -26,6 +26,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 495856}
   - 114: {fileID: 11427138}
+  - 135: {fileID: 13503390}
   m_Layer: 0
   m_Name: Planet_1
   m_TagString: Untagged
@@ -163,7 +164,20 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   openMe: 0
   dispense: 0
-  numberOfGlobs: 201
+  numberOfGlobs: 750
+  randomSpreadScale: 150
+--- !u!135 &13503390
+SphereCollider:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 145144}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 0
+  serializedVersion: 2
+  m_Radius: .5
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1001 &100100000
 Prefab:
   m_ObjectHideFlags: 1
