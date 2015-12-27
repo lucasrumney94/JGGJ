@@ -32,9 +32,11 @@ public class globController : MonoBehaviour
     private GameObject Anchor;
 	private bool smashRecharged = true;
     private bool explodeSelf = false;
+    
     private bool expandSelf = false;
-	private bool expandRecharged = true;
-    private bool expanded = false;
+    private bool expandRecharged = true;
+    [HideInInspector]
+    public bool expanded = false;
     private float playerRadiusSample = 1.0f;
     private float originalClusterAffinity;
     private bool snakeSelf = false;
