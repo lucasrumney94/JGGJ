@@ -58,8 +58,11 @@ public class edibleObject : MonoBehaviour {
             }
             if (!GameObject.FindGameObjectWithTag("Anchor").GetComponent<globController>().lungeRecharged && lungeFlag)
             {
-               eatTime -= lungeTimeReduction;
-               lungeFlag = false;
+                if (playerAnchor.GetComponent<globController>().globCount > globs)
+                {
+                    eatTime -= lungeTimeReduction;
+                    lungeFlag = false;
+                }
             }
 
 
