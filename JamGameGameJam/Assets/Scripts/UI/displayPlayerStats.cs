@@ -17,6 +17,6 @@ public class displayPlayerStats : MonoBehaviour {
 	// Update is called once per frame
 	void Update ()
     {
-        myText.text = "Globs: " + pStats.playerGlobCount.ToString() + "!";
+        myText.text = "Globs: " + pStats.playerGlobCount.ToString();
 	}
 }
