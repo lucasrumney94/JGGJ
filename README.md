@@ -16,7 +16,7 @@ Feel free to use any part of the code (just give credit where credit is due), or
 
 
 ##Author
-3D Model Design and Texture Work:   Hardy Whitney
+3D Model and Texture Design:   Hardy Whitney
 
 Code:               Lucas Rumney and Hardy Whitney
 
