@@ -54,7 +54,7 @@ public class AI_Pinky : MonoBehaviour {
     private void TurnToBroadside()
     {
         Vector3 desiredUp = Vector3.Cross(transform.forward, toPlayer);
-        Debug.DrawRay(transform.position, desiredUp, Color.blue);
-        transform.localEulerAngles = new Vector3(transform.localEulerAngles.x, transform.localEulerAngles.y, desiredUp.z);
+        Debug.DrawRay(transform.position, desiredUp * 20f, Color.blue);
+        transform.localEulerAngles = new Vector3(transform.localEulerAngles.x, transform.localEulerAngles.y, Vector3.Angle(desiredUp, transform.up));
     }
 }

@@ -3,6 +3,8 @@ using System.Collections;
 
 public class AI_Spawner : MonoBehaviour {
 
+    public int capacity = 10;
+    private int spawned = 0;
     [Range(0,10)]
     public float intervalTime;
     public float initialVelocity;
@@ -16,14 +18,14 @@ public class AI_Spawner : MonoBehaviour {
     {
         startTime = Time.time;
         lastSpawnTime = Time.time;
-        Spawn();
     }
 
     void Update()
     {
-        if (Time.time - lastSpawnTime > intervalTime)
+        if (Time.time - lastSpawnTime > intervalTime && spawned > capacity)
         {
             Spawn();
+            spawned++;
             lastSpawnTime = Time.time;
         }
     }
