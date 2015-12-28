@@ -30,7 +30,7 @@ public class AI_Turret : MonoBehaviour
 
     void Fire()
     {
-        GameObject newBullet = Instantiate(bullet, transform.position + muzzlePosition, transform.rotation) as GameObject;
+        GameObject newBullet = Instantiate(bullet, transform.TransformPoint(muzzlePosition), transform.rotation) as GameObject;
         newBullet.GetComponent<Bullet>().speed = bulletSpeed;
     }
 }

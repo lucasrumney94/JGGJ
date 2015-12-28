@@ -8,6 +8,6 @@ public class Bullet : MonoBehaviour {
 
     void Start()
     {
-        GetComponent<Rigidbody>().velocity = transform.eulerAngles.normalized * speed;
+        GetComponent<Rigidbody>().velocity = transform.forward.normalized * speed;
     }
 }
