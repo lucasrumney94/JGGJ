@@ -44,7 +44,7 @@ MeshRenderer:
   m_CastShadows: 1
   m_ReceiveShadows: 1
   m_Materials:
-  - {fileID: 2100000, guid: 498cc44261260bf42872e3e2fe7a5be4, type: 2}
+  - {fileID: 2100000, guid: d8c57ce5907394644aed12611884c583, type: 2}
   m_SubsetIndices: 
   m_StaticBatchRoot: {fileID: 0}
   m_UseLightProbes: 1
@@ -103,7 +103,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2763a4c6976cca647b09b091c3ae003f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  fireDelay: .200000003
+  fireDelay: .0500000007
   bulletSpeed: 60
   muzzlePosition: {x: 0, y: 0, z: 1}
   aimTolerance: 35
@@ -124,11 +124,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   level: 1
-  eatTime: 1
+  eatTime: .0500000007
   globs: 10
-  eatDistance: 2
-  smashTimeLeft: .100000001
-  lungeTimeReduction: 2
+  eatDistance: 5
+  smashTimeLeft: 0
+  lungeTimeReduction: 5
 --- !u!114 &11467094
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -157,7 +157,7 @@ Prefab:
       objectReference: {fileID: 4300000, guid: c8c6f4c62004d584c93a0fcab4a8b07a, type: 3}
     - target: {fileID: 0}
       propertyPath: fireDelay
-      value: .200000003
+      value: .0500000007
       objectReference: {fileID: 0}
     - target: {fileID: 0}
       propertyPath: aimTolerance
@@ -167,6 +167,10 @@ Prefab:
       propertyPath: bulletSpeed
       value: 60
       objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: d8c57ce5907394644aed12611884c583, type: 2}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}
   m_RootGameObject: {fileID: 169934}
