@@ -56,7 +56,7 @@ public class AI_Turret : MonoBehaviour
         Debug.DrawRay(transform.position, transform.forward * 1000f, Color.cyan);
 
         transform.LookAt(GameObject.FindGameObjectWithTag("Anchor").transform);
-        transform.localEulerAngles = new Vector3(Mathf.Clamp(transform.localEulerAngles.x, -10f, 10f), transform.localEulerAngles.y, 0f);
+        transform.localEulerAngles = new Vector3(Mathf.Clamp(transform.localEulerAngles.x, -30f, 10f), transform.localEulerAngles.y, 0f);
     }
 
     private bool CheckAim()
