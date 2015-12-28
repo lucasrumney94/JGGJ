@@ -7,7 +7,7 @@ Material:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_Name: Planet_1
-  m_Shader: {fileID: 4800000, guid: 49aeaab95c5373649a03d315f8bf5fe5, type: 3}
+  m_Shader: {fileID: 4800000, guid: 4390f6db46cc83f419c1d52b6d2ecb9f, type: 3}
   m_ShaderKeywords: 
   m_LightmapFlags: 5
   m_CustomRenderQueue: 2000

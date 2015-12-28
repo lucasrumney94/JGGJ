@@ -32,6 +32,7 @@
 			fixed4 frag(v2f i) : SV_Target
 			{
 				fixed4 c = 0;
+				c.rgb = _SinTime;
 				// normal is a 3D vector with xyz components; in -1..1
 				// range. To display it as color, bring the range into 0..1
 				// and put into red, green, blue components

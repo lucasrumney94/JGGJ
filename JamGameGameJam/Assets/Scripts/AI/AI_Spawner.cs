@@ -3,7 +3,9 @@ using System.Collections;
 
 public class AI_Spawner : MonoBehaviour {
 
+    [Range(0,10)]
     public float intervalTime;
+    public float initialVelocity;
 
     public GameObject spawnable;
 
@@ -28,6 +30,7 @@ public class AI_Spawner : MonoBehaviour {
 
     private void Spawn()
     {
-        Instantiate(spawnable, transform.position, transform.rotation);
+        GameObject freshSpawn = Instantiate(spawnable, transform.position, transform.rotation) as GameObject;
+        freshSpawn.GetComponent<Rigidbody>().velocity = transform.forward * initialVelocity;
     }
 }

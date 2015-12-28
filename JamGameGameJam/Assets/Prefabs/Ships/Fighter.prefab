@@ -104,8 +104,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   fireDelay: 3
-  bulletSpeed: 10
+  bulletSpeed: 30
   muzzlePosition: {x: 0, y: 0, z: 1}
+  aimTolerance: 30
+  turretRotation: 0
   bullet: {fileID: 145304, guid: 7dd8d92d91307b840a993d225e2ad13e, type: 2}
 --- !u!114 &11442888
 MonoBehaviour:
@@ -136,7 +138,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 5
-  turnSpeed: 3
+  turnSpeed: 200
+  swervePeriod: 5
+  swerveForce: 25
 --- !u!1001 &100100000
 Prefab:
   m_ObjectHideFlags: 1

@@ -7,10 +7,12 @@ using System.Collections;
 public class AI_Pinky : MonoBehaviour {
 
     public float speed = 1f;
+    public float turnSpeed = 1f;
     public float orbitRadius = 10f;
 
     private GameObject player;
     private Rigidbody physicsRigidbody;
+    private Vector3 toPlayer;
 
     void Start()
     {
@@ -20,13 +22,39 @@ public class AI_Pinky : MonoBehaviour {
 
     void FixedUpdate()
     {
-        Vector3 toPlayer = (player.transform.position - this.transform.position).normalized;
+        toPlayer = (player.transform.position - this.transform.position).normalized;
         Vector3 edge = Vector3.Cross(toPlayer, Vector3.up) * orbitRadius;
         edge += player.transform.position;
         Vector3 toOrbit = (edge - this.transform.position).normalized;
         toOrbit *= speed;
         physicsRigidbody.AddForce(toOrbit);
+        TurnToVelocity();
+        TurnToBroadside();
         Debug.DrawRay(transform.position, toPlayer, Color.red);
         Debug.DrawLine(transform.position, edge, Color.green);
+    }
+
+    private void TurnToVelocity()
+    {
+        Vector3 facingAngle = transform.forward;
+        Debug.DrawRay(transform.position, facingAngle * 2f, Color.red);
+
+        Vector3 velocityAngle = physicsRigidbody.velocity.normalized;
+        Debug.DrawRay(transform.position, velocityAngle * 2f, Color.green);
+
+        float angleBetween = Vector3.Angle(facingAngle, velocityAngle);
+
+        if (angleBetween > 5f)
+        {
+            Vector3 torqueAxis = Vector3.Cross(facingAngle, velocityAngle).normalized * turnSpeed * physicsRigidbody.mass;
+            physicsRigidbody.AddTorque(torqueAxis * (angleBetween / 360));
+        }
+    }
+
+    private void TurnToBroadside()
+    {
+        Vector3 desiredUp = Vector3.Cross(transform.forward, toPlayer);
+        Debug.DrawRay(transform.position, desiredUp, Color.blue);
+        transform.localEulerAngles = new Vector3(transform.localEulerAngles.x, transform.localEulerAngles.y, desiredUp.z);
     }
 }

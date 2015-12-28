@@ -102,6 +102,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 2
+  turnSpeed: 100
   orbitRadius: 10
 --- !u!1001 &100100000
 Prefab:
