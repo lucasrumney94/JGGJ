@@ -6,9 +6,11 @@ using System.Collections;
 [RequireComponent(typeof(Rigidbody))]
 public class AI_Pinky : MonoBehaviour {
 
+    public bool active = false;
     public float speed = 1f;
     public float turnSpeed = 1f;
     public float orbitRadius = 10f;
+    public GameObject orbitTarget;
 
     private GameObject player;
     private Rigidbody physicsRigidbody;
@@ -22,6 +24,18 @@ public class AI_Pinky : MonoBehaviour {
 
     void FixedUpdate()
     {
+        if (active)
+        {
+            OrbitPlayer();
+        }
+        else if (orbitTarget)
+        {
+            OrbitTarget();
+        }
+    }
+
+    private void OrbitPlayer()
+    {
         toPlayer = (player.transform.position - this.transform.position).normalized;
         Vector3 edge = Vector3.Cross(toPlayer, Vector3.up) * orbitRadius;
         edge += player.transform.position;
@@ -32,6 +46,17 @@ public class AI_Pinky : MonoBehaviour {
         TurnToBroadside();
         Debug.DrawRay(transform.position, toPlayer, Color.red);
         Debug.DrawLine(transform.position, edge, Color.green);
+    }
+
+    private void OrbitTarget()
+    {
+        Vector3 toTarget = (player.transform.position - this.transform.position).normalized;
+        Vector3 edge = Vector3.Cross(toTarget, Vector3.up) * orbitRadius;
+        edge += player.transform.position;
+        Vector3 toOrbit = (edge - this.transform.position).normalized;
+        toOrbit *= speed;
+        physicsRigidbody.AddForce(toOrbit);
+        TurnToVelocity();
     }
 
     private void TurnToVelocity()

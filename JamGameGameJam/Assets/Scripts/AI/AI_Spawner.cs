@@ -3,6 +3,7 @@ using System.Collections;
 
 public class AI_Spawner : MonoBehaviour {
 
+    public bool active = false;
     public int capacity = 10;
     private int spawned = 0;
     [Range(0,10)]
@@ -22,7 +23,7 @@ public class AI_Spawner : MonoBehaviour {
 
     void Update()
     {
-        if (Time.time - lastSpawnTime > intervalTime && spawned > capacity)
+        if (active && (spawned < capacity) && (Time.time - lastSpawnTime > intervalTime))
         {
             Spawn();
             spawned++;
