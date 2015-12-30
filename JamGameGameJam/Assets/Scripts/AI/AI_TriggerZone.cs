@@ -14,13 +14,16 @@ public class AI_TriggerZone : MonoBehaviour {
         triggerZone.isTrigger = true;
     }
 
-    void OnTriggerEnter()
+    void OnTriggerEnter(Collider other)
     {
-        foreach(GameObject inactive in toActivate)
+        if(other.gameObject == GameObject.FindGameObjectWithTag("Anchor"))
         {
-            ActivateObject(inactive);
+            foreach (GameObject inactive in toActivate)
+            {
+                ActivateObject(inactive);
+            }
+            triggerZone.enabled = false;
         }
-        triggerZone.enabled = false;
     }
 
     private void ActivateObject(GameObject activatible)
