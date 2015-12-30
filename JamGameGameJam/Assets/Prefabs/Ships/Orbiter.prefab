@@ -227,7 +227,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   fireDelay: 2
-  bulletSpeed: 30
+  bulletSpeed: 10
   muzzlePosition: {x: 0, y: .189999998, z: 2.52999997}
   aimTolerance: 15
   rotationSpeed: 60

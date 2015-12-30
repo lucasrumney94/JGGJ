@@ -50,7 +50,7 @@ public class edibleObject : MonoBehaviour {
                     this.GetComponents<AudioSource>()[1].Play(); //play the popping sound upon death
                     playerAnchor.SendMessageUpwards("addGlobs", globs, SendMessageOptions.DontRequireReceiver);
 
-                    Destroy(this.gameObject, 0.7f);
+                    Destroy(this.gameObject, 0.3f);
                 }
             }
         }
@@ -65,7 +65,7 @@ public class edibleObject : MonoBehaviour {
                 this.GetComponents<AudioSource>()[1].Play(); //play the popping sound upon death
                 playerAnchor.SendMessageUpwards("addGlobs", globs, SendMessageOptions.DontRequireReceiver);
 
-                Destroy(this.gameObject, 0.7f);
+                Destroy(this.gameObject, 0.3f);
             }
         }
     }
@@ -100,7 +100,7 @@ public class edibleObject : MonoBehaviour {
                     this.GetComponents<AudioSource>()[1].Play(); //play the popping sound upon death
                     playerAnchor.SendMessageUpwards("addGlobs", globs, SendMessageOptions.DontRequireReceiver);
 
-                    Destroy(this.gameObject, 0.7f);
+                    Destroy(this.gameObject, 0.3f);
                 }
                 yield return null;
             }
@@ -115,7 +115,7 @@ public class edibleObject : MonoBehaviour {
             playerAnchor.SendMessageUpwards("addGlobs", globs, SendMessageOptions.DontRequireReceiver);
             //SendMessageUpwards("subtractFromCount");
             
-            Destroy(this.gameObject,0.7f);
+            Destroy(this.gameObject,0.3f);
         }
         yield return null;
     }
