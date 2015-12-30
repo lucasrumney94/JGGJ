@@ -103,10 +103,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2763a4c6976cca647b09b091c3ae003f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  fireDelay: .0500000007
+  fireDelay: .100000001
   bulletSpeed: 60
   muzzlePosition: {x: 0, y: 0, z: 1}
-  aimTolerance: 20
+  aimTolerance: 15
   rotationSpeed: 0
   turretRotation: 0
   xRotation: 0
@@ -124,11 +124,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   level: 1
-  eatTime: .0500000007
+  eatTime: .5
   globs: 10
   eatDistance: 5
   smashTimeLeft: 0
-  lungeTimeReduction: 5
+  lungeTimeReduction: .200000003
 --- !u!114 &11467094
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -141,7 +141,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 5
-  turnSpeed: 200
+  turnSpeed: 250
   swervePeriod: 5
   swerveForce: 25
 --- !u!1001 &100100000
@@ -171,6 +171,14 @@ Prefab:
       propertyPath: m_Materials.Array.data[0]
       value: 
       objectReference: {fileID: 2100000, guid: d8c57ce5907394644aed12611884c583, type: 2}
+    - target: {fileID: 0}
+      propertyPath: eatTime
+      value: .5
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: lungeTimeReduction
+      value: .200000003
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}
   m_RootGameObject: {fileID: 169934}

@@ -7,6 +7,7 @@ public class AI_TriggerZone : MonoBehaviour {
     public GameObject[] toActivate;
 
     private BoxCollider triggerZone;
+    private bool playerInside;
 
     void Start()
     {
@@ -16,13 +17,20 @@ public class AI_TriggerZone : MonoBehaviour {
 
     void OnTriggerEnter(Collider other)
     {
-        if(other.gameObject == GameObject.FindGameObjectWithTag("Anchor"))
+        if(other.gameObject == GameObject.FindGameObjectWithTag("Anchor") && !playerInside)
         {
             foreach (GameObject inactive in toActivate)
             {
                 ActivateObject(inactive);
             }
-            triggerZone.enabled = false;
+            playerInside = true;
+        }
+    }
+    void OnTriggerExit(Collider other)
+    {
+        if (other.gameObject == GameObject.FindGameObjectWithTag("Anchor") && playerInside)
+        {
+            playerInside = false;
         }
     }
 

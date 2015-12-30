@@ -42,8 +42,18 @@ public class edibleObject : MonoBehaviour {
             eating = false;
             StopCoroutine("eatingTime");
         }
-        
-	}
+
+        if (eatTime <= 0.0f)
+        {
+            if (GameObject.FindGameObjectWithTag("Player").GetComponent<playerStats>().canEat)
+            {
+                playerAnchor.SendMessageUpwards("addGlobs", globs, SendMessageOptions.DontRequireReceiver);
+                Destroy(this.gameObject);
+            }
+        }
+
+
+    }
 
     IEnumerator eatingTime ()
     {
