@@ -119,9 +119,10 @@ MonoBehaviour:
   playOnAwake: 1
   crossfadeTime: 7
   themes:
-  - name: titleMusic
+  - name: music
     tracks:
     - {fileID: 8300000, guid: 79de733c8f7d5b645ac2296f4b976874, type: 3}
+    - {fileID: 8300000, guid: 9aeb3531dc83f164e9e05d5af5c13f1e, type: 3}
 --- !u!4 &92272895
 Transform:
   m_ObjectHideFlags: 0
@@ -148,7 +149,7 @@ AudioSource:
   m_PlayOnAwake: 0
   m_Volume: 1
   m_Pitch: 1
-  Loop: 0
+  Loop: 1
   Mute: 0
   Spatialize: 0
   Priority: 128
@@ -216,9 +217,9 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 0}
   m_PlayOnAwake: 0
-  m_Volume: 1
+  m_Volume: .819999993
   m_Pitch: 1
-  Loop: 0
+  Loop: 1
   Mute: 0
   Spatialize: 0
   Priority: 128
