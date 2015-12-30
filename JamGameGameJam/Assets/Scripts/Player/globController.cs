@@ -157,7 +157,7 @@ public class globController : MonoBehaviour
             }
         }
         
-        if (particleCount > 1000)
+        if (particleCount > 700)
         {
             int sCount = 0;
             int mCount = 0;
@@ -178,20 +178,23 @@ public class globController : MonoBehaviour
                     particleCount++;
                     break;
                 }
-                if (glob.name == "globMEDIUM(Clone)")
+                if (sCount < 4)
                 {
-                    mCount++;
-                    globs.Remove(glob);
-                    Destroy(glob);
-                    particleCount--;
-                }
-                if (mCount == 4)
-                {
-                    large = true;
-                    addGlobs(1);
-                    large = false;
-                    particleCount++;
-                    break;
+                    if (glob.name == "globMEDIUM(Clone)")
+                    {
+                        mCount++;
+                        globs.Remove(glob);
+                        Destroy(glob);
+                        particleCount--;
+                    }
+                    if (mCount == 4)
+                    {
+                        large = true;
+                        addGlobs(1);
+                        large = false;
+                        particleCount++;
+                        break;
+                    }
                 }
             }
         }
