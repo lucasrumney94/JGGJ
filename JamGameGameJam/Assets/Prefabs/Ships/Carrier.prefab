@@ -345,8 +345,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6e75ec5d808e1d548aebc9310d0e27af, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  capacity: 10
-  intervalTime: 2
+  capacity: 50
+  intervalTime: .5
   initialVelocity: 15
   spawnable: {fileID: 169934, guid: 950f6bdeabfb9b545a80cefa7d45e19a, type: 2}
 --- !u!114 &11449004
@@ -434,8 +434,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6e75ec5d808e1d548aebc9310d0e27af, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  capacity: 10
-  intervalTime: 2
+  capacity: 50
+  intervalTime: .5
   initialVelocity: 15
   spawnable: {fileID: 169934, guid: 950f6bdeabfb9b545a80cefa7d45e19a, type: 2}
 --- !u!1001 &100100000
