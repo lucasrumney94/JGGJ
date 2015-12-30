@@ -402,6 +402,7 @@ MonoBehaviour:
   eatDistance: 30
   smashTimeLeft: .100000001
   lungeTimeReduction: 1
+  justEatOnCollision: 0
 --- !u!23 &498751844
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -614,11 +615,11 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 22436632, guid: 055d97b13859a6d43bd7f55bef84a44c, type: 2}
       propertyPath: m_AnchorMin.y
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 22436632, guid: 055d97b13859a6d43bd7f55bef84a44c, type: 2}
       propertyPath: m_AnchorMax.y
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 22474774, guid: 055d97b13859a6d43bd7f55bef84a44c, type: 2}
       propertyPath: m_AnchorMin.y
@@ -634,27 +635,27 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 22492666, guid: 055d97b13859a6d43bd7f55bef84a44c, type: 2}
       propertyPath: m_AnchorMin.y
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 22492666, guid: 055d97b13859a6d43bd7f55bef84a44c, type: 2}
       propertyPath: m_AnchorMax.y
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 22492666, guid: 055d97b13859a6d43bd7f55bef84a44c, type: 2}
       propertyPath: m_AnchoredPosition.y
-      value: 0
+      value: -10
       objectReference: {fileID: 0}
     - target: {fileID: 22401062, guid: 055d97b13859a6d43bd7f55bef84a44c, type: 2}
       propertyPath: m_AnchorMin.y
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 22401062, guid: 055d97b13859a6d43bd7f55bef84a44c, type: 2}
       propertyPath: m_AnchorMax.y
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 22401062, guid: 055d97b13859a6d43bd7f55bef84a44c, type: 2}
       propertyPath: m_AnchoredPosition.x
-      value: 0
+      value: .400040001
       objectReference: {fileID: 0}
     - target: {fileID: 22401062, guid: 055d97b13859a6d43bd7f55bef84a44c, type: 2}
       propertyPath: m_AnchoredPosition.y
@@ -662,7 +663,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 22401062, guid: 055d97b13859a6d43bd7f55bef84a44c, type: 2}
       propertyPath: m_SizeDelta.x
-      value: 0
+      value: .800080001
       objectReference: {fileID: 0}
     - target: {fileID: 22401062, guid: 055d97b13859a6d43bd7f55bef84a44c, type: 2}
       propertyPath: m_SizeDelta.y
@@ -694,23 +695,23 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 22478488, guid: 055d97b13859a6d43bd7f55bef84a44c, type: 2}
       propertyPath: m_AnchorMin.y
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 22478488, guid: 055d97b13859a6d43bd7f55bef84a44c, type: 2}
       propertyPath: m_AnchorMax.y
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 22478488, guid: 055d97b13859a6d43bd7f55bef84a44c, type: 2}
       propertyPath: m_AnchoredPosition.x
-      value: 0
+      value: .400040001
       objectReference: {fileID: 0}
     - target: {fileID: 22478488, guid: 055d97b13859a6d43bd7f55bef84a44c, type: 2}
       propertyPath: m_AnchoredPosition.y
-      value: 0
+      value: -20
       objectReference: {fileID: 0}
     - target: {fileID: 22478488, guid: 055d97b13859a6d43bd7f55bef84a44c, type: 2}
       propertyPath: m_SizeDelta.x
-      value: 0
+      value: .800080001
       objectReference: {fileID: 0}
     - target: {fileID: 22478488, guid: 055d97b13859a6d43bd7f55bef84a44c, type: 2}
       propertyPath: m_SizeDelta.y
@@ -723,6 +724,52 @@ Prefab:
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 055d97b13859a6d43bd7f55bef84a44c, type: 2}
   m_IsPrefabParent: 0
+--- !u!1001 &730267074
+Prefab:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 1765124050}
+    m_Modifications:
+    - target: {fileID: 430910, guid: 0b7a9502c95780c4fa97ca51c63a7c9a, type: 2}
+      propertyPath: m_LocalPosition.x
+      value: -639
+      objectReference: {fileID: 0}
+    - target: {fileID: 430910, guid: 0b7a9502c95780c4fa97ca51c63a7c9a, type: 2}
+      propertyPath: m_LocalPosition.y
+      value: 88
+      objectReference: {fileID: 0}
+    - target: {fileID: 430910, guid: 0b7a9502c95780c4fa97ca51c63a7c9a, type: 2}
+      propertyPath: m_LocalPosition.z
+      value: -82
+      objectReference: {fileID: 0}
+    - target: {fileID: 430910, guid: 0b7a9502c95780c4fa97ca51c63a7c9a, type: 2}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 430910, guid: 0b7a9502c95780c4fa97ca51c63a7c9a, type: 2}
+      propertyPath: m_LocalRotation.y
+      value: .517056346
+      objectReference: {fileID: 0}
+    - target: {fileID: 430910, guid: 0b7a9502c95780c4fa97ca51c63a7c9a, type: 2}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 430910, guid: 0b7a9502c95780c4fa97ca51c63a7c9a, type: 2}
+      propertyPath: m_LocalRotation.w
+      value: .855951369
+      objectReference: {fileID: 0}
+    - target: {fileID: 430910, guid: 0b7a9502c95780c4fa97ca51c63a7c9a, type: 2}
+      propertyPath: m_RootOrder
+      value: 5
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_ParentPrefab: {fileID: 100100000, guid: 0b7a9502c95780c4fa97ca51c63a7c9a, type: 2}
+  m_IsPrefabParent: 0
+--- !u!4 &730267075 stripped
+Transform:
+  m_PrefabParentObject: {fileID: 430910, guid: 0b7a9502c95780c4fa97ca51c63a7c9a, type: 2}
+  m_PrefabInternal: {fileID: 730267074}
 --- !u!1001 &790670475
 Prefab:
   m_ObjectHideFlags: 0
@@ -1062,6 +1109,7 @@ MonoBehaviour:
   eatDistance: 16
   smashTimeLeft: .100000001
   lungeTimeReduction: 1
+  justEatOnCollision: 0
 --- !u!23 &891490317
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -1188,6 +1236,7 @@ MonoBehaviour:
   eatDistance: 12
   smashTimeLeft: .100000001
   lungeTimeReduction: 1
+  justEatOnCollision: 0
 --- !u!23 &984807165
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -1368,6 +1417,7 @@ MonoBehaviour:
   eatDistance: 15
   smashTimeLeft: .100000001
   lungeTimeReduction: 5
+  justEatOnCollision: 0
 --- !u!1 &1135426473
 GameObject:
   m_ObjectHideFlags: 0
@@ -1476,6 +1526,7 @@ MonoBehaviour:
   eatDistance: 18
   smashTimeLeft: .100000001
   lungeTimeReduction: 1
+  justEatOnCollision: 0
 --- !u!23 &1158187494
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -1673,6 +1724,7 @@ MonoBehaviour:
   eatDistance: 10
   smashTimeLeft: .100000001
   lungeTimeReduction: 1
+  justEatOnCollision: 0
 --- !u!23 &1368008912
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -1910,6 +1962,7 @@ MonoBehaviour:
   eatDistance: 10
   smashTimeLeft: .100000001
   lungeTimeReduction: 5
+  justEatOnCollision: 0
 --- !u!23 &1470405642
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -2309,6 +2362,7 @@ MonoBehaviour:
   eatDistance: 20
   smashTimeLeft: .100000001
   lungeTimeReduction: 1
+  justEatOnCollision: 0
 --- !u!23 &1745252875
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -2383,6 +2437,7 @@ Transform:
   - {fileID: 1135426475}
   - {fileID: 1368081300}
   - {fileID: 683520906}
+  - {fileID: 730267075}
   m_Father: {fileID: 0}
   m_RootOrder: 0
 --- !u!114 &1765124051

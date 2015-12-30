@@ -11,6 +11,7 @@ GameObject:
   - 33: {fileID: 3359814}
   - 23: {fileID: 2328238}
   - 114: {fileID: 11470104}
+  - 54: {fileID: 5455710}
   m_Layer: 0
   m_Name: Capital
   m_TagString: Untagged
@@ -24,9 +25,9 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 181608}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -5, y: 18.1984787, z: -6.92103195}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalRotation: {x: 0, y: .517056346, z: 0, w: .855951369}
+  m_LocalPosition: {x: -639, y: 88, z: -82}
+  m_LocalScale: {x: 30, y: 30, z: 30}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
@@ -61,6 +62,21 @@ MeshFilter:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 181608}
   m_Mesh: {fileID: 4300000, guid: 8acaad9d1f37d6f46afaa94e6660aa88, type: 3}
+--- !u!54 &5455710
+Rigidbody:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 181608}
+  serializedVersion: 2
+  m_Mass: 9999999
+  m_Drag: 10
+  m_AngularDrag: 10
+  m_UseGravity: 0
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
 --- !u!114 &11470104
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -78,6 +94,7 @@ MonoBehaviour:
   eatDistance: 5
   smashTimeLeft: .100000001
   lungeTimeReduction: 2
+  justEatOnCollision: 0
 --- !u!1001 &100100000
 Prefab:
   m_ObjectHideFlags: 1
