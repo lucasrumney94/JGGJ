@@ -345,7 +345,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6e75ec5d808e1d548aebc9310d0e27af, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  active: 1
+  active: 0
   capacity: 50
   intervalTime: .5
   initialVelocity: 15
@@ -437,7 +437,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6e75ec5d808e1d548aebc9310d0e27af, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  active: 1
+  active: 0
   capacity: 50
   intervalTime: .5
   initialVelocity: 15
