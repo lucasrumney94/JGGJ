@@ -11,6 +11,8 @@ public class AI_Blinky : MonoBehaviour {
     public float swervePeriod = 5f;
     public float swerveForce = 10f;
 
+    private float swerveDelay;
+
     private GameObject player;
     private Rigidbody physicsRigidbody;
 
@@ -21,6 +23,7 @@ public class AI_Blinky : MonoBehaviour {
         player = GameObject.FindGameObjectWithTag("Anchor");
         physicsRigidbody = GetComponent<Rigidbody>();
         startTime = Time.time;
+        swerveDelay = Random.Range(0f, 2f * Mathf.PI);
     }
 
     void FixedUpdate()
@@ -35,7 +38,7 @@ public class AI_Blinky : MonoBehaviour {
 
     private void Swerve()
     {
-        float yForce = Mathf.Cos(2 * Mathf.PI * (Time.time - startTime) / swervePeriod) * swerveForce;
+        float yForce = Mathf.Cos((2 * Mathf.PI * (Time.time - startTime) / swervePeriod) + swerveDelay) * swerveForce;
         physicsRigidbody.AddForce(new Vector3(0f, yForce, 0f));
     }
 
