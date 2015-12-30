@@ -164,6 +164,7 @@ MonoBehaviour:
   lungeSpeed: 12500
   lungeDistance: 20
   globs: []
+  expanded: 0
   lungeRecharged: 1
 --- !u!135 &13516742
 SphereCollider:
