@@ -113,7 +113,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 148756}
   m_LocalRotation: {x: 0, y: -.707106829, z: 0, w: .707106709}
-  m_LocalPosition: {x: -4.19999981, y: 0, z: 4}
+  m_LocalPosition: {x: -5.1500001, y: 0, z: 4}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 497264}
@@ -345,6 +345,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6e75ec5d808e1d548aebc9310d0e27af, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  active: 1
   capacity: 50
   intervalTime: .5
   initialVelocity: 15
@@ -380,9 +381,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 95a89ef089f8b3d49ba53eb2e8b67228, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  active: 0
   speed: 100000
   turnSpeed: 100
   orbitRadius: 10
+  orbitTarget: {fileID: 0}
 --- !u!114 &11481982
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -434,6 +437,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6e75ec5d808e1d548aebc9310d0e27af, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  active: 1
   capacity: 50
   intervalTime: .5
   initialVelocity: 15

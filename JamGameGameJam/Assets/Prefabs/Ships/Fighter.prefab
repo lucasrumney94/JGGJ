@@ -106,7 +106,7 @@ MonoBehaviour:
   fireDelay: .0500000007
   bulletSpeed: 60
   muzzlePosition: {x: 0, y: 0, z: 1}
-  aimTolerance: 35
+  aimTolerance: 20
   rotationSpeed: 0
   turretRotation: 0
   xRotation: 0
