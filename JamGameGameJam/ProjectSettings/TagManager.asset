@@ -9,6 +9,11 @@ TagManager:
   - Planet2
   - Planet3
   - Planet4
+  - New Tag
+  - New Tag
+  - globLARGE
+  - globMEDIUM
+  - globSMALL
   layers:
   - Default
   - TransparentFX

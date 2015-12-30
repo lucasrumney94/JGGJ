@@ -13,9 +13,10 @@ GameObject:
   - 23: {fileID: 2333778}
   - 54: {fileID: 5407264}
   - 114: {fileID: 11463222}
+  - 135: {fileID: 13526460}
   m_Layer: 0
   m_Name: globLARGE
-  m_TagString: Untagged
+  m_TagString: globLARGE
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -89,6 +90,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1e65908d4fe0c9e49b27b6f55c16d67b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!135 &13526460
+SphereCollider:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 172742}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: .5
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!135 &13596916
 SphereCollider:
   m_ObjectHideFlags: 1
@@ -265,6 +278,14 @@ Prefab:
       value: 
       objectReference: {fileID: 13400000, guid: adaa4e859889f224b831094a47465764,
         type: 2}
+    - target: {fileID: 0}
+      propertyPath: m_IsTrigger
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: m_TagString
+      value: globLARGE
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}
   m_RootGameObject: {fileID: 172742}

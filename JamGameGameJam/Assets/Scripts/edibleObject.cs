@@ -9,7 +9,8 @@ public class edibleObject : MonoBehaviour {
     public float eatDistance = 5.0f;
     public float smashTimeLeft = 0.1f;
     public float lungeTimeReduction = 2.0f;
-   
+
+    public bool justEatOnCollision = false;
 
     private GameObject playerAnchor;
 
@@ -25,34 +26,47 @@ public class edibleObject : MonoBehaviour {
 	// Update is called once per frame
 	void FixedUpdate ()
     {
-        eatDistance = Mathf.Pow(transform.localScale.x/4 + playerAnchor.transform.parent.GetComponent<playerStats>().playerRadius,2); 
-		if (((playerAnchor.transform.position - transform.position).sqrMagnitude < eatDistance) && playerAnchor.GetComponent<globController>().globCount>globs)
+        if (!justEatOnCollision)
         {
-            if (eating == false)
+            eatDistance = Mathf.Pow(transform.localScale.x / 4 + playerAnchor.transform.parent.GetComponent<playerStats>().playerRadius, 2);
+            if (((playerAnchor.transform.position - transform.position).sqrMagnitude < eatDistance) && playerAnchor.GetComponent<globController>().globCount > globs)
             {
-                StartCoroutine("eatingTime");
+                if (eating == false)
+                {
+                    StartCoroutine("eatingTime");
+                }
+                eating = true;
+
+
+
             }
-            eating = true;
+            else
+            {
+                eating = false;
+                StopCoroutine("eatingTime");
+            }
 
-            
-
+            if (eatTime <= 0.0f)
+            {
+                if (GameObject.FindGameObjectWithTag("Player").GetComponent<playerStats>().canEat)
+                {
+                    playerAnchor.SendMessageUpwards("addGlobs", globs, SendMessageOptions.DontRequireReceiver);
+                    Destroy(this.gameObject);
+                }
+            }
         }
-        else
-        {
-            eating = false;
-            StopCoroutine("eatingTime");
-        }
+    }
 
-        if (eatTime <= 0.0f)
+    void OnTriggerEnter(Collider other)
+    {
+        if (other.gameObject.tag == "globSMALL" || other.gameObject.tag == "globMEDIUM" || other.gameObject.tag == "globLARGE")
         {
-            if (GameObject.FindGameObjectWithTag("Player").GetComponent<playerStats>().canEat)
+            if (GameObject.FindGameObjectWithTag("Player").GetComponent<playerStats>().canEat || GameObject.FindGameObjectWithTag("Player").GetComponent<playerStats>().isSmashing )
             {
                 playerAnchor.SendMessageUpwards("addGlobs", globs, SendMessageOptions.DontRequireReceiver);
                 Destroy(this.gameObject);
             }
         }
-
-
     }
 
     IEnumerator eatingTime ()
