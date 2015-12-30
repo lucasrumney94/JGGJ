@@ -36,9 +36,6 @@ public class edibleObject : MonoBehaviour {
                     StartCoroutine("eatingTime");
                 }
                 eating = true;
-
-
-
             }
             else
             {
@@ -50,8 +47,10 @@ public class edibleObject : MonoBehaviour {
             {
                 if (GameObject.FindGameObjectWithTag("Player").GetComponent<playerStats>().canEat)
                 {
+                    this.GetComponents<AudioSource>()[1].Play(); //play the popping sound upon death
                     playerAnchor.SendMessageUpwards("addGlobs", globs, SendMessageOptions.DontRequireReceiver);
-                    Destroy(this.gameObject);
+
+                    Destroy(this.gameObject, 0.7f);
                 }
             }
         }
@@ -59,12 +58,14 @@ public class edibleObject : MonoBehaviour {
 
     void OnTriggerEnter(Collider other)
     {
-        if (other.gameObject.tag == "globSMALL" || other.gameObject.tag == "globMEDIUM" || other.gameObject.tag == "globLARGE")
+        if (other.gameObject.tag == "globSMALL" || other.gameObject.tag == "globMEDIUM" || other.gameObject.tag == "globLARGE" || other.gameObject.tag == "Anchor")
         {
-            if (GameObject.FindGameObjectWithTag("Player").GetComponent<playerStats>().canEat || GameObject.FindGameObjectWithTag("Player").GetComponent<playerStats>().isSmashing )
+            if (GameObject.FindGameObjectWithTag("Player").GetComponent<playerStats>().canEat ||  GameObject.FindGameObjectWithTag("Player").GetComponent<playerStats>().isSmashing )
             {
+                this.GetComponents<AudioSource>()[1].Play(); //play the popping sound upon death
                 playerAnchor.SendMessageUpwards("addGlobs", globs, SendMessageOptions.DontRequireReceiver);
-                Destroy(this.gameObject);
+
+                Destroy(this.gameObject, 0.7f);
             }
         }
     }
@@ -96,8 +97,10 @@ public class edibleObject : MonoBehaviour {
             {
                 if (GameObject.FindGameObjectWithTag("Player").GetComponent<playerStats>().canEat)
                 {
+                    this.GetComponents<AudioSource>()[1].Play(); //play the popping sound upon death
                     playerAnchor.SendMessageUpwards("addGlobs", globs, SendMessageOptions.DontRequireReceiver);
-                    Destroy(this.gameObject);
+
+                    Destroy(this.gameObject, 0.7f);
                 }
                 yield return null;
             }
@@ -108,9 +111,11 @@ public class edibleObject : MonoBehaviour {
         //yield return new WaitForSeconds(eatTime);
         if (GameObject.FindGameObjectWithTag("Player").GetComponent<playerStats>().canEat)
         {
+            this.GetComponents<AudioSource>()[1].Play(); //play the popping sound upon death
             playerAnchor.SendMessageUpwards("addGlobs", globs, SendMessageOptions.DontRequireReceiver);
             //SendMessageUpwards("subtractFromCount");
-            Destroy(this.gameObject);
+            
+            Destroy(this.gameObject,0.7f);
         }
         yield return null;
     }

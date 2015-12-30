@@ -69,12 +69,17 @@ public class globController : MonoBehaviour
         }
     }
 
+    void Update()
+    {
+        Debug.Log(pStats.canEat);
+    }
+
     // Update is called once per frame
     void FixedUpdate()
     {
         explodeSelf = Input.GetButtonDown("Explode");
 
-        if (explodeSelf && smashRecharged && !expanded)
+        if (explodeSelf && smashRecharged && !expanded && !snaked)
         {
             //Debug.Log("SMASH ATTACK!");
 			StartCoroutine("smashAttack");
@@ -83,7 +88,7 @@ public class globController : MonoBehaviour
         }
 
 		expandSelf = Input.GetButtonDown("Expand");
-        if (expandSelf && expandRecharged && !explodeSelf && !snaked)
+        if (expandSelf && expandRecharged && !pStats.isSmashing && !snaked)
 		{
             //start coroutines for expand
             
@@ -96,6 +101,7 @@ public class globController : MonoBehaviour
         }
         if (expanded)
         {
+            pStats.canEat = false;
             float scale = 20.0f;
             foreach (GameObject glob in globs)
             {
@@ -109,22 +115,25 @@ public class globController : MonoBehaviour
         if (snakeSelf && !explodeSelf && !expanded)
         {
             snaked = !snaked;
- 
         }
         if (snaked)
         {
             pStats.canEat = false;
             Anchor.GetComponent<playerMovement>().boost = snakeSpeedFactor;
-            
+
             //Debug.Log("FORM OF... SNAKE!");
-            float tempClusterAff = clusterAffinity*2;
+            float tempClusterAff = clusterAffinity * 2;
             foreach (GameObject glob in globs)
             {
                 tempClusterAff++;
-                if (tempClusterAff > 4.5f*clusterAffinity)
-                    tempClusterAff = 2.0f*clusterAffinity;
+                if (tempClusterAff > 4.5f * clusterAffinity)
+                    tempClusterAff = 2.0f * clusterAffinity;
                 glob.GetComponent<Rigidbody>().AddForce(tempClusterAff * (Anchor.transform.position - glob.transform.position).normalized * Time.smoothDeltaTime);
             }
+        }
+        if (!snaked && !expanded && !pStats.isSmashing)
+        {
+            pStats.canEat = true;
         }
         lungeSelf = Input.GetButtonDown("Lunge");
         //Debug.DrawRay(Anchor.transform.position, 100 * Anchor.transform.forward);

@@ -198,6 +198,7 @@ MonoBehaviour:
   eatDistance: 5
   smashTimeLeft: .100000001
   lungeTimeReduction: 2
+  justEatOnCollision: 0
 --- !u!114 &11455930
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -233,7 +234,7 @@ MonoBehaviour:
   turretRotation: 1
   xRotation: 0
   yRotation: 1
-  bullet: {fileID: 145304, guid: 7dd8d92d91307b840a993d225e2ad13e, type: 2}
+  bullet: {fileID: 145304, guid: f252cdf5736bdbc4ebfdb7ff64cb5ddd, type: 2}
 --- !u!1001 &100100000
 Prefab:
   m_ObjectHideFlags: 1

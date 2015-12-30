@@ -58,7 +58,7 @@ Transform:
   m_GameObject: {fileID: 145304}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 37.4900017, y: -2.3499999, z: -9.92000008}
-  m_LocalScale: {x: .200000003, y: .200000003, z: .800000012}
+  m_LocalScale: {x: .100000001, y: .100000001, z: .600000024}
   m_Children:
   - {fileID: 402954}
   m_Father: {fileID: 0}
@@ -138,8 +138,8 @@ AudioSource:
   Loop: 0
   Mute: 0
   Spatialize: 0
-  Priority: 252
-  DopplerLevel: 5
+  Priority: 73
+  DopplerLevel: 0
   MinDistance: 1
   MaxDistance: 100
   Pan2D: 0
@@ -230,7 +230,7 @@ MonoBehaviour:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 145304}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 8ff2d995ae1ed474bb3caceff2852344, type: 3}
   m_Name: 
@@ -254,7 +254,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 0
-  lifetime: 5
+  lifetime: 6
 --- !u!1001 &100100000
 Prefab:
   m_ObjectHideFlags: 1
@@ -296,11 +296,11 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 0}
       propertyPath: m_LocalScale.x
-      value: .200000003
+      value: .100000001
       objectReference: {fileID: 0}
     - target: {fileID: 0}
       propertyPath: m_LocalScale.y
-      value: .200000003
+      value: .100000001
       objectReference: {fileID: 0}
     - target: {fileID: 0}
       propertyPath: eatTime
@@ -324,7 +324,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 0}
       propertyPath: m_LocalScale.z
-      value: .800000012
+      value: .600000024
       objectReference: {fileID: 0}
     - target: {fileID: 0}
       propertyPath: m_audioClip
@@ -345,7 +345,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 0}
       propertyPath: DopplerLevel
-      value: 5
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 0}
       propertyPath: rolloffMode
@@ -353,7 +353,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 0}
       propertyPath: Priority
-      value: 252
+      value: 73
       objectReference: {fileID: 0}
     - target: {fileID: 0}
       propertyPath: m_Volume
@@ -362,6 +362,14 @@ Prefab:
     - target: {fileID: 0}
       propertyPath: MaxDistance
       value: 100
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: lifetime
+      value: 6
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}
