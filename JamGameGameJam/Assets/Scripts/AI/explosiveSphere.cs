@@ -34,30 +34,10 @@ public class explosiveSphere : MonoBehaviour {
         exploding = true;
         if (other.gameObject.GetComponent<Rigidbody>())
         {
-            if(other.gameObject.tag !="Anchor")
+            if (other.gameObject.tag != "Anchor")
                 other.gameObject.GetComponent<Rigidbody>().AddExplosionForce(explosiveForce, transform.position, transform.localScale.x);
 
-            if (other.gameObject.tag == "globSMALL")
-            {
-                globCont.globCount--;
-                globCont.particleCount--;
-                globCont.globs.Remove(other.gameObject);
-                Destroy(other.gameObject);
-            }
-            else if (other.gameObject.tag == "globMEDIUM")
-            {
-                globCont.globCount -= 4;
-                globCont.particleCount--;
-                globCont.globs.Remove(other.gameObject);
-                Destroy(other.gameObject);
-            }
-            else if (other.gameObject.tag == "globLARGE")
-            {
-                globCont.globCount -= 16;
-                globCont.particleCount--;
-                globCont.globs.Remove(other.gameObject);
-                Destroy(other.gameObject);
-            }
+            
         }
     }
 }

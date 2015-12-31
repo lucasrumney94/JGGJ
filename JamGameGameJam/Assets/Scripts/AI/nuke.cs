@@ -6,6 +6,7 @@ public class nuke : MonoBehaviour {
     public float turnSpeed = 1f;
     public float detonationRange = 15.0f;
     public GameObject explosionSphere;
+    public GameObject killSphereObject;
 
     private GameObject player;
     private Rigidbody physicsRigidbody;
@@ -36,7 +37,7 @@ public class nuke : MonoBehaviour {
         {
             
             Instantiate(explosionSphere,transform.position,Quaternion.identity);
-
+            Instantiate(killSphereObject, transform.position, Quaternion.identity);
 
             Destroy(gameObject);
             detonate = true;
