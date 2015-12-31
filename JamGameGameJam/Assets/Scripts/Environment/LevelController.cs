@@ -11,8 +11,13 @@ public class LevelController : MonoBehaviour {
     private int initialCount=0;
     public int currentCount=0;
     private bool planetTriggered = false;
+    private bool encounterTriggered = false;
+    private int maxSpawnNumber = 0;
+    private float maxSpawnDelay = 0.0f;
+    private float totalSpawnDelay = 0.0f;
 
-
+    private float startTime = 0.0f;
+    
     //get encounterTriggered bool
     //start timer #fighters of biggest spawner * its spawn delay
     //during this time, only enumerate and add to the count of enemies
@@ -22,7 +27,18 @@ public class LevelController : MonoBehaviour {
 	void Start ()
     {
         initialCount = transform.FindChild("Enemies").childCount;
+        encounterTriggered = true;
+        foreach (AI_Spawner aiSpawner in transform.FindChild("Enemies").GetComponentsInChildren<AI_Spawner>())
+        {
+            if (aiSpawner.capacity > maxSpawnNumber)
+            {
+                maxSpawnNumber = aiSpawner.capacity;
+                maxSpawnDelay = aiSpawner.intervalTime;
+            }
+        }
+        totalSpawnDelay = maxSpawnNumber * maxSpawnDelay;
 
+        startTime = Time.time;
     }
 	
 	// Update is called once per frame
@@ -30,14 +46,24 @@ public class LevelController : MonoBehaviour {
     {
         //is (nearly) everything dead?
         //activate planet opening
-
-        currentCount = transform.FindChild("Enemies").childCount;
-        if (currentCount <= initialCount* percentTrigger && !planetTriggered)
+        if (Time.time - startTime <= totalSpawnDelay)
         {
-            planet.GetComponent<planetChest>().openMe = true;
-            planetTriggered = true;
+            if (transform.FindChild("Enemies").childCount > currentCount)
+            {
+                currentCount = transform.FindChild("Enemies").childCount;
+                initialCount = currentCount;
+            }
         }
-        
+
+        else if (Time.time - startTime > totalSpawnDelay)
+        {
+            currentCount = transform.FindChild("Enemies").childCount;
+            if (currentCount <= initialCount * percentTrigger && !planetTriggered)
+            {
+                planet.GetComponent<planetChest>().openMe = true;
+                planetTriggered = true;
+            }
+        }
 	}
 
     void addToCount()
