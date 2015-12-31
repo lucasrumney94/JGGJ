@@ -226,7 +226,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2763a4c6976cca647b09b091c3ae003f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  fireDelay: 2
+  fireDelay: 4
   bulletSpeed: 10
   muzzlePosition: {x: 0, y: .189999998, z: 2.52999997}
   aimTolerance: 15

@@ -16,6 +16,8 @@ public class edibleObject : MonoBehaviour {
 
     private bool eating = false;
     private bool lungeFlag = true;
+    private bool triggered = false;
+
 	// Use this for initialization
 	void Start ()
     {
@@ -58,14 +60,18 @@ public class edibleObject : MonoBehaviour {
 
     void OnTriggerEnter(Collider other)
     {
-        if (other.gameObject.tag == "globSMALL" || other.gameObject.tag == "globMEDIUM" || other.gameObject.tag == "globLARGE" || other.gameObject.tag == "Anchor")
+        if (!triggered)
         {
-            if (GameObject.FindGameObjectWithTag("Player").GetComponent<playerStats>().canEat ||  GameObject.FindGameObjectWithTag("Player").GetComponent<playerStats>().isSmashing )
+            if (other.gameObject.tag == "globSMALL" || other.gameObject.tag == "globMEDIUM" || other.gameObject.tag == "globLARGE" || other.gameObject.tag == "Anchor")
             {
-                this.GetComponents<AudioSource>()[1].Play(); //play the popping sound upon death
-                playerAnchor.SendMessageUpwards("addGlobs", globs, SendMessageOptions.DontRequireReceiver);
-
-                Destroy(this.gameObject, 0.3f);
+                if (GameObject.FindGameObjectWithTag("Player").GetComponent<playerStats>().canEat || GameObject.FindGameObjectWithTag("Player").GetComponent<playerStats>().isSmashing)
+                {
+                    this.GetComponents<AudioSource>()[1].Play(); //play the popping sound upon death
+                    playerAnchor.SendMessageUpwards("addGlobs", globs, SendMessageOptions.DontRequireReceiver);
+                    Debug.Log("Trigger Entered!");
+                    triggered = true;
+                    Destroy(this.gameObject, 0.3f);
+                }
             }
         }
     }

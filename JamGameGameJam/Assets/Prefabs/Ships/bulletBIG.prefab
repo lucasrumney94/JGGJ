@@ -205,7 +205,7 @@ AudioSource:
     type: 2}
   m_audioClip: {fileID: 8300000, guid: 2c200b94651c8f841b2b5f6e132e577a, type: 3}
   m_PlayOnAwake: 1
-  m_Volume: .400000006
+  m_Volume: .150000006
   m_Pitch: 1
   Loop: 1
   Mute: 0
@@ -213,7 +213,7 @@ AudioSource:
   Priority: 137
   DopplerLevel: .5
   MinDistance: 1
-  MaxDistance: 300
+  MaxDistance: 60
   Pan2D: 0
   rolloffMode: 2
   BypassEffects: 0
@@ -378,7 +378,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 0
-  lifetime: 30
+  lifetime: 36
 --- !u!1001 &100100000
 Prefab:
   m_ObjectHideFlags: 1
@@ -485,11 +485,11 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 0}
       propertyPath: m_Volume
-      value: .400000006
+      value: .150000006
       objectReference: {fileID: 0}
     - target: {fileID: 0}
       propertyPath: MaxDistance
-      value: 300
+      value: 60
       objectReference: {fileID: 0}
     - target: {fileID: 0}
       propertyPath: m_Enabled
@@ -497,7 +497,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 0}
       propertyPath: lifetime
-      value: 30
+      value: 36
       objectReference: {fileID: 0}
     - target: {fileID: 0}
       propertyPath: Loop

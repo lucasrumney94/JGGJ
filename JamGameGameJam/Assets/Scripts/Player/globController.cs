@@ -50,7 +50,9 @@ public class globController : MonoBehaviour
     private bool lungeSelf = false;
     [HideInInspector]
     public bool lungeRecharged = true;
-
+    private int sCount = 0;
+    private int mCount = 0;
+    private List<GameObject> globsToBeDestroyed;
 
     // Use this for initialization
     void Start()
@@ -67,11 +69,12 @@ public class globController : MonoBehaviour
             randomOffset = new Vector3(Random.Range(-3.0f, 3.0f), Random.Range(-3.0f, 3.0f), Random.Range(-3.0f, 3.0f));
             globs.Add((GameObject)Instantiate(globSMALL,randomOffset,Quaternion.identity));
         }
+        globsToBeDestroyed = new List<GameObject>();
     }
 
     void Update()
     {
-        Debug.Log(pStats.canEat);
+        //Debug.Log(pStats.canEat);
     }
 
     // Update is called once per frame
@@ -166,17 +169,16 @@ public class globController : MonoBehaviour
             }
         }
         
-        if (particleCount > 700)
+        if (particleCount > 1000)
         {
-            int sCount = 0;
-            int mCount = 0;
+            
             foreach (GameObject glob in globs)
             {
                 if (glob.name == "globSMALL(Clone)")
                 {
                     sCount++;
-                    globs.Remove(glob);
-                    Destroy(glob);
+                    globsToBeDestroyed.Add(glob);
+                    globCount--;
                     particleCount--;
                 }
                 if (sCount == 4)
@@ -185,16 +187,17 @@ public class globController : MonoBehaviour
                     addGlobs(1);
                     medium = false;
                     particleCount++;
+                    sCount = 0;
                     break;
                 }
-                if (sCount < 4)
-                {
+                if (globs.Count > 1500)
+                { 
                     if (glob.name == "globMEDIUM(Clone)")
                     {
                         mCount++;
-                        globs.Remove(glob);
-                        Destroy(glob);
+                        globsToBeDestroyed.Add(glob);
                         particleCount--;
+                        globCount -= 4;
                     }
                     if (mCount == 4)
                     {
@@ -202,21 +205,39 @@ public class globController : MonoBehaviour
                         addGlobs(1);
                         large = false;
                         particleCount++;
+                        mCount = 0;
                         break;
                     }
                 }
             }
+
+            foreach (GameObject deadGlob in globsToBeDestroyed)
+            {
+
+                globs.Remove(deadGlob);
+                GameObject.Destroy(deadGlob);
+
+            }
+
+
+
+
         }
-        
     }
 
     void addGlobs(int numberOfGlobs)
     {
         int mediumToSmallRatio = 4;
         int largeToMediumRatio = 4;
+
         int mediumGlobs = numberOfGlobs / mediumToSmallRatio;
         int largeGlobs = numberOfGlobs / largeToMediumRatio;
-        if (numberOfGlobs < 200)
+        if (medium)
+            mediumGlobs = numberOfGlobs;
+        if (large)
+            largeGlobs = numberOfGlobs;
+        //Debug.Log(medium);
+        if (numberOfGlobs < 200 && !medium && !large )
         {
             for (int j = 0; j < numberOfGlobs; j++)
             {
@@ -227,10 +248,11 @@ public class globController : MonoBehaviour
                 globs.Add((GameObject)Instantiate(globSMALL, transform.position + randomOffset, Quaternion.identity));
             }
         }
-        else if (numberOfGlobs >=200 && numberOfGlobs<=700 || medium == true)
+        else if ((numberOfGlobs >=200 && numberOfGlobs<=700) || medium)
         {
-            for (int j = 0; j < largeGlobs; j++)
+            for (int j = 0; j < mediumGlobs; j++)
             {
+                Debug.Log("Added medium blob!");
                 particleCount++;
                 globCount += mediumToSmallRatio;
                 randomOffset = new Vector3(Random.Range(-1.0f, 1.0f), Random.Range(-1.0f, 1.0f), Random.Range(-1.0f, 1.0f));

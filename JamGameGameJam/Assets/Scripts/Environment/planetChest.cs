@@ -27,6 +27,7 @@ public class planetChest : MonoBehaviour
         if (openMe)
         {
             StartCoroutine("openPlanet");
+            gameObject.GetComponent<AudioSource>().Play();
             openMe = false;
         }
         if (dispense)
