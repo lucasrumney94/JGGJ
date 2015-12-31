@@ -5,6 +5,8 @@ public class explosiveSphere : MonoBehaviour {
 
     public float explosiveForce;
 
+    private bool exploding = false;
+
     private globController globCont;
 	// Use this for initialization
 	void Start ()
@@ -20,33 +22,41 @@ public class explosiveSphere : MonoBehaviour {
 	// Update is called once per frame
 	void Update ()
     {
-	    
+        if (exploding)
+        {
+            gameObject.GetComponent<SphereCollider>().enabled = false;
+            Destroy(gameObject, 5f);
+        }
 	}
 
-    void OnTriggerEnter(Collider other)
+    void OnCollisionEnter(Collision other)
     {
-        if (other.GetComponent<Rigidbody>())
+        exploding = true;
+        if (other.gameObject.GetComponent<Rigidbody>())
         {
-            if(other.tag !="Anchor")
-                other.GetComponent<Rigidbody>().AddExplosionForce(explosiveForce, transform.position, transform.localScale.x);
+            if(other.gameObject.tag !="Anchor")
+                other.gameObject.GetComponent<Rigidbody>().AddExplosionForce(explosiveForce, transform.position, transform.localScale.x);
 
             if (other.gameObject.tag == "globSMALL")
             {
                 globCont.globCount--;
+                globCont.particleCount--;
                 globCont.globs.Remove(other.gameObject);
-                Destroy(other.gameObject, 0.5f);
+                Destroy(other.gameObject);
             }
             else if (other.gameObject.tag == "globMEDIUM")
             {
                 globCont.globCount -= 4;
+                globCont.particleCount--;
                 globCont.globs.Remove(other.gameObject);
-                Destroy(other.gameObject, 0.5f);
+                Destroy(other.gameObject);
             }
             else if (other.gameObject.tag == "globLARGE")
             {
                 globCont.globCount -= 16;
+                globCont.particleCount--;
                 globCont.globs.Remove(other.gameObject);
-                Destroy(other.gameObject, 0.5f);
+                Destroy(other.gameObject);
             }
         }
     }
