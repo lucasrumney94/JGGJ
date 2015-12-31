@@ -12,6 +12,6 @@ public class AI_Turret_Editor : Editor {
         Vector3 muzzlePos = turret.transform.TransformPoint(turret.muzzlePosition);
 
         Handles.color = Color.red;
-        //Handles.CubeCap(0, muzzlePos, turret.transform.rotation, HandleUtility.GetHandleSize(muzzlePos) * 0.5f);
+        Handles.CubeCap(0, muzzlePos, turret.transform.rotation, 0.1f);
     }
 }

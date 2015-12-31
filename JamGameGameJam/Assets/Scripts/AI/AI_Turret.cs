@@ -70,11 +70,12 @@ public class AI_Turret : MonoBehaviour
     private void TurnToFace()
     {
         //Debug.DrawRay(transform.position, transform.forward * 1000f, Color.cyan);
+        float initialZ = transform.localEulerAngles.z;
 
         if (yRotation)
         {
             transform.LookAt(GameObject.FindGameObjectWithTag("Anchor").transform);
-            transform.localEulerAngles = new Vector3(0f, limitRotation ? Mathf.Clamp(transform.localEulerAngles.y, -lowerLimit, upperLimit) : transform.localEulerAngles.y, 0f);
+            transform.localEulerAngles = new Vector3(0f, limitRotation ? Mathf.Clamp(transform.localEulerAngles.y, -lowerLimit, upperLimit) : transform.localEulerAngles.y, initialZ);
             //Moved out of vector creation to disable limited movement along x
             //Mathf.Clamp(transform.localEulerAngles.x, -30f, 10f)
         }
@@ -82,7 +83,7 @@ public class AI_Turret : MonoBehaviour
         if (xRotation)
         {
             transform.LookAt(GameObject.FindGameObjectWithTag("Anchor").transform);
-            transform.localEulerAngles = new Vector3(limitRotation ? Mathf.Clamp(transform.localEulerAngles.x, -lowerLimit, upperLimit) : transform.localEulerAngles.x, 0f, 0f);
+            transform.localEulerAngles = new Vector3(limitRotation ? Mathf.Clamp(transform.localEulerAngles.x, -lowerLimit, upperLimit) : transform.localEulerAngles.x, 0f, initialZ);
         }
     }
 
