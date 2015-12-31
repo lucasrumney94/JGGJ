@@ -28,10 +28,8 @@ GameObject:
   - 65: {fileID: 6533776}
   - 23: {fileID: 2337672}
   - 54: {fileID: 5491016}
-  - 114: {fileID: 11497354}
-  - 114: {fileID: 11420820}
   - 96: {fileID: 9645476}
-  - 114: {fileID: 11411362}
+  - 114: {fileID: 11426372}
   m_Layer: 0
   m_Name: Nuke
   m_TagString: Untagged
@@ -59,7 +57,7 @@ Transform:
   m_GameObject: {fileID: 145304}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: .800000012, y: .800000012, z: .800000012}
+  m_LocalScale: {x: .300000012, y: .300000012, z: .300000012}
   m_Children:
   - {fileID: 402954}
   m_Father: {fileID: 0}
@@ -120,7 +118,7 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: .5, y: .5, z: .5}
+  m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!96 &9645476
 TrailRenderer:
@@ -199,7 +197,7 @@ Light:
   m_ShadowRadius: 0
   m_ShadowAngle: 0
   m_AreaSize: {x: 1, y: 1}
---- !u!114 &11411362
+--- !u!114 &11426372
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
@@ -207,44 +205,13 @@ MonoBehaviour:
   m_GameObject: {fileID: 145304}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 82ad821b5310d82459530b7857a1df5c, type: 3}
+  m_Script: {fileID: 11500000, guid: 425d65f26166f4d43abec2a253dc94fb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 20
-  turnSpeed: .00499999989
-  swervePeriod: 0
-  swerveForce: 0
---- !u!114 &11420820
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 145304}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8ff2d995ae1ed474bb3caceff2852344, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  level: 1
-  eatTime: .00999999978
-  globs: -10
-  eatDistance: 10
-  smashTimeLeft: 10
-  lungeTimeReduction: 10
-  justEatOnCollision: 0
---- !u!114 &11497354
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 145304}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a4165efab0d674941861ba3eb6dd0b0c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  speed: 1
-  lifetime: 40
+  speed: 55
+  turnSpeed: .25
+  detonationRange: 5
+  explosionSphere: {fileID: 150476, guid: 33483c2e91b5af84aac67d700fe53ddc, type: 2}
 --- !u!1001 &100100000
 Prefab:
   m_ObjectHideFlags: 1
@@ -258,15 +225,15 @@ Prefab:
       objectReference: {fileID: 2100000, guid: 590f1f21e1b1df64faee2c0177c24c47, type: 2}
     - target: {fileID: 0}
       propertyPath: m_Size.x
-      value: .5
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 0}
       propertyPath: m_Size.y
-      value: .5
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 0}
       propertyPath: m_Size.z
-      value: .5
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 0}
       propertyPath: m_Mass
@@ -278,7 +245,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 0}
       propertyPath: speed
-      value: 20
+      value: 55
       objectReference: {fileID: 0}
     - target: {fileID: 0}
       propertyPath: m_IsTrigger
@@ -286,11 +253,11 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 0}
       propertyPath: m_LocalScale.x
-      value: .800000012
+      value: .300000012
       objectReference: {fileID: 0}
     - target: {fileID: 0}
       propertyPath: m_LocalScale.y
-      value: .800000012
+      value: .300000012
       objectReference: {fileID: 0}
     - target: {fileID: 0}
       propertyPath: eatTime
@@ -314,7 +281,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 0}
       propertyPath: m_LocalScale.z
-      value: .800000012
+      value: .300000012
       objectReference: {fileID: 0}
     - target: {fileID: 0}
       propertyPath: lifetime
@@ -366,7 +333,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 0}
       propertyPath: turnSpeed
-      value: .00499999989
+      value: .25
       objectReference: {fileID: 0}
     - target: {fileID: 0}
       propertyPath: swervePeriod
@@ -379,6 +346,14 @@ Prefab:
     - target: {fileID: 0}
       propertyPath: m_Drag
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: explosionSphere
+      value: 
+      objectReference: {fileID: 150476, guid: 33483c2e91b5af84aac67d700fe53ddc, type: 2}
+    - target: {fileID: 0}
+      propertyPath: detonationRange
+      value: 5
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}

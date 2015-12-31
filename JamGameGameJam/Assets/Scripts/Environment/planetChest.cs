@@ -45,8 +45,9 @@ public class planetChest : MonoBehaviour
         float topAngle = 0.0f;
         while (topAngle < 75.0f)
         {
-            topAngle++;
-            transform.GetChild(0).transform.RotateAround(transform.position+(-playerToPlanet.normalized*transform.localScale.x), Vector3.Cross(playerToPlanet, Vector3.up), 1.0f);
+            float openAngleStep = 15*Time.deltaTime;
+            topAngle+=openAngleStep;
+            transform.GetChild(0).transform.RotateAround(transform.position+(-playerToPlanet.normalized*transform.localScale.x), Vector3.Cross(playerToPlanet, Vector3.up), openAngleStep);
 
             yield return null;
         }

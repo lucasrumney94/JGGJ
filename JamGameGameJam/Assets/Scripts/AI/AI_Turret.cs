@@ -18,6 +18,8 @@ public class AI_Turret : MonoBehaviour
     [Range(0f, 360f)]
     public float upperLimit;
 
+    public bool nukeTurret = false;
+
     public GameObject bullet;
 
     private float fireLast;
@@ -52,8 +54,16 @@ public class AI_Turret : MonoBehaviour
 
     private void Fire()
     {
-        GameObject newBullet = Instantiate(bullet, transform.TransformPoint(muzzlePosition), transform.rotation) as GameObject;
-        newBullet.GetComponent<Bullet>().speed = bulletSpeed;
+        if (!nukeTurret)
+        {
+            GameObject newBullet = Instantiate(bullet, transform.TransformPoint(muzzlePosition), transform.rotation) as GameObject;
+            newBullet.GetComponent<Bullet>().speed = bulletSpeed;
+        }
+        else
+        {
+            GameObject newBullet = Instantiate(bullet, transform.TransformPoint(muzzlePosition), transform.rotation) as GameObject;
+            newBullet.GetComponent<nuke>().speed = bulletSpeed;
+        }
     }
 
     //half broken for now, don't enable angle limiting
