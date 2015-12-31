@@ -10,8 +10,13 @@ public class AI_Turret : MonoBehaviour
 
     public float rotationSpeed;
     public bool turretRotation;
+    public bool limitRotation;
     public bool xRotation;
     public bool yRotation;
+    [Range(0f, 360f)]
+    public float lowerLimit;
+    [Range(0f, 360f)]
+    public float upperLimit;
 
     public GameObject bullet;
 
@@ -51,12 +56,24 @@ public class AI_Turret : MonoBehaviour
         newBullet.GetComponent<Bullet>().speed = bulletSpeed;
     }
 
+    //half broken for now, don't enable angle limiting
     private void TurnToFace()
     {
-        Debug.DrawRay(transform.position, transform.forward * 1000f, Color.cyan);
+        //Debug.DrawRay(transform.position, transform.forward * 1000f, Color.cyan);
 
-        transform.LookAt(GameObject.FindGameObjectWithTag("Anchor").transform);
-        transform.localEulerAngles = new Vector3(Mathf.Clamp(transform.localEulerAngles.x, -30f, 10f), transform.localEulerAngles.y, 0f);
+        if (yRotation)
+        {
+            transform.LookAt(GameObject.FindGameObjectWithTag("Anchor").transform);
+            transform.localEulerAngles = new Vector3(0f, limitRotation ? Mathf.Clamp(transform.localEulerAngles.y, -lowerLimit, upperLimit) : transform.localEulerAngles.y, 0f);
+            //Moved out of vector creation to disable limited movement along x
+            //Mathf.Clamp(transform.localEulerAngles.x, -30f, 10f)
+        }
+
+        if (xRotation)
+        {
+            transform.LookAt(GameObject.FindGameObjectWithTag("Anchor").transform);
+            transform.localEulerAngles = new Vector3(limitRotation ? Mathf.Clamp(transform.localEulerAngles.x, -lowerLimit, upperLimit) : transform.localEulerAngles.x, 0f, 0f);
+        }
     }
 
     private bool CheckAim()

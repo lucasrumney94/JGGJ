@@ -1,7 +1,10 @@
 ﻿Shader "Unlit/normalstest"
 {
-	// no Properties block this time!
-	SubShader
+	Properties
+	{
+		_Color("Main Color", Color) = (0,0,0,0)
+	}
+		SubShader
 	{
 		Pass
 		{
@@ -10,6 +13,8 @@
 			#pragma fragment frag
 			// include file that contains UnityObjectToWorldNormal helper function
 			#include "UnityCG.cginc"
+
+			fixed4 _Color;
 
 			struct v2f 
 			{
@@ -32,11 +37,13 @@
 			fixed4 frag(v2f i) : SV_Target
 			{
 				fixed4 c = 0;
-				c.rgb = _SinTime;
 				// normal is a 3D vector with xyz components; in -1..1
 				// range. To display it as color, bring the range into 0..1
 				// and put into red, green, blue components
 				c.rgb = i.worldNormal*0.5 + 0.5;
+				float mag = (c.r + c.g + c.b) / 3.0;
+				c.rgb = _Color.rgb * mag;
+				c.a = _Color.a;
 				return c;
 			}
 			ENDCG
