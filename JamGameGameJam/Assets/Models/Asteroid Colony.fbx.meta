@@ -9,19 +9,29 @@ ModelImporter:
     100002: //RootNode
     100004: Panels
     100006: Station
+    100008: Bottom
+    100010: Top
     400000: Asteroid
     400002: //RootNode
     400004: Panels
     400006: Station
+    400008: Bottom
+    400010: Top
     2300000: Asteroid
     2300002: Panels
     2300004: Station
+    2300006: Bottom
+    2300008: Top
     3300000: Asteroid
     3300002: Panels
     3300004: Station
+    3300006: Bottom
+    3300008: Top
     4300000: Panels
     4300002: Station
     4300004: Asteroid
+    4300006: Bottom
+    4300008: Top
   materials:
     importMaterials: 1
     materialName: 0
