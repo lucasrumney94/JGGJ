@@ -172,7 +172,7 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 153614}
-  m_LocalRotation: {x: .0542428493, y: .878270268, z: -.102706887, w: .463843137}
+  m_LocalRotation: {x: 0, y: .695285916, z: 0, w: .718733251}
   m_LocalPosition: {x: -155.399994, y: -14, z: 35}
   m_LocalScale: {x: 10, y: 10, z: 10}
   m_Children:
@@ -330,7 +330,7 @@ MeshCollider:
   m_GameObject: {fileID: 153614}
   m_Material: {fileID: 0}
   m_IsTrigger: 0
-  m_Enabled: 0
+  m_Enabled: 1
   serializedVersion: 2
   m_Convex: 0
   m_Mesh: {fileID: 4300000, guid: 81aeadd5ee08c2b4f80016eaf7468711, type: 3}
@@ -361,7 +361,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2763a4c6976cca647b09b091c3ae003f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  fireDelay: 8
+  fireDelay: 15
   bulletSpeed: 15
   muzzlePosition: {x: 0, y: .189999998, z: 2.52999997}
   aimTolerance: 15

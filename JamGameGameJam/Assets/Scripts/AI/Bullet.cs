@@ -37,19 +37,19 @@ public class Bullet : MonoBehaviour {
         {
             if (other.gameObject.tag == "globSMALL")
             {
-                pStats.playerGlobCount--;
+                globCont.globCount--;
                 globs.Remove(other.gameObject);
                 Destroy(other.gameObject, 0.5f);
             }
             else if (other.gameObject.tag == "globMEDIUM")
             {
-                pStats.playerGlobCount -= 4;
+                globCont.globCount -= 4;
                 globs.Remove(other.gameObject);
                 Destroy(other.gameObject, 0.5f);
             }
             else if (other.gameObject.tag == "globLARGE")
             {
-                pStats.playerGlobCount -= 16;
+                globCont.globCount -= 16;
                 globs.Remove(other.gameObject);
                 Destroy(other.gameObject, 0.5f);
             }

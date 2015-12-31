@@ -29,6 +29,7 @@ GameObject:
   - 114: {fileID: 11455930}
   - 65: {fileID: 6503624}
   - 114: {fileID: 11414712}
+  - 65: {fileID: 6500172}
   m_Layer: 0
   m_Name: Orbiter
   m_TagString: Untagged
@@ -47,6 +48,7 @@ GameObject:
   - 33: {fileID: 3334722}
   - 23: {fileID: 2386056}
   - 114: {fileID: 11469270}
+  - 65: {fileID: 6588494}
   m_Layer: 0
   m_Name: turret
   m_TagString: Untagged
@@ -85,7 +87,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 171624}
   m_LocalRotation: {x: 0, y: .975457788, z: 0, w: .220186636}
-  m_LocalPosition: {x: 0, y: 2.25999999, z: 9.47999954}
+  m_LocalPosition: {x: -.0900000036, y: 2.25999999, z: 9.65999985}
   m_LocalScale: {x: .5, y: .5, z: .5}
   m_Children:
   - {fileID: 416216}
@@ -165,10 +167,22 @@ Rigidbody:
   m_Drag: .0500000007
   m_AngularDrag: 1
   m_UseGravity: 0
-  m_IsKinematic: 1
+  m_IsKinematic: 0
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
+--- !u!65 &6500172
+BoxCollider:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 171624}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 9.61999989, y: 1.19000006, z: 3.49000001}
+  m_Center: {x: 0, y: 0, z: .439999998}
 --- !u!65 &6503624
 BoxCollider:
   m_ObjectHideFlags: 1
@@ -179,8 +193,20 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 5, y: 2, z: 9}
-  m_Center: {x: 0, y: 0, z: 2}
+  m_Size: {x: 4, y: 2.73000002, z: 11.0500002}
+  m_Center: {x: 0, y: 0, z: 2.42000008}
+--- !u!65 &6588494
+BoxCollider:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 176632}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 2.00000072, y: 1.20000005, z: 3.81999993}
+  m_Center: {x: 2.6822093e-07, y: -.212500393, z: .753055692}
 --- !u!114 &11414712
 MonoBehaviour:
   m_ObjectHideFlags: 1

@@ -13,6 +13,8 @@ public class AI_Turret : MonoBehaviour
     public bool xRotation;
     public bool yRotation;
 
+    public bool nukeTurret = false;
+
     public GameObject bullet;
 
     private float fireLast;
@@ -47,8 +49,16 @@ public class AI_Turret : MonoBehaviour
 
     private void Fire()
     {
-        GameObject newBullet = Instantiate(bullet, transform.TransformPoint(muzzlePosition), transform.rotation) as GameObject;
-        newBullet.GetComponent<Bullet>().speed = bulletSpeed;
+        if (!nukeTurret)
+        {
+            GameObject newBullet = Instantiate(bullet, transform.TransformPoint(muzzlePosition), transform.rotation) as GameObject;
+            newBullet.GetComponent<Bullet>().speed = bulletSpeed;
+        }
+        else
+        {
+            GameObject newBullet = Instantiate(bullet, transform.TransformPoint(muzzlePosition), transform.rotation) as GameObject;
+            newBullet.GetComponent<nuke>().speed = bulletSpeed;
+        }
     }
 
     private void TurnToFace()
