@@ -15,6 +15,12 @@ TagManager:
   - globMEDIUM
   - globSMALL
   - Encounter1
+  - llllllllllllllllllll
+  - lllllllllllllllllllll
+  - llllllllllllllllllllll
+  - lllllllllllllllllllllllll
+  - lllllllllllllllllllllllllllll
+  - gameController
   layers:
   - Default
   - TransparentFX

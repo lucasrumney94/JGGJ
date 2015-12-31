@@ -50,9 +50,9 @@ public class AI_Pinky : MonoBehaviour {
 
     private void OrbitTarget()
     {
-        Vector3 toTarget = (player.transform.position - this.transform.position).normalized;
+        Vector3 toTarget = (orbitTarget.transform.position - this.transform.position).normalized;
         Vector3 edge = Vector3.Cross(toTarget, Vector3.up) * orbitRadius;
-        edge += player.transform.position;
+        edge += orbitTarget.transform.position;
         Vector3 toOrbit = (edge - this.transform.position).normalized;
         toOrbit *= speed;
         physicsRigidbody.AddForce(toOrbit);

@@ -14,6 +14,7 @@ public class rotateMe : MonoBehaviour {
 	// Update is called once per frame
 	void Update ()
     {
-        transform.Rotate(angleRotation);
+        if (Time.timeScale != 0.0f)
+            transform.Rotate(angleRotation);
 	}
 }

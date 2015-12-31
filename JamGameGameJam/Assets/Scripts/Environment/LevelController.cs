@@ -6,7 +6,7 @@ public class LevelController : MonoBehaviour {
 
     public GameObject planet;
     public float percentTrigger = .20f;
-    
+    public bool levelBeaten = false;
 
     private int initialCount=0;
     public int currentCount=0;
@@ -62,6 +62,7 @@ public class LevelController : MonoBehaviour {
             {
                 planet.GetComponent<planetChest>().openMe = true;
                 planetTriggered = true;
+                levelBeaten = true;
             }
         }
 	}

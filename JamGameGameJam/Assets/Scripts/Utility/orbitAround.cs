@@ -16,6 +16,7 @@ public class orbitAround : MonoBehaviour {
 	// Update is called once per frame
 	void Update ()
     {
-        gameObject.transform.RotateAround(target.transform.position, Vector3.up, speed);
+        if(Time.timeScale != 0.0f)
+            gameObject.transform.RotateAround(target.transform.position, Vector3.up, speed);
 	}
 }

@@ -27,6 +27,13 @@ public class UIHandler : MonoBehaviour {
 	public List<Menu> activeMenus = new List<Menu>();					//List of activated menus in oldest to newest. The last in the list should be the currently active menu
 
     public GameObject ContinueButton;
+    public GameObject wonRestartButton;
+    public GameObject lostRestartButton;
+    public GameObject mainMenuStartButton;
+
+    private gameController gameCont;
+    private bool gameOverWindowFlag = false;
+    private GameObject lastSelectedObject;
 
 	/// <summary>
 	/// Awake Singleton Pattern
@@ -63,6 +70,12 @@ public class UIHandler : MonoBehaviour {
 	// Use this for initialization
 	void Start () 
 	{
+        if (Application.loadedLevel != 0)
+            gameCont = GameObject.FindGameObjectWithTag("gameController").GetComponent<gameController>();
+        else
+        {
+            EventSystem.current.SetSelectedGameObject(mainMenuStartButton);
+        }
 		Time.timeScale = 1.0f;											//When project opens, make sure Timescale is normal
 		menus = this.gameObject.GetComponentsInChildren<Menu>();		//menus is initialized with all Menu gameobjects that are children
 		if (Application.loadedLevel == 0)								//if first scene, display main menu, close all others
@@ -70,7 +83,7 @@ public class UIHandler : MonoBehaviour {
 			openMenu("main");
 			closeMenu("options");
 			closeMenu("pause");											//not completely necessary, but convenient.
-			closeMenu("ingameoptions");
+			//closeMenu("ingameoptions");
 		}
 		else
 		{
@@ -82,7 +95,13 @@ public class UIHandler : MonoBehaviour {
 	// Update is called once per frame
 	void Update () 
 	{
-		if (activeMenus.Count == 0 || getActiveMenu().menuName == "pause")
+        
+        if (Input.GetMouseButton(0) || Input.GetMouseButton(1) || Input.GetMouseButton(2))
+        {
+            EventSystem.current.SetSelectedGameObject(lastSelectedObject);
+        }
+
+        if (activeMenus.Count == 0 || getActiveMenu().menuName == "pause")
 		{
 			if ((Input.GetKeyUp(KeyCode.Escape) || Input.GetButtonDown("Pause")) && Application.loadedLevel != 0)		//toggles pause and timescale
 			{
@@ -90,7 +109,26 @@ public class UIHandler : MonoBehaviour {
 				pauseMenu(pause);
 			}
 		}
-	}
+        if (Application.loadedLevel != 0)
+        {
+            if (gameCont.gameWon && !gameOverWindowFlag)
+            {
+                EventSystem.current.SetSelectedGameObject(wonRestartButton);
+                openMenu("gameWon");
+                Time.timeScale = 0.0f;
+                gameOverWindowFlag = true;
+            }
+            if (gameCont.gameLost && !gameOverWindowFlag)
+            {
+                EventSystem.current.SetSelectedGameObject(lostRestartButton);
+                openMenu("gameLost");
+                Time.timeScale = 0.0f;
+                gameOverWindowFlag = true;
+            }
+        }
+
+
+    }
 
 
 	/// <summary>
@@ -98,7 +136,8 @@ public class UIHandler : MonoBehaviour {
 	/// </summary>
 	public void openMenu(string Menu) //Displays all of the Canvas' associated with the nextMenu tag
 	{
-		foreach (Menu M in menus)
+        lastSelectedObject = EventSystem.current.currentSelectedGameObject;
+        foreach (Menu M in menus)
 		{
 			if (M.menuName == Menu)
 			{
@@ -136,7 +175,8 @@ public class UIHandler : MonoBehaviour {
 	public void changeSceneString(string scene)
 	{
 		Application.LoadLevel(scene);
-	}
+        lastSelectedObject = EventSystem.current.currentSelectedGameObject;
+    }
 
 	/// <summary>
 	/// Button Action
@@ -194,4 +234,11 @@ public class UIHandler : MonoBehaviour {
 	{
 		Application.Quit();
 	}
+    public void resetGame()
+    {
+
+        Time.timeScale = 1.0f;
+        gameOverWindowFlag = false;
+    }
+
 }

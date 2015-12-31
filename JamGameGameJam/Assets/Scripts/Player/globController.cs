@@ -57,6 +57,7 @@ public class globController : MonoBehaviour
     // Use this for initialization
     void Start()
     {
+        Random.seed = gameObject.GetInstanceID();
         Anchor = GameObject.FindGameObjectWithTag("Anchor");
 
 		player = GameObject.FindGameObjectWithTag("Player");
@@ -237,7 +238,7 @@ public class globController : MonoBehaviour
         if (large)
             largeGlobs = numberOfGlobs;
         //Debug.Log(medium);
-        if (numberOfGlobs < 200 && !medium && !large )
+        if (numberOfGlobs < 100 && !medium && !large )
         {
             for (int j = 0; j < numberOfGlobs; j++)
             {
@@ -248,11 +249,11 @@ public class globController : MonoBehaviour
                 globs.Add((GameObject)Instantiate(globSMALL, transform.position + randomOffset, Quaternion.identity));
             }
         }
-        else if ((numberOfGlobs >=200 && numberOfGlobs<=700) || medium)
+        else if ((numberOfGlobs >=100 && numberOfGlobs<=400) || medium)
         {
             for (int j = 0; j < mediumGlobs; j++)
             {
-                Debug.Log("Added medium blob!");
+                //Debug.Log("Added medium blob!");
                 particleCount++;
                 globCount += mediumToSmallRatio;
                 randomOffset = new Vector3(Random.Range(-1.0f, 1.0f), Random.Range(-1.0f, 1.0f), Random.Range(-1.0f, 1.0f));
@@ -260,7 +261,7 @@ public class globController : MonoBehaviour
                 globs.Add((GameObject)Instantiate(globMEDIUM, transform.position + randomOffset, Quaternion.identity));
             }
         }
-        else if (numberOfGlobs >= 700 || large == true)
+        else if (numberOfGlobs >= 400 || large == true)
         {
             for (int j = 0; j < largeGlobs; j++)
             {

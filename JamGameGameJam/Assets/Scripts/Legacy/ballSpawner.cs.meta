@@ -1,0 +1,17 @@
+fileFormatVersion: 2
+<<<<<<< HEAD:JamGameGameJam/Assets/Scripts/ballSpawner.cs.meta
+guid: cf2fe238ce84d8c44b1314fb24bb3cee
+timeCreated: 1450818879
+=======
+guid: 60dad5279a78d7f448c5ed658090d6d7
+timeCreated: 1450818696
+>>>>>>> 196a35c8534cf6dcc709ad0d5ed22ea41fdcbadc:JamGameGameJam/Assets/Scripts/ballSpawner.cs.meta
+licenseType: Free
+MonoImporter:
+  serializedVersion: 2
+  defaultReferences: []
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
