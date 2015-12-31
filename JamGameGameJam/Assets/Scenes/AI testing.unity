@@ -412,7 +412,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 415920, guid: 488358894ab58ff4984b2f6f17d2e52b, type: 2}
       propertyPath: m_RootOrder
-      value: 0
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 154492, guid: 488358894ab58ff4984b2f6f17d2e52b, type: 2}
       propertyPath: m_Name
@@ -520,6 +520,7 @@ MonoBehaviour:
   yRotation: 0
   lowerLimit: 90
   upperLimit: 60
+  nukeTurret: 0
   bullet: {fileID: 145304, guid: f252cdf5736bdbc4ebfdb7ff64cb5ddd, type: 2}
 --- !u!23 &943939637
 MeshRenderer:
@@ -689,7 +690,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 411254, guid: 950f6bdeabfb9b545a80cefa7d45e19a, type: 2}
       propertyPath: m_RootOrder
-      value: 6
+      value: 7
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 950f6bdeabfb9b545a80cefa7d45e19a, type: 2}
@@ -731,7 +732,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 495856, guid: 47e050c4e5327de4ca986ead3f644d94, type: 2}
       propertyPath: m_RootOrder
-      value: 2
+      value: 6
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 47e050c4e5327de4ca986ead3f644d94, type: 2}
@@ -817,7 +818,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 431658, guid: 7dd8d92d91307b840a993d225e2ad13e, type: 2}
       propertyPath: m_RootOrder
-      value: 9
+      value: 13
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 7dd8d92d91307b840a993d225e2ad13e, type: 2}
@@ -859,7 +860,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 497264, guid: f0ba498026ca9984f9065726a8f217f5, type: 2}
       propertyPath: m_RootOrder
-      value: 1
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 153614, guid: f0ba498026ca9984f9065726a8f217f5, type: 2}
       propertyPath: m_IsActive
@@ -997,6 +998,7 @@ MonoBehaviour:
   yRotation: 1
   lowerLimit: 0
   upperLimit: 0
+  nukeTurret: 0
   bullet: {fileID: 0}
 --- !u!23 &1843547430
 MeshRenderer:

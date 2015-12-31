@@ -3,6 +3,7 @@
 	Properties
 	{
 		_Color("Main Color", Color) = (0,0,0,0)
+		_Intensity("Intensity", Range(0, 1)) = 0.5
 	}
 		SubShader
 	{
@@ -15,6 +16,7 @@
 			#include "UnityCG.cginc"
 
 			fixed4 _Color;
+			float _Intensity;
 
 			struct v2f 
 			{
@@ -40,7 +42,7 @@
 				// normal is a 3D vector with xyz components; in -1..1
 				// range. To display it as color, bring the range into 0..1
 				// and put into red, green, blue components
-				c.rgb = i.worldNormal*0.5 + 0.5;
+				c.rgb = i.worldNormal * _Intensity + 0.5;
 				float mag = (c.r + c.g + c.b) / 3.0;
 				c.rgb = _Color.rgb * mag;
 				c.a = _Color.a;
