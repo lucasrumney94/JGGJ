@@ -208,9 +208,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 425d65f26166f4d43abec2a253dc94fb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 15
+  speed: 55
   turnSpeed: .25
-  detonationRange: 15
+  detonationRange: 5
   explosionSphere: {fileID: 150476, guid: 33483c2e91b5af84aac67d700fe53ddc, type: 2}
 --- !u!1001 &100100000
 Prefab:
@@ -245,7 +245,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 0}
       propertyPath: speed
-      value: 15
+      value: 55
       objectReference: {fileID: 0}
     - target: {fileID: 0}
       propertyPath: m_IsTrigger
@@ -351,6 +351,10 @@ Prefab:
       propertyPath: explosionSphere
       value: 
       objectReference: {fileID: 150476, guid: 33483c2e91b5af84aac67d700fe53ddc, type: 2}
+    - target: {fileID: 0}
+      propertyPath: detonationRange
+      value: 5
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}
   m_RootGameObject: {fileID: 145304}
