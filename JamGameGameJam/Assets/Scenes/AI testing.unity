@@ -197,7 +197,7 @@ Transform:
   m_LocalScale: {x: 50, y: 100, z: 100}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 15
+  m_RootOrder: 16
 --- !u!1001 &520424882
 Prefab:
   m_ObjectHideFlags: 0
@@ -640,7 +640,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 8
+  m_RootOrder: 9
 --- !u!1001 &1374521822
 Prefab:
   m_ObjectHideFlags: 0
@@ -729,6 +729,48 @@ Prefab:
 Transform:
   m_PrefabParentObject: {fileID: 459134, guid: 8750a61d87f30ef4da41fe5674729146, type: 2}
   m_PrefabInternal: {fileID: 1726028882}
+--- !u!1001 &1705945660
+Prefab:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 419968, guid: 7aa56d258abe53642b4aa5f30e8f1e80, type: 2}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 419968, guid: 7aa56d258abe53642b4aa5f30e8f1e80, type: 2}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 419968, guid: 7aa56d258abe53642b4aa5f30e8f1e80, type: 2}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 419968, guid: 7aa56d258abe53642b4aa5f30e8f1e80, type: 2}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 419968, guid: 7aa56d258abe53642b4aa5f30e8f1e80, type: 2}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 419968, guid: 7aa56d258abe53642b4aa5f30e8f1e80, type: 2}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 419968, guid: 7aa56d258abe53642b4aa5f30e8f1e80, type: 2}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 419968, guid: 7aa56d258abe53642b4aa5f30e8f1e80, type: 2}
+      propertyPath: m_RootOrder
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_ParentPrefab: {fileID: 100100000, guid: 7aa56d258abe53642b4aa5f30e8f1e80, type: 2}
+  m_IsPrefabParent: 0
 --- !u!1001 &1726028882
 Prefab:
   m_ObjectHideFlags: 0
@@ -830,4 +872,4 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 9
+  m_RootOrder: 10
