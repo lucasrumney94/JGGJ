@@ -49,7 +49,7 @@ public class edibleObject : MonoBehaviour {
             {
                 if (GameObject.FindGameObjectWithTag("Player").GetComponent<playerStats>().canEat)
                 {
-                    this.GetComponents<AudioSource>()[1].Play(); //play the popping sound upon death
+                    //this.GetComponents<AudioSource>()[1].Play(); //play the popping sound upon death
                     playerAnchor.SendMessageUpwards("addGlobs", globs, SendMessageOptions.DontRequireReceiver);
 
                     Destroy(this.gameObject, 0.3f);
@@ -70,7 +70,7 @@ public class edibleObject : MonoBehaviour {
                     playerAnchor.SendMessageUpwards("addGlobs", globs, SendMessageOptions.DontRequireReceiver);
                     Debug.Log("Trigger Entered!");
                     triggered = true;
-                    Destroy(this.gameObject, 0.3f);
+                    Destroy(this.gameObject, 0.128f);
                 }
             }
         }
@@ -103,10 +103,10 @@ public class edibleObject : MonoBehaviour {
             {
                 if (GameObject.FindGameObjectWithTag("Player").GetComponent<playerStats>().canEat)
                 {
-                    this.GetComponents<AudioSource>()[1].Play(); //play the popping sound upon death
+                    //this.GetComponents<AudioSource>()[1].Play(); //play the popping sound upon death
                     playerAnchor.SendMessageUpwards("addGlobs", globs, SendMessageOptions.DontRequireReceiver);
 
-                    Destroy(this.gameObject, 0.3f);
+                    Destroy(this.gameObject, 0.128f);
                 }
                 yield return null;
             }
@@ -121,7 +121,7 @@ public class edibleObject : MonoBehaviour {
             playerAnchor.SendMessageUpwards("addGlobs", globs, SendMessageOptions.DontRequireReceiver);
             SendMessageUpwards("subtractFromCount", SendMessageOptions.DontRequireReceiver);
             
-            Destroy(this.gameObject,0.3f);
+            Destroy(this.gameObject,0.128f);
         }
         yield return null;
     }
