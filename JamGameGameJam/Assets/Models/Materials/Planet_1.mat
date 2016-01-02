@@ -82,7 +82,7 @@ Material:
         first:
           name: _Texture
         second:
-          m_Texture: {fileID: 2800000, guid: 59c6dc14dd1629f4f9e46eb466aca8f3, type: 3}
+          m_Texture: {fileID: 2800000, guid: a30f2d07cc0c5cc4fbc72f3d1370b97a, type: 3}
           m_Scale: {x: 1, y: 1}
           m_Offset: {x: 0, y: 0}
     m_Floats:
@@ -137,7 +137,7 @@ Material:
       data:
         first:
           name: _Intensity
-        second: 1
+        second: 0
     m_Colors:
       data:
         first:
@@ -146,4 +146,4 @@ Material:
       data:
         first:
           name: _Color
-        second: {r: 0, g: .367647052, b: .254108965, a: 1}
+        second: {r: .170955867, g: .375, b: 0, a: 1}
