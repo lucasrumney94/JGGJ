@@ -137,7 +137,7 @@ Material:
       data:
         first:
           name: _Intensity
-        second: 0
+        second: 1
     m_Colors:
       data:
         first:
@@ -146,4 +146,4 @@ Material:
       data:
         first:
           name: _Color
-        second: {r: .170955867, g: .375, b: 0, a: 1}
+        second: {r: .34299314, g: 0, b: .382352948, a: 1}
