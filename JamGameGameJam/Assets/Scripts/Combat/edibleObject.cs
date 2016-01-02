@@ -50,7 +50,7 @@ public class edibleObject : MonoBehaviour {
                 if (GameObject.FindGameObjectWithTag("Player").GetComponent<playerStats>().canEat)
                 {
                     //this.GetComponents<AudioSource>()[1].Play(); //play the popping sound upon death
-                    playerAnchor.SendMessageUpwards("addGlobs", globs, SendMessageOptions.DontRequireReceiver);
+                    //playerAnchor.SendMessageUpwards("addGlobs", globs, SendMessageOptions.DontRequireReceiver);
 
                     Destroy(this.gameObject, 0.3f);
                 }
@@ -104,7 +104,7 @@ public class edibleObject : MonoBehaviour {
                 if (GameObject.FindGameObjectWithTag("Player").GetComponent<playerStats>().canEat)
                 {
                     //this.GetComponents<AudioSource>()[1].Play(); //play the popping sound upon death
-                    playerAnchor.SendMessageUpwards("addGlobs", globs, SendMessageOptions.DontRequireReceiver);
+                    //playerAnchor.SendMessageUpwards("addGlobs", globs, SendMessageOptions.DontRequireReceiver);
 
                     Destroy(this.gameObject, 0.128f);
                 }
