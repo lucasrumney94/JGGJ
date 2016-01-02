@@ -200,7 +200,7 @@ ParticleSystem:
         m_PostInfinity: 2
       minMaxState: 0
     startSpeed:
-      scalar: .0199999996
+      scalar: .100000001
       maxCurve:
         serializedVersion: 2
         m_Curve:
@@ -408,7 +408,7 @@ ParticleSystem:
     arc: 360
     placementMode: 0
     m_Mesh: {fileID: 0}
-    randomDirection: 0
+    randomDirection: 1
   EmissionModule:
     enabled: 1
     m_Type: 0

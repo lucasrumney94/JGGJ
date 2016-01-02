@@ -244,18 +244,6 @@ Prefab:
       propertyPath: target
       value: 
       objectReference: {fileID: 510115956}
-    - target: {fileID: 19895424, guid: 72da4853879ec434f9f41795765f5dd9, type: 2}
-      propertyPath: ShapeModule.randomDirection
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 19895424, guid: 72da4853879ec434f9f41795765f5dd9, type: 2}
-      propertyPath: InitialModule.startSpeed.scalar
-      value: .100000001
-      objectReference: {fileID: 0}
-    - target: {fileID: 2030840, guid: 72da4853879ec434f9f41795765f5dd9, type: 2}
-      propertyPath: m_OcclusionCulling
-      value: 1
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 72da4853879ec434f9f41795765f5dd9, type: 2}
   m_IsPrefabParent: 0
@@ -477,10 +465,6 @@ Prefab:
     - target: {fileID: 473726, guid: 8750a61d87f30ef4da41fe5674729146, type: 2}
       propertyPath: m_RootOrder
       value: 3
-      objectReference: {fileID: 0}
-    - target: {fileID: 2321620, guid: 8750a61d87f30ef4da41fe5674729146, type: 2}
-      propertyPath: m_Enabled
-      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 8750a61d87f30ef4da41fe5674729146, type: 2}

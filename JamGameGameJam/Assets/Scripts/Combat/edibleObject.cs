@@ -119,7 +119,7 @@ public class edibleObject : MonoBehaviour {
         {
             this.GetComponents<AudioSource>()[1].Play(); //play the popping sound upon death
             playerAnchor.SendMessageUpwards("addGlobs", globs, SendMessageOptions.DontRequireReceiver);
-            SendMessageUpwards("subtractFromCount");
+            SendMessageUpwards("subtractFromCount", SendMessageOptions.DontRequireReceiver);
             
             Destroy(this.gameObject,0.3f);
         }
