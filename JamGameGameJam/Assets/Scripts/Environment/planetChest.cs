@@ -35,6 +35,10 @@ public class planetChest : MonoBehaviour
             StartCoroutine("dispenseGlobs");
             dispense = false;
         }
+        if (dispensing == false)
+        {
+            Destroy(this.gameObject, 3.0f);
+        }
     }
 
     IEnumerator openPlanet()

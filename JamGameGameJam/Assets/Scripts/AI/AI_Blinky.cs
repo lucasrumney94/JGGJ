@@ -17,7 +17,7 @@ public class AI_Blinky : MonoBehaviour {
     private Rigidbody physicsRigidbody;
 
     private float startTime;
-    private GameObject enemiesObject;
+    //private GameObject enemiesObject;
 
     void Start()
     {
@@ -25,8 +25,8 @@ public class AI_Blinky : MonoBehaviour {
         physicsRigidbody = GetComponent<Rigidbody>();
         startTime = Time.time;
         swerveDelay = Random.Range(0f, 2f * Mathf.PI);
-        enemiesObject = GameObject.FindGameObjectWithTag("Enemies");
-        gameObject.transform.parent = enemiesObject.transform;
+        //enemiesObject = GameObject.FindGameObjectWithTag("Enemies");
+        //gameObject.transform.parent = enemiesObject.transform;
     }
 
     void FixedUpdate()

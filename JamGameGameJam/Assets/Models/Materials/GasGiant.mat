@@ -6,7 +6,7 @@ Material:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
-  m_Name: Asteroid
+  m_Name: GasGiant
   m_Shader: {fileID: 4800000, guid: 4390f6db46cc83f419c1d52b6d2ecb9f, type: 3}
   m_ShaderKeywords: 
   m_LightmapFlags: 5
@@ -109,7 +109,7 @@ Material:
       data:
         first:
           name: _Glossiness
-        second: .200000003
+        second: .5
       data:
         first:
           name: _BumpScale
@@ -133,7 +133,7 @@ Material:
       data:
         first:
           name: _Metallic
-        second: .5
+        second: 0
       data:
         first:
           name: _Intensity
@@ -146,4 +146,4 @@ Material:
       data:
         first:
           name: _Color
-        second: {r: .448529422, g: .197880626, b: 0, a: 1}
+        second: {r: .323529422, g: .0428200737, b: 0, a: 1}

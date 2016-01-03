@@ -29,11 +29,16 @@ public class AI_Spawner : MonoBehaviour {
             spawned++;
             lastSpawnTime = Time.time;
         }
+        else if (spawned >= capacity)
+        {
+            Destroy(gameObject);
+        }
     }
 
     private void Spawn()
     {
         GameObject freshSpawn = Instantiate(spawnable, transform.position, transform.rotation) as GameObject;
         freshSpawn.GetComponent<Rigidbody>().velocity = transform.forward * initialVelocity;
+        freshSpawn.transform.parent = transform.parent;
     }
 }
