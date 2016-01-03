@@ -229,10 +229,10 @@ public class globController : MonoBehaviour
     void addGlobs(int numberOfGlobs)
     {
         int mediumToSmallRatio = 4;
-        int largeToMediumRatio = 4;
+        int largeToSmallRatio = 16;
 
         int mediumGlobs = numberOfGlobs / mediumToSmallRatio;
-        int largeGlobs = numberOfGlobs / largeToMediumRatio;
+        int largeGlobs = numberOfGlobs / largeToSmallRatio;
         if (medium)
             mediumGlobs = numberOfGlobs;
         if (large)
@@ -266,7 +266,7 @@ public class globController : MonoBehaviour
             for (int j = 0; j < largeGlobs; j++)
             {
                 particleCount++;
-                globCount += largeToMediumRatio;
+                globCount += largeToSmallRatio;
                 randomOffset = new Vector3(Random.Range(-1.0f, 1.0f), Random.Range(-1.0f, 1.0f), Random.Range(-1.0f, 1.0f));
                 globs.Add((GameObject)Instantiate(globLARGE, transform.position + randomOffset, Quaternion.identity));
             }
