@@ -30,7 +30,7 @@ public class edibleObject : MonoBehaviour {
     {
         if (!justEatOnCollision)
         {
-            //eatDistance = Mathf.Pow(transform.localScale.x / 4 + playerAnchor.transform.parent.GetComponent<playerStats>().playerRadius, 2);
+            eatDistance = Mathf.Pow(transform.localScale.x / 4 + playerAnchor.transform.parent.GetComponent<playerStats>().playerRadius, 2);
             if (((playerAnchor.transform.position - transform.position).sqrMagnitude < eatDistance) && playerAnchor.GetComponent<globController>().globCount > globs && GameObject.FindGameObjectWithTag("Player").GetComponent<playerStats>().canEat)
             {
                 if (eating == false)
