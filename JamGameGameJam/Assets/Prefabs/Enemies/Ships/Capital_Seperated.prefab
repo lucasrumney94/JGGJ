@@ -543,7 +543,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 171280}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: -396.515411, y: 74.3441696, z: 244.428329}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 484034}
@@ -1152,7 +1152,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2763a4c6976cca647b09b091c3ae003f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  fireDelay: 3
+  fireRate: 3
+  fireDelay: 0
   bulletSpeed: 50
   muzzlePosition: {x: 0, y: 0, z: 1.85000002}
   aimTolerance: 15
@@ -1176,6 +1177,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2763a4c6976cca647b09b091c3ae003f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  fireRate: 0
   fireDelay: 0
   bulletSpeed: 0
   muzzlePosition: {x: 0, y: 0, z: 0}
@@ -1200,6 +1202,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2763a4c6976cca647b09b091c3ae003f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  fireRate: 0
   fireDelay: 0
   bulletSpeed: 0
   muzzlePosition: {x: 0, y: 0, z: 0}
@@ -1224,6 +1227,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2763a4c6976cca647b09b091c3ae003f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  fireRate: 0
   fireDelay: 0
   bulletSpeed: 0
   muzzlePosition: {x: 0, y: 0, z: 0}
@@ -1248,7 +1252,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2763a4c6976cca647b09b091c3ae003f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  fireDelay: 3
+  fireRate: 3
+  fireDelay: 0
   bulletSpeed: 50
   muzzlePosition: {x: 0, y: 0, z: 1.85000002}
   aimTolerance: 15
@@ -1272,6 +1277,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2763a4c6976cca647b09b091c3ae003f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  fireRate: 0
   fireDelay: 0
   bulletSpeed: 0
   muzzlePosition: {x: 0, y: 0, z: 0}
@@ -1296,7 +1302,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2763a4c6976cca647b09b091c3ae003f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  fireDelay: 3
+  fireRate: 3
+  fireDelay: 0
   bulletSpeed: 50
   muzzlePosition: {x: 0, y: 0, z: 1.85000002}
   aimTolerance: 15
@@ -1320,7 +1327,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2763a4c6976cca647b09b091c3ae003f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  fireDelay: 3
+  fireRate: 3
+  fireDelay: 0
   bulletSpeed: 50
   muzzlePosition: {x: 0, y: 0, z: 1.85000002}
   aimTolerance: 15
@@ -1344,7 +1352,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2763a4c6976cca647b09b091c3ae003f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  fireDelay: 3
+  fireRate: 3
+  fireDelay: 0
   bulletSpeed: 50
   muzzlePosition: {x: 0, y: 0, z: 1.85000002}
   aimTolerance: 15
@@ -1368,7 +1377,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2763a4c6976cca647b09b091c3ae003f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  fireDelay: 3
+  fireRate: 3
+  fireDelay: 0
   bulletSpeed: 50
   muzzlePosition: {x: 0, y: 0, z: 1.85000002}
   aimTolerance: 15
@@ -1392,7 +1402,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2763a4c6976cca647b09b091c3ae003f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  fireDelay: 3
+  fireRate: 3
+  fireDelay: 0
   bulletSpeed: 50
   muzzlePosition: {x: 0, y: 0, z: 1.85000002}
   aimTolerance: 15
@@ -1416,6 +1427,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2763a4c6976cca647b09b091c3ae003f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  fireRate: 0
   fireDelay: 0
   bulletSpeed: 0
   muzzlePosition: {x: 0, y: 0, z: 0}
@@ -1440,6 +1452,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2763a4c6976cca647b09b091c3ae003f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  fireRate: 0
   fireDelay: 0
   bulletSpeed: 0
   muzzlePosition: {x: 0, y: 0, z: 0}
@@ -1464,6 +1477,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2763a4c6976cca647b09b091c3ae003f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  fireRate: 0
   fireDelay: 0
   bulletSpeed: 0
   muzzlePosition: {x: 0, y: 0, z: 0}
@@ -1488,6 +1502,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2763a4c6976cca647b09b091c3ae003f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  fireRate: 0
   fireDelay: 0
   bulletSpeed: 0
   muzzlePosition: {x: 0, y: 0, z: 0}
@@ -1512,7 +1527,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2763a4c6976cca647b09b091c3ae003f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  fireDelay: 3
+  fireRate: 3
+  fireDelay: 0
   bulletSpeed: 50
   muzzlePosition: {x: 0, y: 0, z: 1.85000002}
   aimTolerance: 15

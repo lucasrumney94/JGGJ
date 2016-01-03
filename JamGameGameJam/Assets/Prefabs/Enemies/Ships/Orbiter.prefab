@@ -118,7 +118,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 171624}
   m_LocalRotation: {x: 0, y: .975457788, z: 0, w: .220186636}
-  m_LocalPosition: {x: 307, y: 0, z: 0}
+  m_LocalPosition: {x: -408.373016, y: 46.7234879, z: 240.911911}
   m_LocalScale: {x: .5, y: .5, z: .5}
   m_Children:
   - {fileID: 416216}
@@ -225,11 +225,11 @@ Rigidbody:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 171624}
   serializedVersion: 2
-  m_Mass: 10
-  m_Drag: .0500000007
-  m_AngularDrag: 1
+  m_Mass: 20
+  m_Drag: 5
+  m_AngularDrag: 5
   m_UseGravity: 0
-  m_IsKinematic: 1
+  m_IsKinematic: 0
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
@@ -418,6 +418,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2763a4c6976cca647b09b091c3ae003f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  fireRate: 0
   fireDelay: 0
   bulletSpeed: 0
   muzzlePosition: {x: 0, y: 0, z: 0}
@@ -443,9 +444,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   level: 1
-  eatTime: 8
+  eatTime: 3
   globs: 150
-  eatDistance: 3
+  eatDistance: 10
   smashTimeLeft: .5
   lungeTimeReduction: 5
   justEatOnCollision: 0
@@ -460,7 +461,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2763a4c6976cca647b09b091c3ae003f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  fireDelay: 3
+  fireRate: 3
+  fireDelay: 0
   bulletSpeed: 50
   muzzlePosition: {x: 0, y: 0, z: 1.85000002}
   aimTolerance: 15
@@ -472,7 +474,7 @@ MonoBehaviour:
   lowerLimit: 0
   upperLimit: 0
   nukeTurret: 0
-  bullet: {fileID: 145304, guid: f252cdf5736bdbc4ebfdb7ff64cb5ddd, type: 2}
+  bullet: {fileID: 145304, guid: 7dd8d92d91307b840a993d225e2ad13e, type: 2}
 --- !u!114 &11455930
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -485,9 +487,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   active: 0
-  speed: 5
+  speed: 150
   turnSpeed: 100
-  orbitRadius: 10
+  orbitRadius: 70
+  playerDiameter: 0
   orbitTarget: {fileID: 0}
 --- !u!1001 &100100000
 Prefab:
@@ -504,6 +507,10 @@ Prefab:
       propertyPath: m_Materials.Array.data[0]
       value: 
       objectReference: {fileID: 2100000, guid: 903c482e8bc8f3941aa4adb1c318ed71, type: 2}
+    - target: {fileID: 0}
+      propertyPath: fireRate
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}
   m_RootGameObject: {fileID: 171624}

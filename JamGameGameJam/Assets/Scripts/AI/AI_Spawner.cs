@@ -39,6 +39,13 @@ public class AI_Spawner : MonoBehaviour {
     {
         GameObject freshSpawn = Instantiate(spawnable, transform.position, transform.rotation) as GameObject;
         freshSpawn.GetComponent<Rigidbody>().velocity = transform.forward * initialVelocity;
-        freshSpawn.transform.parent = transform.parent;
+        if (transform.parent.GetComponent<AI_Pinky>())
+        {
+            freshSpawn.transform.parent = transform.parent.parent;
+        }
+        else
+        {
+            freshSpawn.transform.parent = transform.parent;
+        }
     }
 }

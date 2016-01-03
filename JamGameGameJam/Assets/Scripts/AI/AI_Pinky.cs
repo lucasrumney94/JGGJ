@@ -10,15 +10,19 @@ public class AI_Pinky : MonoBehaviour {
     public float speed = 1f;
     public float turnSpeed = 1f;
     public float orbitRadius = 10f;
+    public float playerDiameter = 0f;
     public GameObject orbitTarget;
 
+    private GameObject anchor;
     private GameObject player;
     private Rigidbody physicsRigidbody;
     private Vector3 toPlayer;
 
     void Start()
     {
-        player = GameObject.FindGameObjectWithTag("Anchor");
+        
+        anchor = GameObject.FindGameObjectWithTag("Anchor");
+        player = GameObject.FindGameObjectWithTag("Player");
         physicsRigidbody = GetComponent<Rigidbody>();
     }
 
@@ -26,6 +30,7 @@ public class AI_Pinky : MonoBehaviour {
     {
         if (active)
         {
+            playerDiameter = player.GetComponent<playerStats>().playerRadius * 2f;
             OrbitPlayer();
         }
         else if (orbitTarget)
@@ -36,27 +41,27 @@ public class AI_Pinky : MonoBehaviour {
 
     private void OrbitPlayer()
     {
-        toPlayer = (player.transform.position - this.transform.position).normalized;
-        Vector3 edge = Vector3.Cross(toPlayer, Vector3.up) * orbitRadius;
-        edge += player.transform.position;
-        Vector3 toOrbit = (edge - this.transform.position).normalized;
+        toPlayer = (anchor.transform.position - this.transform.position).normalized;
+        Vector3 edge = Vector3.Cross(toPlayer, Vector3.up) * playerDiameter;
+        Vector3 toOrbit = (edge).normalized;
         toOrbit *= speed;
         physicsRigidbody.AddForce(toOrbit);
         TurnToVelocity();
-        TurnToBroadside();
+        //TurnToBroadside();
         Debug.DrawRay(transform.position, toPlayer, Color.red);
-        Debug.DrawLine(transform.position, edge, Color.green);
+        Debug.DrawLine(transform.position, edge + anchor.transform.position, Color.green);
     }
 
     private void OrbitTarget()
     {
         Vector3 toTarget = (orbitTarget.transform.position - this.transform.position).normalized;
         Vector3 edge = Vector3.Cross(toTarget, Vector3.up) * orbitRadius;
-        edge += orbitTarget.transform.position;
-        Vector3 toOrbit = (edge - this.transform.position).normalized;
+        Vector3 toOrbit = (edge).normalized;
         toOrbit *= speed;
         physicsRigidbody.AddForce(toOrbit);
         TurnToVelocity();
+        Debug.DrawRay(transform.position, toOrbit, Color.red);
+        Debug.DrawLine(transform.position, edge + orbitTarget.transform.position, Color.green);
     }
 
     private void TurnToVelocity()

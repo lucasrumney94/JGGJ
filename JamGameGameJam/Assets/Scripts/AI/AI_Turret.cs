@@ -3,6 +3,7 @@ using System.Collections;
 
 public class AI_Turret : MonoBehaviour
 {
+    public float fireRate;
     public float fireDelay;
     public float bulletSpeed;
     public Vector3 muzzlePosition;
@@ -25,29 +26,36 @@ public class AI_Turret : MonoBehaviour
     private float fireLast;
 
     private GameObject player;
+    private AI_Pinky parentAI;
     private Vector3 toPlayer;
 
     void Start()
     {
         player = GameObject.FindGameObjectWithTag("Anchor");
-        fireLast = Time.time;
+        parentAI = transform.GetComponentInParent<AI_Pinky>();
+        Random.seed = gameObject.GetInstanceID();
+        fireDelay = Random.Range(-fireRate, fireRate);
+        fireLast = Time.time + fireDelay;
     }
 
     void Update()
     {
-        toPlayer = GameObject.FindGameObjectWithTag("Anchor").transform.position - transform.position;
-        if (turretRotation)
+        if (GetComponent<AI_Blinky>() || parentAI.active)
         {
-            TurnToFace();
-        }
-
-        if(Time.time - fireLast > fireDelay && fireDelay > 0f)
-        {
-            if (CheckAim())
+            toPlayer = GameObject.FindGameObjectWithTag("Anchor").transform.position - transform.position;
+            if (turretRotation)
             {
-                Fire();
-                fireLast = Time.time;
+                TurnToFace();
+            }
 
+            if (Time.time - fireLast > fireRate && fireRate > 0f)
+            {
+                if (CheckAim())
+                {
+                    Fire();
+                    fireLast = Time.time;
+
+                }
             }
         }
     }
