@@ -99,6 +99,7 @@ GameObject:
   - 4: {fileID: 495362}
   - 33: {fileID: 3364244}
   - 23: {fileID: 2302250}
+  - 114: {fileID: 11480036}
   m_Layer: 0
   m_Name: Weapon Ring
   m_TagString: Untagged
@@ -240,6 +241,8 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 495246}
+  - 54: {fileID: 5459914}
+  - 114: {fileID: 11477878}
   m_Layer: 0
   m_Name: Capital_Seperated
   m_TagString: Untagged
@@ -542,9 +545,9 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 171280}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -396.515411, y: 74.3441696, z: 244.428329}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalRotation: {x: 0, y: .739631176, z: 0, w: .673012435}
+  m_LocalPosition: {x: 456, y: 0, z: -40}
+  m_LocalScale: {x: 20, y: 20, z: 20}
   m_Children:
   - {fileID: 484034}
   - {fileID: 434178}
@@ -1141,6 +1144,21 @@ MeshFilter:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 127306}
   m_Mesh: {fileID: 4300002, guid: 60f8e359b542aa149a9f330f87cf8b22, type: 3}
+--- !u!54 &5459914
+Rigidbody:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 171280}
+  serializedVersion: 2
+  m_Mass: 999999
+  m_Drag: 99999
+  m_AngularDrag: 99999
+  m_UseGravity: 0
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
 --- !u!114 &11403748
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1154,7 +1172,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   fireRate: 3
   fireDelay: 0
-  bulletSpeed: 50
+  bulletSpeed: 30
   muzzlePosition: {x: 0, y: 0, z: 1.85000002}
   aimTolerance: 15
   rotationSpeed: 0
@@ -1254,7 +1272,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   fireRate: 3
   fireDelay: 0
-  bulletSpeed: 50
+  bulletSpeed: 30
   muzzlePosition: {x: 0, y: 0, z: 1.85000002}
   aimTolerance: 15
   rotationSpeed: 0
@@ -1329,7 +1347,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   fireRate: 3
   fireDelay: 0
-  bulletSpeed: 50
+  bulletSpeed: 30
   muzzlePosition: {x: 0, y: 0, z: 1.85000002}
   aimTolerance: 15
   rotationSpeed: 0
@@ -1354,7 +1372,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   fireRate: 3
   fireDelay: 0
-  bulletSpeed: 50
+  bulletSpeed: 30
   muzzlePosition: {x: 0, y: 0, z: 1.85000002}
   aimTolerance: 15
   rotationSpeed: 0
@@ -1379,7 +1397,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   fireRate: 3
   fireDelay: 0
-  bulletSpeed: 50
+  bulletSpeed: 30
   muzzlePosition: {x: 0, y: 0, z: 1.85000002}
   aimTolerance: 15
   rotationSpeed: 0
@@ -1404,7 +1422,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   fireRate: 3
   fireDelay: 0
-  bulletSpeed: 50
+  bulletSpeed: 30
   muzzlePosition: {x: 0, y: 0, z: 1.85000002}
   aimTolerance: 15
   rotationSpeed: 0
@@ -1466,6 +1484,35 @@ MonoBehaviour:
   upperLimit: 0
   nukeTurret: 0
   bullet: {fileID: 0}
+--- !u!114 &11477878
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 171280}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 95a89ef089f8b3d49ba53eb2e8b67228, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  active: 0
+  speed: 0
+  turnSpeed: 0
+  orbitRadius: 0
+  playerDiameter: 0
+  orbitTarget: {fileID: 0}
+--- !u!114 &11480036
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 117378}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d26091fd4148cca41b44a79fd1ed6ee9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  angleRotation: {x: 0, y: 0, z: .0900000036}
 --- !u!114 &11482634
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1529,7 +1576,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   fireRate: 3
   fireDelay: 0
-  bulletSpeed: 50
+  bulletSpeed: 30
   muzzlePosition: {x: 0, y: 0, z: 1.85000002}
   aimTolerance: 15
   rotationSpeed: 0

@@ -118,7 +118,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 171624}
   m_LocalRotation: {x: 0, y: .975457788, z: 0, w: .220186636}
-  m_LocalPosition: {x: -408.373016, y: 46.7234879, z: 240.911911}
+  m_LocalPosition: {x: -29.5399933, y: 25.6000004, z: 62.5900116}
   m_LocalScale: {x: .5, y: .5, z: .5}
   m_Children:
   - {fileID: 416216}
@@ -463,7 +463,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   fireRate: 3
   fireDelay: 0
-  bulletSpeed: 50
+  bulletSpeed: 30
   muzzlePosition: {x: 0, y: 0, z: 1.85000002}
   aimTolerance: 15
   rotationSpeed: 0

@@ -65,11 +65,13 @@ public class globController : MonoBehaviour
 
         originalClusterAffinity = clusterAffinity;
 
-        for (i = 0; i < particleCount; i++)
-        {
-            randomOffset = new Vector3(Random.Range(-3.0f, 3.0f), Random.Range(-3.0f, 3.0f), Random.Range(-3.0f, 3.0f));
-            globs.Add((GameObject)Instantiate(globSMALL,randomOffset,Quaternion.identity));
-        }
+
+        addGlobs(globCount);
+        //for (i = 0; i < particleCount; i++)
+        //{
+        //    randomOffset = new Vector3(Random.Range(-3.0f, 3.0f), Random.Range(-3.0f, 3.0f), Random.Range(-3.0f, 3.0f));
+        //    globs.Add((GameObject)Instantiate(globSMALL,randomOffset,Quaternion.identity));
+        //}
         globsToBeDestroyed = new List<GameObject>();
     }
 
