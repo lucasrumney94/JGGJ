@@ -45,7 +45,44 @@ User Interface was built using my UITemplate for Unity
 
 Sound Effects are from the following sources:
 
+
+Pop Sound http://www.freesound.org/people/kwahmah_02/sounds/260614/
+
+
+planetChest http://www.freesound.org/people/spookymodem/sounds/202092/
+
+
+spaceAmbience
+http://www.freesound.org/people/Bliss/sounds/8132/
+
+
+jetEngine http://www.freesound.org/people/qubodup/sounds/146770/
+
+
+spaceLaser
+http://www.freesound.org/people/Julien%20Matthey/sounds/268344/
+
+
+explosion
+http://www.freesound.org/people/Klerrp/sounds/121941/
+
+
+BigBullet
+http://www.freesound.org/people/Erdie/sounds/158728/
+
+
+largeChatter
+http://www.freesound.org/people/Speedenza/sounds/208436/
+
+
+smallChatter
+http://www.freesound.org/people/Timbre/sounds/80441/
+
+
 Font: Bubblebath by PizzaDude
+
+
+
 
 ##Contact Us
 For questions regarding installation, or bugs please contact us at:
