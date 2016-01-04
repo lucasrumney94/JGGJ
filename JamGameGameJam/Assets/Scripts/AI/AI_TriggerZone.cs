@@ -5,12 +5,14 @@ using System.Collections;
 public class AI_TriggerZone : MonoBehaviour {
 
     public GameObject[] toActivate;
+    public LevelController level;
 
     private BoxCollider triggerZone;
     private bool playerInside;
 
     void Start()
     {
+        level = GetComponentInParent<LevelController>();
         triggerZone = GetComponent<BoxCollider>();
         triggerZone.isTrigger = true;
     }
@@ -23,6 +25,7 @@ public class AI_TriggerZone : MonoBehaviour {
             {
                 ActivateObject(inactive);
             }
+            level.encounteredTriggered = true;
             playerInside = true;
         }
     }
