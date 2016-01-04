@@ -9,13 +9,13 @@ Download the release file, extract, and run the executable file.
 ##Controls
 Use of a controller is recommended. 
 
-Movement (Forward/Back/Left/Right): Left Analog Stick
-Vertical Movement (UP/DOWN): RB/LB
+Movement (Forward/Back/Left/Right): Left Analog Stick 
+Vertical Movement (UP/DOWN): RB/LB 
 
-Lunge: Y
-Spread (Toggle): X
-Snake Mode (Toggle): B
-Smash Attack: A
+Lunge: Y 
+Spread (Toggle): X 
+Snake Mode (Toggle): B 
+Smash Attack: A 
 
 
 
