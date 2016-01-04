@@ -9,19 +9,19 @@ Download the release file, extract, and run the executable file.
 ##Controls
 Use of a controller is recommended. 
 
-Movement (Forward/Back/Left/Right): Left Analog Stick 
+Movement (Forward/Back/Left/Right): Left Analog Stick or WASD or Arrow Keys
 
-Vertical Movement (UP/DOWN): RB/LB 
+Vertical Movement (UP/DOWN): RB/LB  or X/Z
 
-Camera Control: Right Analog Stick
+Camera Control: Right Analog Stick or Q/E Rotate and 2/8 altitude
 
-Lunge: Y 
+Lunge: Y or T (on KB)
 
 Spread (Toggle): X 
 
-Snake Mode (Toggle): B 
+Snake Mode (Toggle): B or R
 
-Smash Attack: A 
+Smash Attack: A or F
 
 
 
