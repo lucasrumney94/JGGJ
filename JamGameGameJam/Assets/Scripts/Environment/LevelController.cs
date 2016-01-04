@@ -8,15 +8,16 @@ public class LevelController : MonoBehaviour {
     public float percentTrigger = .20f;
     public bool levelBeaten = false;
 
-    private int initialCount=0;
+    public int initialCount=0;
     public int currentCount=0;
     private bool planetTriggered = false;
-    private bool encounterTriggered = false;
-    private int maxSpawnNumber = 0;
-    private float maxSpawnDelay = 0.0f;
-    private float totalSpawnDelay = 0.0f;
+    public bool encounterTriggered;
+    public int maxSpawnNumber = 0;
+    public float maxSpawnDelay = 0.0f;
+    public float totalSpawnDelay = 0.0f;
 
     private float startTime = 0.0f;
+    private bool timeFlag = false;
     
     //get encounterTriggered bool
     //start timer #fighters of biggest spawner * its spawn delay
@@ -27,7 +28,7 @@ public class LevelController : MonoBehaviour {
 	void Start ()
     {
         initialCount = transform.FindChild("Enemies").childCount;
-        encounterTriggered = true;
+        
         foreach (AI_Spawner aiSpawner in transform.FindChild("Enemies").GetComponentsInChildren<AI_Spawner>())
         {
             if (aiSpawner.capacity > maxSpawnNumber)
@@ -38,33 +39,43 @@ public class LevelController : MonoBehaviour {
         }
         totalSpawnDelay = maxSpawnNumber * maxSpawnDelay;
 
-        startTime = Time.time;
+        
     }
 	
 	// Update is called once per frame
 	void Update ()
     {
-        //is (nearly) everything dead?
-        //activate planet opening
-        if (Time.time - startTime <= totalSpawnDelay)
+        if (encounterTriggered)
         {
-            if (transform.FindChild("Enemies").childCount > currentCount)
+            if (!timeFlag)
+            {
+                startTime = Time.time;
+                timeFlag = !timeFlag;
+            }
+            //Debug.Log(Time.time - startTime);
+            //is (nearly) everything dead?
+            //activate planet opening
+            if (Time.time - startTime <= totalSpawnDelay)
+            {
+                if (transform.FindChild("Enemies").childCount > currentCount)
+                {
+                    currentCount = transform.FindChild("Enemies").childCount;
+                    initialCount = currentCount;
+                }
+            }
+
+            else if (Time.time - startTime > totalSpawnDelay)
             {
                 currentCount = transform.FindChild("Enemies").childCount;
-                initialCount = currentCount;
+                if (currentCount <= initialCount * percentTrigger && !planetTriggered)
+                {
+                    planet.GetComponent<planetChest>().openMe = true;
+                    planetTriggered = true;
+                    levelBeaten = true;
+                }
             }
         }
-
-        else if (Time.time - startTime > totalSpawnDelay)
-        {
-            currentCount = transform.FindChild("Enemies").childCount;
-            if (currentCount <= initialCount * percentTrigger && !planetTriggered)
-            {
-                planet.GetComponent<planetChest>().openMe = true;
-                planetTriggered = true;
-                levelBeaten = true;
-            }
-        }
+        
 	}
 
     void addToCount()

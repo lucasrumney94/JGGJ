@@ -240,7 +240,7 @@ public class globController : MonoBehaviour
         if (large)
             largeGlobs = numberOfGlobs;
         //Debug.Log(medium);
-        if (numberOfGlobs < 100 && !medium && !large )
+        if (numberOfGlobs < 700 && !medium && !large )
         {
             for (int j = 0; j < numberOfGlobs; j++)
             {
@@ -251,7 +251,7 @@ public class globController : MonoBehaviour
                 globs.Add((GameObject)Instantiate(globSMALL, transform.position + randomOffset, Quaternion.identity));
             }
         }
-        else if ((numberOfGlobs >=100 && numberOfGlobs<=400) || medium)
+        else if ((numberOfGlobs >=700 && numberOfGlobs<=1500) || medium)
         {
             for (int j = 0; j < mediumGlobs; j++)
             {
@@ -263,7 +263,7 @@ public class globController : MonoBehaviour
                 globs.Add((GameObject)Instantiate(globMEDIUM, transform.position + randomOffset, Quaternion.identity));
             }
         }
-        else if (numberOfGlobs >= 400 || large == true)
+        else if (numberOfGlobs >= 1500 || large == true)
         {
             for (int j = 0; j < largeGlobs; j++)
             {
