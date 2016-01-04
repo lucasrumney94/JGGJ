@@ -65,8 +65,9 @@ public class globController : MonoBehaviour
 
         originalClusterAffinity = clusterAffinity;
 
-
+        
         addGlobs(globCount);
+        globCount /= 2;
         //for (i = 0; i < particleCount; i++)
         //{
         //    randomOffset = new Vector3(Random.Range(-3.0f, 3.0f), Random.Range(-3.0f, 3.0f), Random.Range(-3.0f, 3.0f));
@@ -83,6 +84,7 @@ public class globController : MonoBehaviour
     // Update is called once per frame
     void FixedUpdate()
     {
+        particleCount = globs.Count;
         explodeSelf = Input.GetButtonDown("Explode");
 
         if (explodeSelf && smashRecharged && !expanded && !snaked)
@@ -182,32 +184,34 @@ public class globController : MonoBehaviour
                     sCount++;
                     globsToBeDestroyed.Add(glob);
                     globCount--;
-                    particleCount--;
+                    //Debug.Log("Remove if small and >1000");
+                    //particleCount--;
                 }
                 if (sCount == 4)
                 {
                     medium = true;
                     addGlobs(1);
                     medium = false;
-                    particleCount++;
+                    //particleCount++;
                     sCount = 0;
                     break;
                 }
-                if (globs.Count > 1500)
+                if (globCount > 1500)
                 { 
                     if (glob.name == "globMEDIUM(Clone)")
                     {
                         mCount++;
                         globsToBeDestroyed.Add(glob);
-                        particleCount--;
+                        //particleCount--;
                         globCount -= 4;
+                        //Debug.Log("Remove if medium and >1500");
                     }
                     if (mCount == 4)
                     {
                         large = true;
                         addGlobs(1);
                         large = false;
-                        particleCount++;
+                        //particleCount++;
                         mCount = 0;
                         break;
                     }
@@ -244,8 +248,10 @@ public class globController : MonoBehaviour
         {
             for (int j = 0; j < numberOfGlobs; j++)
             {
-                particleCount++;
+                //particleCount++;
                 globCount++;
+                //Debug.Log("< 700");
+                //Debug.Log(numberOfGlobs);
                 randomOffset = new Vector3(Random.Range(-1.0f, 1.0f), Random.Range(-1.0f, 1.0f), Random.Range(-1.0f, 1.0f));
 
                 globs.Add((GameObject)Instantiate(globSMALL, transform.position + randomOffset, Quaternion.identity));
@@ -256,8 +262,9 @@ public class globController : MonoBehaviour
             for (int j = 0; j < mediumGlobs; j++)
             {
                 //Debug.Log("Added medium blob!");
-                particleCount++;
+                //particleCount++;
                 globCount += mediumToSmallRatio;
+                //Debug.Log("700 > x > 1500");
                 randomOffset = new Vector3(Random.Range(-1.0f, 1.0f), Random.Range(-1.0f, 1.0f), Random.Range(-1.0f, 1.0f));
          
                 globs.Add((GameObject)Instantiate(globMEDIUM, transform.position + randomOffset, Quaternion.identity));
@@ -267,8 +274,9 @@ public class globController : MonoBehaviour
         {
             for (int j = 0; j < largeGlobs; j++)
             {
-                particleCount++;
+                //particleCount++;
                 globCount += largeToSmallRatio;
+                //Debug.Log(">= 1500");
                 randomOffset = new Vector3(Random.Range(-1.0f, 1.0f), Random.Range(-1.0f, 1.0f), Random.Range(-1.0f, 1.0f));
                 globs.Add((GameObject)Instantiate(globLARGE, transform.position + randomOffset, Quaternion.identity));
             }

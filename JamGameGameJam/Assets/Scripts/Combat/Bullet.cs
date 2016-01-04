@@ -6,6 +6,8 @@ using System.Collections.Generic;
 public class Bullet : MonoBehaviour {
 
     public float speed;
+    [Range(1,3)]
+    public int size;
     public float lifetime = 5f;
 
     private float startTime;
@@ -42,14 +44,14 @@ public class Bullet : MonoBehaviour {
                 globs.Remove(other.gameObject);
                 Destroy(other.gameObject);
             }
-            else if (other.gameObject.tag == "globMEDIUM")
+            else if (size >= 2 && other.gameObject.tag == "globMEDIUM")
             {
                 globCont.globCount -= 4;
                 globCont.particleCount--;
                 globs.Remove(other.gameObject);
                 Destroy(other.gameObject);
             }
-            else if (other.gameObject.tag == "globLARGE")
+            else if (size >= 3 && other.gameObject.tag == "globLARGE")
             {
                 globCont.globCount -= 16;
                 globCont.particleCount--;

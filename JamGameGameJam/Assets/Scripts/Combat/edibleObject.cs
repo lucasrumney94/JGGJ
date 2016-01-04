@@ -2,8 +2,7 @@
 using System.Collections;
 
 public class edibleObject : MonoBehaviour {
-
-    public int level = 1;
+    
     public float eatTime = 5.0f;
     public int globs = 10;
     public float eatDistance = 5.0f;
