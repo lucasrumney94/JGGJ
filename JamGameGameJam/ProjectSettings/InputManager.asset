@@ -423,7 +423,7 @@ InputManager:
     joyNum: 0
   - serializedVersion: 3
     m_Name: Pause
-    descriptiveName: Lunge Forward
+    descriptiveName: Pauses the Game
     descriptiveNegativeName: 
     negativeButton: 
     positiveButton: 
