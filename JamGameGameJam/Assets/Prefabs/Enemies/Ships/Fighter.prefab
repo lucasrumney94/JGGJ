@@ -17,6 +17,7 @@ GameObject:
   - 114: {fileID: 11408928}
   - 82: {fileID: 8256172}
   - 82: {fileID: 8280442}
+  - 114: {fileID: 11440146}
   m_Layer: 11
   m_Name: Fighter
   m_TagString: Untagged
@@ -106,17 +107,17 @@ AudioSource:
     type: 2}
   m_audioClip: {fileID: 8300000, guid: 452ec5878bab2d14c951f5011de05bce, type: 3}
   m_PlayOnAwake: 1
-  m_Volume: .100000001
+  m_Volume: .600000024
   m_Pitch: .419999987
   Loop: 1
   Mute: 0
   Spatialize: 0
-  Priority: 256
+  Priority: 227
   DopplerLevel: 2
   MinDistance: 1
   MaxDistance: 50
   Pan2D: 0
-  rolloffMode: 2
+  rolloffMode: 1
   BypassEffects: 0
   BypassListenerEffects: 0
   BypassReverbZones: 0
@@ -286,6 +287,18 @@ MonoBehaviour:
   upperLimit: 0
   nukeTurret: 0
   bullet: {fileID: 145304, guid: 7dd8d92d91307b840a993d225e2ad13e, type: 2}
+--- !u!114 &11440146
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 169934}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6a9ea711c67e10548a582db4a6492dfe, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  variance: 1
 --- !u!114 &11442888
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -380,7 +393,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 0}
       propertyPath: m_Volume
-      value: .330000013
+      value: .600000024
       objectReference: {fileID: 0}
     - target: {fileID: 0}
       propertyPath: rolloffMode
@@ -400,7 +413,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 0}
       propertyPath: Priority
-      value: 104
+      value: 227
       objectReference: {fileID: 0}
     - target: {fileID: 0}
       propertyPath: OutputAudioMixerGroup
