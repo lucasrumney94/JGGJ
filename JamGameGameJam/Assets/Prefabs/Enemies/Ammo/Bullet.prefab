@@ -48,7 +48,7 @@ GameObject:
   - 4: {fileID: 404600}
   - 65: {fileID: 6591486}
   - 114: {fileID: 11482252}
-  m_Layer: 12
+  m_Layer: 0
   m_Name: ShipSensor
   m_TagString: Untagged
   m_Icon: {fileID: 0}
