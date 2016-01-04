@@ -106,7 +106,7 @@ AudioSource:
     type: 2}
   m_audioClip: {fileID: 8300000, guid: 452ec5878bab2d14c951f5011de05bce, type: 3}
   m_PlayOnAwake: 1
-  m_Volume: .100000001
+  m_Volume: .200000003
   m_Pitch: .419999987
   Loop: 1
   Mute: 0
@@ -380,7 +380,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 0}
       propertyPath: m_Volume
-      value: .330000013
+      value: .200000003
       objectReference: {fileID: 0}
     - target: {fileID: 0}
       propertyPath: rolloffMode
