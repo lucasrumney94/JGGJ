@@ -9,7 +9,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 402954}
   - 108: {fileID: 10833150}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: Point light
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -30,7 +30,7 @@ GameObject:
   - 54: {fileID: 5491016}
   - 96: {fileID: 9645476}
   - 114: {fileID: 11426372}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: Nuke
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -360,6 +360,10 @@ Prefab:
       propertyPath: killSphereObject
       value: 
       objectReference: {fileID: 150476, guid: 1efb2e050b70ae543b9b219a46822b51, type: 2}
+    - target: {fileID: 0}
+      propertyPath: m_Layer
+      value: 12
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}
   m_RootGameObject: {fileID: 145304}

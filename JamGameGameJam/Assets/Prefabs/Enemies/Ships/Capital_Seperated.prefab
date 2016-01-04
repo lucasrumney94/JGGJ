@@ -11,7 +11,7 @@ GameObject:
   - 33: {fileID: 3330088}
   - 23: {fileID: 2318036}
   - 114: {fileID: 11447676}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Turret_Front_Right
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -29,7 +29,7 @@ GameObject:
   - 33: {fileID: 3311618}
   - 23: {fileID: 2378898}
   - 114: {fileID: 11412940}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Turret_Front_Left
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -47,7 +47,7 @@ GameObject:
   - 33: {fileID: 3307956}
   - 23: {fileID: 2336034}
   - 114: {fileID: 11459620}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Cannon
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -64,7 +64,7 @@ GameObject:
   - 4: {fileID: 409934}
   - 33: {fileID: 3327666}
   - 23: {fileID: 2327570}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Body
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -82,7 +82,7 @@ GameObject:
   - 33: {fileID: 3318094}
   - 23: {fileID: 2330122}
   - 114: {fileID: 11467252}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Turret_Front_Left_Bottom
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -100,7 +100,7 @@ GameObject:
   - 33: {fileID: 3364244}
   - 23: {fileID: 2302250}
   - 114: {fileID: 11480036}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Weapon Ring
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -118,7 +118,7 @@ GameObject:
   - 33: {fileID: 3347732}
   - 23: {fileID: 2362826}
   - 114: {fileID: 11449438}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Cannon
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -136,7 +136,7 @@ GameObject:
   - 33: {fileID: 3388440}
   - 23: {fileID: 2359620}
   - 114: {fileID: 11482634}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Turret_Back_Left
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -154,7 +154,7 @@ GameObject:
   - 33: {fileID: 3326886}
   - 23: {fileID: 2364974}
   - 114: {fileID: 11450494}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Cannon
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -172,7 +172,7 @@ GameObject:
   - 33: {fileID: 3376266}
   - 23: {fileID: 2333722}
   - 114: {fileID: 11455870}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Cannon
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -190,7 +190,7 @@ GameObject:
   - 33: {fileID: 3325672}
   - 23: {fileID: 2395976}
   - 114: {fileID: 11499366}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Cannon
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -208,7 +208,7 @@ GameObject:
   - 33: {fileID: 3346250}
   - 23: {fileID: 2319240}
   - 114: {fileID: 11483976}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Turret_Front_Right_Bottom
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -226,7 +226,7 @@ GameObject:
   - 33: {fileID: 3316564}
   - 23: {fileID: 2340982}
   - 114: {fileID: 11431256}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Turret_Back_Left_Bottom
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -243,7 +243,7 @@ GameObject:
   - 4: {fileID: 495246}
   - 54: {fileID: 5459914}
   - 114: {fileID: 11477878}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Capital_Seperated
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -261,7 +261,7 @@ GameObject:
   - 33: {fileID: 3324098}
   - 23: {fileID: 2393300}
   - 114: {fileID: 11403748}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Cannon
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -279,7 +279,7 @@ GameObject:
   - 33: {fileID: 3326922}
   - 23: {fileID: 2389990}
   - 114: {fileID: 11445186}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Cannon
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -297,7 +297,7 @@ GameObject:
   - 33: {fileID: 3355638}
   - 23: {fileID: 2396102}
   - 114: {fileID: 11455234}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Cannon
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -315,7 +315,7 @@ GameObject:
   - 33: {fileID: 3316790}
   - 23: {fileID: 2332832}
   - 114: {fileID: 11471502}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Turret_Back_Right_Bottom
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -333,7 +333,7 @@ GameObject:
   - 33: {fileID: 3342570}
   - 23: {fileID: 2329442}
   - 114: {fileID: 11406650}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Turret_Back_Right
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1594,7 +1594,11 @@ Prefab:
   serializedVersion: 2
   m_Modification:
     m_TransformParent: {fileID: 0}
-    m_Modifications: []
+    m_Modifications:
+    - target: {fileID: 0}
+      propertyPath: m_Layer
+      value: 11
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}
   m_RootGameObject: {fileID: 171280}
