@@ -11,6 +11,7 @@ GameObject:
   - 33: {fileID: 3330088}
   - 23: {fileID: 2318036}
   - 114: {fileID: 11447676}
+  - 114: {fileID: 11433356}
   m_Layer: 11
   m_Name: Turret_Front_Right
   m_TagString: Untagged
@@ -29,6 +30,7 @@ GameObject:
   - 33: {fileID: 3311618}
   - 23: {fileID: 2378898}
   - 114: {fileID: 11412940}
+  - 114: {fileID: 11499038}
   m_Layer: 11
   m_Name: Turret_Front_Left
   m_TagString: Untagged
@@ -83,6 +85,7 @@ GameObject:
   - 33: {fileID: 3318094}
   - 23: {fileID: 2330122}
   - 114: {fileID: 11467252}
+  - 114: {fileID: 11465820}
   m_Layer: 11
   m_Name: Turret_Front_Left_Bottom
   m_TagString: Untagged
@@ -138,6 +141,7 @@ GameObject:
   - 33: {fileID: 3388440}
   - 23: {fileID: 2359620}
   - 114: {fileID: 11482634}
+  - 114: {fileID: 11433788}
   m_Layer: 11
   m_Name: Turret_Back_Left
   m_TagString: Untagged
@@ -210,6 +214,7 @@ GameObject:
   - 33: {fileID: 3346250}
   - 23: {fileID: 2319240}
   - 114: {fileID: 11483976}
+  - 114: {fileID: 11412796}
   m_Layer: 11
   m_Name: Turret_Front_Right_Bottom
   m_TagString: Untagged
@@ -228,6 +233,7 @@ GameObject:
   - 33: {fileID: 3316564}
   - 23: {fileID: 2340982}
   - 114: {fileID: 11431256}
+  - 114: {fileID: 11401696}
   m_Layer: 11
   m_Name: Turret_Back_Left_Bottom
   m_TagString: Untagged
@@ -335,6 +341,7 @@ GameObject:
   - 33: {fileID: 3316790}
   - 23: {fileID: 2332832}
   - 114: {fileID: 11471502}
+  - 114: {fileID: 11495530}
   m_Layer: 11
   m_Name: Turret_Back_Right_Bottom
   m_TagString: Untagged
@@ -353,6 +360,7 @@ GameObject:
   - 33: {fileID: 3342570}
   - 23: {fileID: 2329442}
   - 114: {fileID: 11406650}
+  - 114: {fileID: 11497506}
   m_Layer: 11
   m_Name: Turret_Back_Right
   m_TagString: Untagged
@@ -1216,6 +1224,24 @@ MeshCollider:
   serializedVersion: 2
   m_Convex: 0
   m_Mesh: {fileID: 4300000, guid: 8a102ed8ea22969449b433d923487de3, type: 3}
+--- !u!114 &11401696
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 157902}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8ff2d995ae1ed474bb3caceff2852344, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  level: 1
+  eatTime: 2
+  globs: 500
+  eatDistance: 5
+  smashTimeLeft: 0
+  lungeTimeReduction: 2
+  justEatOnCollision: 0
 --- !u!114 &11403748
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1266,6 +1292,24 @@ MonoBehaviour:
   upperLimit: 0
   nukeTurret: 0
   bullet: {fileID: 0}
+--- !u!114 &11412796
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 157696}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8ff2d995ae1ed474bb3caceff2852344, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  level: 1
+  eatTime: 2
+  globs: 500
+  eatDistance: 5
+  smashTimeLeft: 0
+  lungeTimeReduction: 2
+  justEatOnCollision: 0
 --- !u!114 &11412940
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1316,6 +1360,42 @@ MonoBehaviour:
   upperLimit: 0
   nukeTurret: 0
   bullet: {fileID: 0}
+--- !u!114 &11433356
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 103314}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8ff2d995ae1ed474bb3caceff2852344, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  level: 1
+  eatTime: 2
+  globs: 500
+  eatDistance: 5
+  smashTimeLeft: 0
+  lungeTimeReduction: 2
+  justEatOnCollision: 0
+--- !u!114 &11433788
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 127306}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8ff2d995ae1ed474bb3caceff2852344, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  level: 1
+  eatTime: 2
+  globs: 500
+  eatDistance: 5
+  smashTimeLeft: 0
+  lungeTimeReduction: 2
+  justEatOnCollision: 0
 --- !u!114 &11436606
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1516,6 +1596,24 @@ MonoBehaviour:
   upperLimit: 0
   nukeTurret: 0
   bullet: {fileID: 145304, guid: f252cdf5736bdbc4ebfdb7ff64cb5ddd, type: 2}
+--- !u!114 &11465820
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 115534}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8ff2d995ae1ed474bb3caceff2852344, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  level: 1
+  eatTime: 2
+  globs: 500
+  eatDistance: 5
+  smashTimeLeft: 0
+  lungeTimeReduction: 2
+  justEatOnCollision: 0
 --- !u!114 &11467252
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1645,6 +1743,60 @@ MonoBehaviour:
   upperLimit: 0
   nukeTurret: 0
   bullet: {fileID: 0}
+--- !u!114 &11495530
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 189074}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8ff2d995ae1ed474bb3caceff2852344, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  level: 1
+  eatTime: 2
+  globs: 500
+  eatDistance: 5
+  smashTimeLeft: 0
+  lungeTimeReduction: 2
+  justEatOnCollision: 0
+--- !u!114 &11497506
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 190512}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8ff2d995ae1ed474bb3caceff2852344, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  level: 1
+  eatTime: 2
+  globs: 500
+  eatDistance: 5
+  smashTimeLeft: 0
+  lungeTimeReduction: 2
+  justEatOnCollision: 0
+--- !u!114 &11499038
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 106516}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8ff2d995ae1ed474bb3caceff2852344, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  level: 1
+  eatTime: 2
+  globs: 500
+  eatDistance: 5
+  smashTimeLeft: 0
+  lungeTimeReduction: 2
+  justEatOnCollision: 0
 --- !u!114 &11499366
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -2769,6 +2921,10 @@ Prefab:
     - target: {fileID: 0}
       propertyPath: m_Layer
       value: 11
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: globs
+      value: 500
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}
