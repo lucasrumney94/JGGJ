@@ -25,7 +25,7 @@ public class AI_TriggerZone : MonoBehaviour {
             {
                 ActivateObject(inactive);
             }
-            level.encounteredTriggered = true;
+            level.encounterTriggered = true;
             playerInside = true;
         }
     }
