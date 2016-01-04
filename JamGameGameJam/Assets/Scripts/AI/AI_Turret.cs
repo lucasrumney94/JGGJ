@@ -62,15 +62,17 @@ public class AI_Turret : MonoBehaviour
 
     private void Fire()
     {
-        if (!nukeTurret)
+        if (nukeTurret)
         {
             GameObject newBullet = Instantiate(bullet, transform.TransformPoint(muzzlePosition), transform.rotation) as GameObject;
-            newBullet.GetComponent<Bullet>().speed = bulletSpeed;
+            ParticleSystem warpParticles = GetComponent<ParticleSystem>();
+            warpParticles.Play();
+            newBullet.GetComponent<nuke>().speed = bulletSpeed;
         }
         else
         {
             GameObject newBullet = Instantiate(bullet, transform.TransformPoint(muzzlePosition), transform.rotation) as GameObject;
-            newBullet.GetComponent<nuke>().speed = bulletSpeed;
+            newBullet.GetComponent<Bullet>().speed = bulletSpeed;
         }
     }
 
