@@ -29,6 +29,7 @@ GameObject:
   - 33: {fileID: 3321866}
   - 23: {fileID: 2342924}
   - 114: {fileID: 11494964}
+  - 114: {fileID: 11425756}
   m_Layer: 0
   m_Name: Turret_NEW
   m_TagString: Untagged
@@ -123,6 +124,24 @@ MeshFilter:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 172314}
   m_Mesh: {fileID: 4300000, guid: 60f8e359b542aa149a9f330f87cf8b22, type: 3}
+--- !u!114 &11425756
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 198184}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8ff2d995ae1ed474bb3caceff2852344, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  level: 1
+  eatTime: 2
+  globs: 10
+  eatDistance: 5
+  smashTimeLeft: 0
+  lungeTimeReduction: 2
+  justEatOnCollision: 0
 --- !u!114 &11480216
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -134,6 +153,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2763a4c6976cca647b09b091c3ae003f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  fireRate: 0
   fireDelay: 3
   bulletSpeed: 50
   muzzlePosition: {x: 0, y: 0, z: 1.85000002}
@@ -158,6 +178,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2763a4c6976cca647b09b091c3ae003f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  fireRate: 0
   fireDelay: 0
   bulletSpeed: 0
   muzzlePosition: {x: 0, y: 0, z: 0}
