@@ -32,7 +32,7 @@ public class gameController : MonoBehaviour {
             }
             if (numLevelsbeaten == levels.Count)
             {
-                gameWon = true;
+                StartCoroutine("gameWinActivation");
             }
             if (pStats.playerGlobCount <= 0)
             {
@@ -40,4 +40,10 @@ public class gameController : MonoBehaviour {
             }
         }
 	}
+    IEnumerator gameWinActivation()
+    {
+
+        yield return new WaitForSeconds(12.0f);
+        gameWon = true;
+    }
 }
