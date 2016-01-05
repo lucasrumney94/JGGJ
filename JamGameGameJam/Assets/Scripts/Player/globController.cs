@@ -52,6 +52,8 @@ public class globController : MonoBehaviour
     public bool lungeRecharged = true;
     private int sCount = 0;
     private int mCount = 0;
+    private int lCount = 0;
+    private bool tradeUpGlobs = true;
     private List<GameObject> globsToBeDestroyed;
 
     // Use this for initialization
@@ -174,9 +176,9 @@ public class globController : MonoBehaviour
             }
         }
         
-        if (particleCount > 1000)
+        if (particleCount > 1000 && tradeUpGlobs)
         {
-            
+            lCount = 0; //reset large count
             foreach (GameObject glob in globs)
             {
                 if (glob.name == "globSMALL(Clone)")
@@ -216,8 +218,16 @@ public class globController : MonoBehaviour
                         break;
                     }
                 }
+                if (glob.name == "globLARGE(Clone)")
+                {
+                    lCount++; //count each large glob,
+                    if (lCount >= 1000) //if lCount makes up a ton of blobs, no longer try to tradeUp
+                    {
+                        tradeUpGlobs = false;
+                    }
+                }
             }
-
+           
             foreach (GameObject deadGlob in globsToBeDestroyed)
             {
 
