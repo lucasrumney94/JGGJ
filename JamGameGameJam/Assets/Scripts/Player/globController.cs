@@ -198,7 +198,7 @@ public class globController : MonoBehaviour
                     sCount = 0;
                     break;
                 }
-                if (globCount > 1500)
+                if (globCount > 3500)
                 { 
                     if (glob.name == "globMEDIUM(Clone)")
                     {
@@ -221,13 +221,13 @@ public class globController : MonoBehaviour
                 if (glob.name == "globLARGE(Clone)")
                 {
                     lCount++; //count each large glob,
-                    if (lCount >= 1000) //if lCount makes up a ton of blobs, no longer try to tradeUp
+                    if (lCount >= 600) //if lCount makes up a ton of blobs, no longer try to tradeUp
                     {
                         tradeUpGlobs = false;
                     }
                 }
             }
-           
+            Debug.Log(lCount);
             foreach (GameObject deadGlob in globsToBeDestroyed)
             {
 
