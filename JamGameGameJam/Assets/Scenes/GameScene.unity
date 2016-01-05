@@ -1170,6 +1170,10 @@ Prefab:
       propertyPath: globs
       value: 30
       objectReference: {fileID: 0}
+    - target: {fileID: 11414712, guid: 301b6bd8933ef864cbd16b5b383fc8ac, type: 2}
+      propertyPath: lungeTimeReduction
+      value: 2
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 301b6bd8933ef864cbd16b5b383fc8ac, type: 2}
   m_IsPrefabParent: 0
@@ -2868,6 +2872,10 @@ Prefab:
       propertyPath: globs
       value: 30
       objectReference: {fileID: 0}
+    - target: {fileID: 11414712, guid: 301b6bd8933ef864cbd16b5b383fc8ac, type: 2}
+      propertyPath: lungeTimeReduction
+      value: 2
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 301b6bd8933ef864cbd16b5b383fc8ac, type: 2}
   m_IsPrefabParent: 0
@@ -2922,18 +2930,6 @@ Prefab:
       propertyPath: orbitTarget
       value: 
       objectReference: {fileID: 496557408}
-    - target: {fileID: 497264, guid: f0ba498026ca9984f9065726a8f217f5, type: 2}
-      propertyPath: m_LocalScale.x
-      value: 3
-      objectReference: {fileID: 0}
-    - target: {fileID: 497264, guid: f0ba498026ca9984f9065726a8f217f5, type: 2}
-      propertyPath: m_LocalScale.y
-      value: 3
-      objectReference: {fileID: 0}
-    - target: {fileID: 497264, guid: f0ba498026ca9984f9065726a8f217f5, type: 2}
-      propertyPath: m_LocalScale.z
-      value: 3
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: f0ba498026ca9984f9065726a8f217f5, type: 2}
   m_IsPrefabParent: 0

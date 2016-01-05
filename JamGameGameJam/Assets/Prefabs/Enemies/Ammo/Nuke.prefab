@@ -130,7 +130,7 @@ TrailRenderer:
   m_CastShadows: 0
   m_ReceiveShadows: 0
   m_Materials:
-  - {fileID: 2100000, guid: 590f1f21e1b1df64faee2c0177c24c47, type: 2}
+  - {fileID: 2100000, guid: 248f863abb6e4824f808ea60c8675f9b, type: 2}
   m_SubsetIndices: 
   m_StaticBatchRoot: {fileID: 0}
   m_UseLightProbes: 1
@@ -144,7 +144,7 @@ TrailRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingOrder: 0
-  m_Time: 10
+  m_Time: 3
   m_StartWidth: 1
   m_EndWidth: .00999999978
   m_Colors:
@@ -223,7 +223,7 @@ Prefab:
     - target: {fileID: 0}
       propertyPath: m_Materials.Array.data[0]
       value: 
-      objectReference: {fileID: 2100000, guid: 590f1f21e1b1df64faee2c0177c24c47, type: 2}
+      objectReference: {fileID: 2100000, guid: 248f863abb6e4824f808ea60c8675f9b, type: 2}
     - target: {fileID: 0}
       propertyPath: m_Size.x
       value: 1
@@ -314,7 +314,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 0}
       propertyPath: m_Time
-      value: 10
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 0}
       propertyPath: m_Autodestruct
