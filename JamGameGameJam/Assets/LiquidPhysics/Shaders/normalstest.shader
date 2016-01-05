@@ -51,7 +51,7 @@
 				float mag = (c.r + c.g + c.b) / 3.0;
 				c.rgb = _Color.rgb * mag;
 				c.a = _Color.a;
-				c = c + t / 2.0;
+				c.rgb = c.rgb * t.rgb;
 				return c;
 			}
 			ENDCG
