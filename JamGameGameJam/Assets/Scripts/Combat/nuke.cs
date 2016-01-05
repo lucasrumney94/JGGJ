@@ -9,6 +9,7 @@ public class nuke : MonoBehaviour {
     public GameObject killSphereObject;
 
     private GameObject player;
+    private float playerRadius;
     private Rigidbody physicsRigidbody;
     private float startTime;
 
@@ -18,6 +19,7 @@ public class nuke : MonoBehaviour {
     void Start ()
     {
         player = GameObject.FindGameObjectWithTag("Anchor");
+        playerRadius = GameObject.FindGameObjectWithTag("Player").GetComponent<playerStats>().playerRadius;
         physicsRigidbody = GetComponent<Rigidbody>();
         startTime = Time.time;
 
@@ -33,7 +35,7 @@ public class nuke : MonoBehaviour {
         transform.LookAt(player.transform);
 
         
-        if (toPlayer.magnitude <detonationRange && !detonate)
+        if (toPlayer.magnitude < detonationRange * playerRadius && !detonate)
         {
             
             Instantiate(explosionSphere,transform.position,Quaternion.identity);
