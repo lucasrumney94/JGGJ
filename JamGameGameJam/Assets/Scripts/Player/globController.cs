@@ -198,7 +198,7 @@ public class globController : MonoBehaviour
                     sCount = 0;
                     break;
                 }
-                if (globCount > 3500)
+                if (globCount > 1500)
                 { 
                     if (glob.name == "globMEDIUM(Clone)")
                     {
@@ -221,7 +221,7 @@ public class globController : MonoBehaviour
                 if (glob.name == "globLARGE(Clone)")
                 {
                     lCount++; //count each large glob,
-                    if (lCount >= 600) //if lCount makes up a ton of blobs, no longer try to tradeUp
+                    if (lCount >= 500) //if lCount makes up a ton of blobs, no longer try to tradeUp
                     {
                         tradeUpGlobs = false;
                     }
@@ -254,7 +254,7 @@ public class globController : MonoBehaviour
         if (large)
             largeGlobs = numberOfGlobs;
         //Debug.Log(medium);
-        if (numberOfGlobs < 700 && !medium && !large )
+        if (numberOfGlobs < 300 && !medium && !large )
         {
             for (int j = 0; j < numberOfGlobs; j++)
             {
@@ -267,7 +267,7 @@ public class globController : MonoBehaviour
                 globs.Add((GameObject)Instantiate(globSMALL, transform.position + randomOffset, Quaternion.identity));
             }
         }
-        else if ((numberOfGlobs >=700 && numberOfGlobs<=1500) || medium)
+        else if ((numberOfGlobs >=300 && numberOfGlobs<=700) || medium)
         {
             for (int j = 0; j < mediumGlobs; j++)
             {
@@ -280,7 +280,7 @@ public class globController : MonoBehaviour
                 globs.Add((GameObject)Instantiate(globMEDIUM, transform.position + randomOffset, Quaternion.identity));
             }
         }
-        else if (numberOfGlobs >= 1500 || large == true)
+        else if (numberOfGlobs > 700 || large == true)
         {
             for (int j = 0; j < largeGlobs; j++)
             {
