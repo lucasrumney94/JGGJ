@@ -210,7 +210,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speed: 55
   turnSpeed: .25
-  detonationRange: 5
+  detonationRange: 1
   explosionSphere: {fileID: 150476, guid: 33483c2e91b5af84aac67d700fe53ddc, type: 2}
   killSphereObject: {fileID: 150476, guid: 1efb2e050b70ae543b9b219a46822b51, type: 2}
 --- !u!1001 &100100000
@@ -354,7 +354,7 @@ Prefab:
       objectReference: {fileID: 150476, guid: 33483c2e91b5af84aac67d700fe53ddc, type: 2}
     - target: {fileID: 0}
       propertyPath: detonationRange
-      value: 5
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 0}
       propertyPath: killSphereObject
