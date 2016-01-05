@@ -1625,10 +1625,6 @@ Prefab:
       propertyPath: orbitTarget
       value: 
       objectReference: {fileID: 1834895695}
-    - target: {fileID: 11443670, guid: f0ba498026ca9984f9065726a8f217f5, type: 2}
-      propertyPath: eatDistance
-      value: 5
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: f0ba498026ca9984f9065726a8f217f5, type: 2}
   m_IsPrefabParent: 0
@@ -3867,18 +3863,6 @@ Prefab:
       propertyPath: orbitTarget
       value: 
       objectReference: {fileID: 1834895695}
-    - target: {fileID: 495392, guid: 301b6bd8933ef864cbd16b5b383fc8ac, type: 2}
-      propertyPath: m_LocalScale.x
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 495392, guid: 301b6bd8933ef864cbd16b5b383fc8ac, type: 2}
-      propertyPath: m_LocalScale.y
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 495392, guid: 301b6bd8933ef864cbd16b5b383fc8ac, type: 2}
-      propertyPath: m_LocalScale.z
-      value: 1
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 301b6bd8933ef864cbd16b5b383fc8ac, type: 2}
   m_IsPrefabParent: 0
@@ -4301,23 +4285,6 @@ Transform:
 GameObject:
   m_PrefabParentObject: {fileID: 153614, guid: f0ba498026ca9984f9065726a8f217f5, type: 2}
   m_PrefabInternal: {fileID: 867835071}
---- !u!114 &1818234580
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1818234579}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8ff2d995ae1ed474bb3caceff2852344, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  eatTime: 5
-  globs: 700
-  eatDistance: 5
-  smashTimeLeft: .100000001
-  lungeTimeReduction: 2
-  justEatOnCollision: 0
 --- !u!1 &1834895695 stripped
 GameObject:
   m_PrefabParentObject: {fileID: 190994, guid: 296425c25f5cd094d83e736d78d75c5a, type: 2}
