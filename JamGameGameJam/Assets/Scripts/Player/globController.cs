@@ -42,7 +42,8 @@ public class globController : MonoBehaviour
     private bool snakeSelf = false;
     private bool snakeRecharged = true;
     private float originalSpeed;
-    private bool snaked = false;
+    [HideInInspector]
+    public bool snaked = false;
 
 
     private bool lunge = false;
@@ -132,12 +133,12 @@ public class globController : MonoBehaviour
             Anchor.GetComponent<playerMovement>().boost = snakeSpeedFactor;
 
             //Debug.Log("FORM OF... SNAKE!");
-            float tempClusterAff = clusterAffinity * 2;
+            float tempClusterAff = clusterAffinity * 2.0f;
             foreach (GameObject glob in globs)
             {
-                tempClusterAff++;
-                if (tempClusterAff > 4.5f * clusterAffinity)
-                    tempClusterAff = 2.0f * clusterAffinity;
+                tempClusterAff+=5;
+                if (tempClusterAff > 100f * clusterAffinity)
+                    tempClusterAff = 10f * clusterAffinity;
                 glob.GetComponent<Rigidbody>().AddForce(tempClusterAff * (Anchor.transform.position - glob.transform.position).normalized * Time.smoothDeltaTime);
             }
         }

@@ -17,6 +17,8 @@ public class cameraContoller : MonoBehaviour {
     private float followVelocity;
 
     private float initialHeight;
+    private float followScaleSnaked = 1.0f;
+    private float originalFollowScale = 1.0f;
 
 	// Use this for initialization
 	void Start ()
@@ -28,6 +30,8 @@ public class cameraContoller : MonoBehaviour {
         initialDistance = sFollow.distance;
         anchor = GameObject.FindGameObjectWithTag("Anchor");
         initialHeight = sFollow.height;
+        followScaleSnaked = 1.0f;
+        originalFollowScale = followDistanceScale;
 	}
 	
 	// Update is called once per frame
@@ -35,7 +39,13 @@ public class cameraContoller : MonoBehaviour {
     {
         float xAxis = Input.GetAxis("rotateCamera");
         anchor.transform.Rotate(new Vector3(0.0f, xAxis * turnSpeed, 0.0f));
+        if (GameObject.FindGameObjectWithTag("Anchor").GetComponent<globController>().snaked)
+            followDistanceScale = followScaleSnaked;
+        else
+            followDistanceScale = originalFollowScale;
+
         sFollow.distance = Mathf.SmoothDamp(sFollow.distance, initialDistance + pStats.playerRadius*followDistanceScale, ref followVelocity, followSmoothTime);
+
 
         float yAxis = Input.GetAxis("rotateCameraVertical");
         sFollow.height += yAxis;
