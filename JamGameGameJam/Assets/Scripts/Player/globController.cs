@@ -265,7 +265,7 @@ public class globController : MonoBehaviour
                 //particleCount++;
                 globCount += mediumToSmallRatio;
                 //Debug.Log("700 > x > 1500");
-                randomOffset = new Vector3(Random.Range(-1.0f, 1.0f), Random.Range(-1.0f, 1.0f), Random.Range(-1.0f, 1.0f));
+                randomOffset = new Vector3(Random.Range(-3.0f, 3.0f), Random.Range(-3.0f, 3.0f), Random.Range(-3.0f, 3.0f));
          
                 globs.Add((GameObject)Instantiate(globMEDIUM, transform.position + randomOffset, Quaternion.identity));
             }
@@ -277,7 +277,7 @@ public class globController : MonoBehaviour
                 //particleCount++;
                 globCount += largeToSmallRatio;
                 //Debug.Log(">= 1500");
-                randomOffset = new Vector3(Random.Range(-1.0f, 1.0f), Random.Range(-1.0f, 1.0f), Random.Range(-1.0f, 1.0f));
+                randomOffset = new Vector3(Random.Range(-10.0f, 10.0f), Random.Range(-10.0f, 10.0f), Random.Range(-10.0f, 10.0f));
                 globs.Add((GameObject)Instantiate(globLARGE, transform.position + randomOffset, Quaternion.identity));
             }
         }

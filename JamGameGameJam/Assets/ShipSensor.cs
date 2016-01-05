@@ -9,7 +9,7 @@ public class ShipSensor : MonoBehaviour
     {
         if (other.gameObject.layer == 11)
         {
-            Debug.Log("Bullet hit a ship");
+            //Debug.Log("Bullet hit a ship");
             Destroy(transform.parent.gameObject);
         }
     }

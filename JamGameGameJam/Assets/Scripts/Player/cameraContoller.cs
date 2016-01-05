@@ -9,7 +9,7 @@ public class cameraContoller : MonoBehaviour {
 
     public float followSmoothTime = 0.5f;
     public float turnSpeed = 4.0f;
-
+    public float followDistanceScale = 1.0f;
 
     private playerStats pStats;
     private UnityStandardAssets.Utility.SmoothFollow sFollow;
@@ -35,7 +35,7 @@ public class cameraContoller : MonoBehaviour {
     {
         float xAxis = Input.GetAxis("rotateCamera");
         anchor.transform.Rotate(new Vector3(0.0f, xAxis * turnSpeed, 0.0f));
-        sFollow.distance = Mathf.SmoothDamp(sFollow.distance, initialDistance + pStats.playerRadius, ref followVelocity, followSmoothTime);
+        sFollow.distance = Mathf.SmoothDamp(sFollow.distance, initialDistance + pStats.playerRadius*followDistanceScale, ref followVelocity, followSmoothTime);
 
         float yAxis = Input.GetAxis("rotateCameraVertical");
         sFollow.height += yAxis;
