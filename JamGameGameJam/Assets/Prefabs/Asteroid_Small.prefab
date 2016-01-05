@@ -27,9 +27,9 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 110174}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 5.03200006}
-  m_LocalScale: {x: .200000003, y: .200000003, z: .200000003}
+  m_LocalRotation: {x: .273723394, y: -.456174463, z: .325560689, w: .781658888}
+  m_LocalPosition: {x: 2.02306771, y: -.0193173997, z: 10.5483255}
+  m_LocalScale: {x: .5, y: .50000006, z: .49999997}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
@@ -229,12 +229,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8ff2d995ae1ed474bb3caceff2852344, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  level: 1
   eatTime: 2
-  globs: 10
+  globs: 2
   eatDistance: 5
   smashTimeLeft: .100000001
-  lungeTimeReduction: 2
+  lungeTimeReduction: 1
   justEatOnCollision: 0
 --- !u!1001 &100100000
 Prefab:
